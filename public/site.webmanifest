@@ -1,0 +1,16 @@
+{
+  "name": "Food Tech Bootcamp",
+  "short_name": "FTB Lab",
+  "description": "AI lab for Italy's artisanal food producers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "/images/logo/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
