@@ -1,4 +1,4 @@
-export const SITE_URL = "https://foodtechbootcamp.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://foodtechbootcamp.com";
 export const SITE_NAME = "Food Tech Bootcamp";
 export const SITE_DESCRIPTION =
   "AI lab for Italy's real artisanal food producers. We discover, validate, and build intelligence tools for the cheesemakers, bakers, olive oil producers, and winemakers who still do it by hand.";

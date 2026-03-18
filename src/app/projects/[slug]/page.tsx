@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getProject, getAllProjects } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx/MDXComponents";
 import { Tag } from "@/components/ui/Tag";
+import { SubscribeForm } from "@/components/ui/SubscribeForm";
 import { SITE_URL } from "@/lib/constants";
 import type { ProjectTag } from "@/lib/constants";
 
@@ -76,6 +77,16 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <div className="prose-ftb">
           <MDXRemote source={project.content} components={mdxComponents} />
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-[var(--border-subtle)]">
+          <p className="font-headline text-xl font-bold text-caglio mb-2">
+            Interested in this project?
+          </p>
+          <p className="font-body text-sm text-crosta mb-6">
+            Get updates when we publish results.
+          </p>
+          <SubscribeForm interest={slug} />
         </div>
       </article>
 

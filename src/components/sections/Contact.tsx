@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL } from "@/lib/constants";
 import { SectionReveal } from "@/components/ui/SectionReveal";
+import { SubscribeForm } from "@/components/ui/SubscribeForm";
 
 export function Contact() {
   return (
@@ -15,10 +16,13 @@ export function Contact() {
           >
             {CONTACT_EMAIL}
           </a>
-          <p className="font-body text-base text-crosta max-w-[55ch] mx-auto">
+          <p className="font-body text-base text-crosta max-w-[55ch] mx-auto mb-10">
             Are you a gastronome who codes? A developer who loves food? A
             producer who wants to compete?
           </p>
+          <div className="flex justify-center">
+            <SubscribeForm />
+          </div>
         </SectionReveal>
       </div>
     </section>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL } from "@/lib/constants";
 import { SectionReveal } from "@/components/ui/SectionReveal";
+import { SubscribeForm } from "@/components/ui/SubscribeForm";
 
 export const metadata: Metadata = {
   title: "Manifesto — Food Tech Bootcamp",
@@ -64,83 +65,7 @@ export default function ManifestoPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-transparent to-dark/60" />
       </section>
 
-      {/* The problem */}
-      <section className="bg-dark py-section px-5 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-[65ch]">
-          <SectionReveal>
-            <p className="font-headline text-3xl md:text-4xl font-bold text-caglio mb-12">
-              98% of them compete without digital tools.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
-              Right now, somewhere in Lombardy, a cheesemaker is waking up at
-              4am. He will check his aging rooms by hand. He will read the mold
-              by sight, the humidity by feel, the readiness of each wheel by a
-              tap and a listen. He has done this for thirty years. His father did
-              it before him.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
-              His product is extraordinary. His sales team is three people. His
-              competitor — an industrial producer — has thirty salespeople, a
-              CRM, a digital marketing department, and distribution agreements
-              he will never match.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed">
-              The cheesemaker&apos;s problem was never the product. The problem
-              is that the tools to compete were designed for industrial scale,
-              not artisanal craft.
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Tailored technology */}
-      <section className="bg-caglio py-section px-5 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-[65ch]">
-          <SectionReveal>
-            <p className="font-headline text-2xl md:text-3xl font-bold text-carbone mb-12">
-              Technology should be crafted like the product it serves.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-carbone/80 leading-relaxed mb-6">
-              An artisan doesn&apos;t use industrial molds. He shapes each piece
-              by hand because that&apos;s what the raw material demands. The same
-              principle applies to technology. A tool built for a producer
-              with three people should be as precise and intentional as the
-              product they make.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-carbone/80 leading-relaxed mb-6">
-              Find the restaurants that would love your product — and reach
-              them before the industrial alternative arrives. Turn compliance
-              documentation from hours into minutes. Know which of your clients
-              is about to reorder and which is about to leave.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-carbone/80 leading-relaxed">
-              Not generic platforms. Not one-size-fits-all dashboards.
-              Intelligence tailored to each craft — as specific as the terroir
-              that defines the product.
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Food knowledge is computable */}
+     {/* Food knowledge is computable */}
       <section className="bg-dark py-section px-5 md:px-12 lg:px-20">
         <div className="mx-auto max-w-[65ch]">
           <SectionReveal>
@@ -176,6 +101,7 @@ export default function ManifestoPage() {
           </SectionReveal>
         </div>
       </section>
+ 
 
       {/* The DOP lie */}
       <section className="bg-caglio py-section px-5 md:px-12 lg:px-20">
@@ -376,11 +302,19 @@ export default function ManifestoPage() {
             </p>
           </SectionReveal>
 
+
           <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
-              We refuse to build technology that replaces the artisan. If the AI
-              could make the cheese, we would not be interested. The craft is
-              sacred. The bottleneck is everything around it.
+            <p className="font-body text-base text-caglio/80 leading-relaxed">
+              We refuse to let artisanal knowledge disappear before it is
+              captured. Automation is coming — robots will shape, age, and
+              package food whether we like it or not. The question is not if,
+              but what they learn from. If the only data available comes from
+              industrial production, every future product will taste the same.
+              Standardized. Efficient. Forgettable. The artisan who pierces
+              gorgonzola by hand, who reads the curd by touch, who adjusts the
+              recipe by season — that knowledge is the only thing standing
+              between a future of craft and a future of copies. We collect it
+              now, or it is gone.
             </p>
           </SectionReveal>
 
@@ -389,15 +323,6 @@ export default function ManifestoPage() {
               We refuse to scale before proving. One experiment, documented
               honestly, is worth more than fifty pitch decks. We ship
               experiments, not strategies. We build demos, not promises.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed">
-              We refuse to speak about artisans without speaking to them first.
-              Every tool we build starts with a conversation, not a spreadsheet.
-              The producer is always the subject. Technology is always the tool.
-              Never the reverse.
             </p>
           </SectionReveal>
         </div>
@@ -431,13 +356,25 @@ export default function ManifestoPage() {
             </p>
             <Link
               href="/#work"
-              className="inline-flex items-center font-body font-medium text-sm text-terra hover:text-crosta transition-colors group"
+              className="inline-flex items-center font-body font-medium text-sm text-terra hover:text-crosta transition-colors group mb-16"
             >
               See the work
               <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
                 →
               </span>
             </Link>
+
+            <div className="mt-12 pt-12 border-t border-[var(--border-subtle)]">
+              <p className="font-headline text-xl font-bold text-caglio mb-2">
+                Follow the mission
+              </p>
+              <p className="font-body text-sm text-crosta mb-6">
+                Rare updates. Always worth reading.
+              </p>
+              <div className="flex justify-center">
+                <SubscribeForm />
+              </div>
+            </div>
           </SectionReveal>
         </div>
       </section>

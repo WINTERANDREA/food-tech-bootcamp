@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getPost, getAllPosts } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx/MDXComponents";
+import { SubscribeForm } from "@/components/ui/SubscribeForm";
 import { SITE_URL } from "@/lib/constants";
 
 interface PageProps {
@@ -79,6 +80,16 @@ export default async function BlogPost({ params }: PageProps) {
 
         <div className="prose-ftb">
           <MDXRemote source={post.content} components={mdxComponents} />
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-[var(--border-subtle)]">
+          <p className="font-headline text-xl font-bold text-caglio mb-2">
+            Want more like this?
+          </p>
+          <p className="font-body text-sm text-crosta mb-6">
+            Rare updates on AI tools for artisanal food producers.
+          </p>
+          <SubscribeForm />
         </div>
       </article>
 
