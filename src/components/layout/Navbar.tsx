@@ -1,15 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
-
-const SECTION_IDS = NAV_LINKS.map((l) => l.href.replace("#", ""));
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -17,10 +17,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Observe sections only on the homepage
   useEffect(() => {
+    if (pathname !== "/") return;
+
+    const sectionIds = NAV_LINKS
+      .filter((l) => l.href.startsWith("/#"))
+      .map((l) => l.href.replace("/#", ""));
+
     const observers: IntersectionObserver[] = [];
 
-    SECTION_IDS.forEach((id) => {
+    sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
 
@@ -38,7 +45,19 @@ export function Navbar() {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [pathname]);
+
+  function isActive(href: string) {
+    // Standalone page link (e.g. /manifesto)
+    if (!href.includes("#")) {
+      return pathname === href;
+    }
+    // Hash link — only highlight on homepage
+    if (pathname === "/") {
+      return activeSection === href.replace("/#", "");
+    }
+    return false;
+  }
 
   return (
     <header
@@ -68,24 +87,20 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => {
-            const sectionId = link.href.replace("#", "");
-            const isActive = activeSection === sectionId;
-            return (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={`font-body font-medium text-sm transition-colors duration-300 relative after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:bg-terra after:transition-all after:duration-300 ${
-                    isActive
-                      ? "text-terra after:w-full"
-                      : "text-caglio hover:text-terra after:w-0 hover:after:w-full"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            );
-          })}
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`font-body font-medium text-sm transition-colors duration-300 relative after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:bg-terra after:transition-all after:duration-300 ${
+                  isActive(link.href)
+                    ? "text-terra after:w-full"
+                    : "text-caglio hover:text-terra after:w-0 hover:after:w-full"
+                }`}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile hamburger */}
@@ -116,14 +131,14 @@ export function Navbar() {
       {menuOpen && (
         <div className="fixed inset-0 top-16 bg-dark z-40 flex flex-col items-center justify-center gap-8 md:hidden">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className="font-headline text-2xl font-bold text-caglio hover:text-terra transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}

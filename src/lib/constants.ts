@@ -20,11 +20,11 @@ export const SECTORS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "Mission", href: "#mission" },
-  { label: "About", href: "#founder" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Manifesto", href: "/manifesto" },
+  { label: "About", href: "/#founder" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export type ProjectTag = "experiment" | "research" | "active" | "upcoming";
