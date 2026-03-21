@@ -5,7 +5,7 @@ export function BlogCard({ post }: { post: PostFrontmatter }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block bg-dark-surface border border-[var(--border-medium)] p-6 transition-all duration-500 hover:border-[var(--border-strong)]"
+      className="group flex flex-col bg-dark-surface border border-[var(--border-medium)] p-6 h-full transition-all duration-500 hover:border-[var(--border-strong)]"
     >
       <time className="block font-mono text-xs text-crosta mb-2">
         {new Date(post.date).toLocaleDateString("en-US", {

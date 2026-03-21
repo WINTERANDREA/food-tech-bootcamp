@@ -22,6 +22,7 @@ export const SECTORS = [
 export const NAV_LINKS = [
   { label: "Work", href: "/#work" },
   { label: "Manifesto", href: "/manifesto" },
+  { label: "Produttori", href: "/produttori" },
   { label: "About", href: "/#founder" },
   { label: "Blog", href: "/#blog" },
   { label: "Contact", href: "/#contact" },
