@@ -10,7 +10,7 @@ export function BlogFeed() {
       <div className="mx-auto max-w-[1280px]">
         <SectionReveal>
           <h2 className="font-headline text-xl md:text-2xl font-bold text-caglio mb-block">
-            What&apos;s new
+            From the lab
           </h2>
         </SectionReveal>
         {posts.length > 0 ? (

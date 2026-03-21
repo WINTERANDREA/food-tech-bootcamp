@@ -21,17 +21,15 @@ export function Hero() {
         </h1>
 
         <p className="font-body font-medium text-lg text-crosta mb-8">
-          Where food knowledge becomes computable.
+          We find the best artisanal food producers in Italy. Then we build the AI tools they need to compete.
         </p>
 
         <p className="font-body text-base text-caglio/80 max-w-[55ch] mb-4">
-          Every year, artisanal producers close. Not because their products are
-          worse — but because a market rigged for scale has no patience for
-          craft. When an artisan retires, their knowledge disappears forever.
+          Food wisdom is going extinct. Not because the products are worse — because the tools are. When an artisan retires, centuries of technique disappear forever.
         </p>
 
         <p className="font-body text-sm text-terra font-medium max-w-[55ch] mb-12">
-          This is not an economic problem. It is a cultural extinction.
+          One producer per sector. The ones who chose craft over convenience.
         </p>
 
         <a

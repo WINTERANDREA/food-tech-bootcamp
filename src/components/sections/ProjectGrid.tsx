@@ -8,7 +8,7 @@ export function ProjectGrid() {
       <div className="mx-auto max-w-[1280px]">
         <SectionReveal>
           <h2 className="font-headline text-xl md:text-2xl font-bold text-caglio mb-block">
-            We do food intelligence and stuff
+            What we&apos;re exploring
           </h2>
         </SectionReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

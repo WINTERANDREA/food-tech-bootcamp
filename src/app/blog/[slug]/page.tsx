@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getPost, getAllPosts } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx/MDXComponents";
 import { SubscribeForm } from "@/components/ui/SubscribeForm";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, PROJECTS } from "@/lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -82,7 +82,31 @@ export default async function BlogPost({ params }: PageProps) {
           <MDXRemote source={post.content} components={mdxComponents} />
         </div>
 
-        <div className="mt-16 pt-12 border-t border-[var(--border-subtle)]">
+        {(() => {
+          const related = PROJECTS.find((p) => p.relatedBlog === slug);
+          if (!related) return null;
+          return (
+            <div className="mt-12 pt-8 border-t border-[var(--border-subtle)]">
+              <p className="font-mono text-xs text-crosta/50 uppercase tracking-widest mb-2">
+                Related experiment
+              </p>
+              <Link
+                href={related.comingSoon ? "/#work" : `/projects/${related.slug}`}
+                className="group inline-flex items-center font-headline text-lg font-bold text-caglio hover:text-terra transition-colors"
+              >
+                {related.title}
+                <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <p className="font-body text-sm italic text-crosta mt-1">
+                {related.question}
+              </p>
+            </div>
+          );
+        })()}
+
+        <div className="mt-12 pt-8 border-t border-[var(--border-subtle)]">
           <p className="font-headline text-xl font-bold text-caglio mb-2">
             Want more like this?
           </p>

@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 
 const TOPICS = [
   { value: "newsletter", label: "Newsletter (All Topics)" },
-  { value: "tosi-ai-sales", label: "Tosi AI Sales Agent" },
+  { value: "ai-sales-agent", label: "AI Sales Agent" },
   { value: "cooking-intelligence-llm", label: "Cooking Intelligence LLM" },
   { value: "haccp-automation", label: "HACCP Automation" },
   { value: "partnership", label: "Partnership opportunities" },

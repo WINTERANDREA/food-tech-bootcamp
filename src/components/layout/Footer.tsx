@@ -17,7 +17,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 font-body text-xs text-caglio/50">
           <span>&copy; {new Date().getFullYear()} Food Tech Bootcamp</span>
           <span className="hidden sm:inline">&middot;</span>
-          <span>Milan / Pollenzo, Italy</span>
+          <span>Milan, Italy</span>
         </div>
       </div>
     </footer>

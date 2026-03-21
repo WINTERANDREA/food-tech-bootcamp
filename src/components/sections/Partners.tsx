@@ -5,13 +5,13 @@ const LAYERS = [
     label: "Food Science",
     title: "Gastronomic Sciences",
     description:
-      "Trained at UNISG Pollenzo — the world's only university dedicated to gastronomic sciences. We don't guess what artisans need. We studied alongside them.",
+      "Trained in gastronomic sciences. We don't guess what artisans need. We studied alongside them, made cheese with them, learned their craft from the inside.",
   },
   {
     label: "AI",
-    title: "Claude by Anthropic",
+    title: "Built on Claude",
     description:
-      "Every tool we build runs on Claude. The first AI capable of reasoning about food the way a trained gastronome does — not just processing data, but understanding context.",
+      "Every tool runs on Claude by Anthropic. AI that can reason about stagionatura, disciplinari, and production technique — not just process data.",
   },
   {
     label: "Craft",

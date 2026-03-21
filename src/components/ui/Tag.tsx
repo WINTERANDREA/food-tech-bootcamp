@@ -5,6 +5,7 @@ const tagStyles: Record<ProjectTag, string> = {
   experiment: "bg-rame text-caglio",
   research: "border border-crosta text-crosta bg-transparent",
   upcoming: "text-crosta bg-crosta/40",
+  "producer selected": "bg-terra/80 text-caglio",
 };
 
 export function Tag({ tag }: { tag: ProjectTag }) {
