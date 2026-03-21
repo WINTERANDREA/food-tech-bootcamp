@@ -61,7 +61,7 @@
 |---------|------------|--------|------|
 | Anthropic | Ambassador application | Pending — applications open March 2026 | — |
 | UNISG Pollenzo | Initial contact with faculty | Not started | — |
-| Tosi (Andrea) | Secure case study permission | Not started | — |
+| Tosi (Andrea) | Case study permission secured — enthusiastic about Anthropic partnership | **Done** | 2026-03-20 |
 | EIT Food | Identify specific call to apply for | Not started | — |
 
 ---
@@ -73,4 +73,5 @@ Record what you shipped, not what you planned.
 | Date | What was done | Output produced |
 |------|--------------|-----------------|
 | 2026-03-14 | Brand identity skill + website build prompt + CLAUDE.md restructure | 3 skill files ready for dev |
-| | | |
+| 2026-03-20 | Met with Tosi — he endorses Anthropic partnership, case study permission secured | Partnership narrative validated |
+| 2026-03-21 | Created FTB-Andrea-CEO skill — strategic positioning + partnership comms | Skill file in .claude/skills/ |
