@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getPost, getAllPosts } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx/MDXComponents";
 import { SubscribeForm } from "@/components/ui/SubscribeForm";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL, PROJECTS } from "@/lib/constants";
 
 interface PageProps {
@@ -28,10 +29,10 @@ export async function generateMetadata({
       openGraph: {
         title: post.title,
         description: post.excerpt,
-        images: [{ url: post.ogImage || post.image }],
+        images: [{ url: post.ogImage || post.image || `/api/og?title=${encodeURIComponent(post.title)}&type=blog`, width: 1200, height: 630 }],
         type: "article",
         publishedTime: post.date,
-        authors: ["Food Tech Bootcamp"],
+        authors: [post.author || "Andrea"],
         tags: post.tags,
       },
       alternates: {
@@ -55,12 +56,12 @@ export default async function BlogPost({ params }: PageProps) {
   return (
     <div className="bg-dark min-h-screen pt-24 pb-section">
       <article className="mx-auto max-w-[800px] px-5 md:px-12">
-        <Link
-          href="/#blog"
-          className="inline-flex items-center text-sm text-crosta hover:text-terra transition-colors mb-8 font-body"
-        >
-          ← Back to updates
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: "Blog", href: "/#blog" },
+            { label: post.title, href: `/blog/${slug}` },
+          ]}
+        />
 
         <time className="block font-mono text-xs text-crosta mb-4">
           {new Date(post.date).toLocaleDateString("en-US", {
@@ -125,14 +126,19 @@ export default async function BlogPost({ params }: PageProps) {
             "@type": "Article",
             headline: post.title,
             description: post.excerpt,
-            image: post.ogImage || post.image,
+            image: post.ogImage || post.image || `${SITE_URL}/images/og/home.jpg`,
             datePublished: post.date,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${SITE_URL}/blog/${slug}`,
+            },
             author: {
               "@type": "Person",
-              name: "Food Tech Bootcamp",
+              name: post.author || "Andrea",
             },
             publisher: {
               "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
               name: "Food Tech Bootcamp",
               logo: {
                 "@type": "ImageObject",

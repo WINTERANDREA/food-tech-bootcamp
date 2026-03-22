@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description:
       "Your product is the best. The market doesn't know yet. We build the tools that change this.",
     type: "website",
+    images: [{ url: "/api/og?title=For+Producers&subtitle=Your+product+is+the+best.+The+market+doesn%27t+know+yet.", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: `${SITE_URL}/produttori`,

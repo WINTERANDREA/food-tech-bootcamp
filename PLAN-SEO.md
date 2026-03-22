@@ -42,10 +42,10 @@ Already in place:
 **Effort:** 30 min
 **Files:** `sitemap.ts`, `not-found.tsx`, `blog/[slug]/page.tsx`
 
-- [ ] Fix sitemap: add `/produttori` route
-- [ ] Fix sitemap: use `SITE_URL` constant instead of hardcoded URL
-- [ ] Fix blog Article JSON-LD: change `author` from org to `@type: Person` using frontmatter `author` field
-- [ ] Add metadata to 404 page: `title`, `robots: { index: false, follow: true }`
+- [x] Fix sitemap: add `/produttori` route
+- [x] Fix sitemap: use `SITE_URL` constant instead of hardcoded URL
+- [x] Fix blog Article JSON-LD: change `author` from org to `@type: Person` using frontmatter `author` field
+- [x] Add metadata to 404 page: `title`, `robots: { index: false, follow: true }`
 
 ---
 
@@ -54,18 +54,9 @@ Already in place:
 **Effort:** 45 min
 **Files:** new `llms.txt/route.ts`, new `llms-full.txt/route.ts`, `layout.tsx`
 
-- [ ] Create `/llms.txt` route — plain text, concise summary:
-  - About (lab, mission, Milan, gastronome who codes)
-  - Projects (3 experiments with one-line descriptions)
-  - Blog (post titles with URLs)
-  - Sectors served (12 sectors)
-  - Contact email
-- [ ] Create `/llms-full.txt` route — dynamic, pulls all MDX content:
-  - Full blog post text (stripped of MDX syntax)
-  - Full project descriptions
-  - Manifesto content
-  - Uses existing `getAllPosts()` and `getAllProjects()` from `lib/content.ts`
-- [ ] Add `<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />` in root layout head
+- [x] Create `/llms.txt` route — plain text, concise summary
+- [x] Create `/llms-full.txt` route — dynamic, pulls all MDX content
+- [x] Add `<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />` in root layout head
 
 ---
 
@@ -74,20 +65,12 @@ Already in place:
 **Effort:** 45 min
 **Files:** `layout.tsx`, new `components/seo/Breadcrumbs.tsx`, `manifesto/page.tsx`, `blog/[slug]/page.tsx`, `projects/[slug]/page.tsx`
 
-- [ ] Enhance Organization JSON-LD in root layout:
-  - Add `founder`: `@type: Person`, name, job title
-  - Add `sameAs`: LinkedIn profile, future social
-  - Add `contactPoint`: email
-  - Add `areaServed: "IT"`
-  - Add `knowsAbout`: artisanal food, AI, food technology
-- [ ] Add WebSite JSON-LD alongside Organization using `@graph` pattern:
-  - `name`, `url`, `publisher` linked to Organization via `@id`
-- [ ] Create reusable `Breadcrumbs` component:
-  - Renders visible breadcrumb navigation
-  - Embeds `BreadcrumbList` JSON-LD
-  - Paths: Home > Manifesto, Home > Produttori, Home > Blog > [Post], Home > Projects > [Project]
-- [ ] Add breadcrumbs to manifesto, blog post, and project pages
-- [ ] Fix Article JSON-LD: add `mainEntityOfPage`, `dateModified`
+- [x] Enhance Organization JSON-LD: founder, sameAs, contactPoint, areaServed, knowsAbout
+- [x] Add WebSite JSON-LD using `@graph` pattern
+- [x] Create reusable `Breadcrumbs` component with BreadcrumbList JSON-LD
+- [x] Add breadcrumbs to blog post and project pages
+- [x] Fix Article JSON-LD: add `mainEntityOfPage`, linked publisher `@id`
+- [x] Add breadcrumbs to manifesto page (hidden, JSON-LD only)
 
 ---
 
@@ -96,18 +79,9 @@ Already in place:
 **Effort:** 60 min
 **Files:** new `api/og/route.tsx`, all page metadata, blog MDX frontmatter
 
-- [ ] Create dynamic OG image route at `/api/og` using `next/og` (`ImageResponse`):
-  - Accepts query params: `title`, `subtitle`, `type` (blog/project/page)
-  - Branded design: dark background (`#0A0A0A`), terra accent, caglio text
-  - FTB leaf logo mark
-  - Output: 1200x630 PNG
-- [ ] Update metadata across all pages to use dynamic OG:
-  - Homepage: `title=Food Tech Bootcamp&subtitle=AI tools for artisanal food producers`
-  - Manifesto: `title=Manifesto&type=page`
-  - Produttori: `title=For Producers&type=page`
-  - Blog posts: `title=[post title]&type=blog`
-  - Projects: `title=[project title]&type=project`
-- [ ] Fix blog MDX frontmatter: set actual `image` and `ogImage` values (use project images or generate)
+- [x] Create dynamic OG image route at `/api/og` using `next/og` (edge runtime, `ImageResponse`)
+- [x] Update metadata across all pages to use dynamic OG (homepage, manifesto, produttori, blog, projects)
+- [x] Fix blog MDX frontmatter: set actual `image` and `ogImage` values, fix author name
 
 ---
 

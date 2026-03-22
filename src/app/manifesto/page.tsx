@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL } from "@/lib/constants";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SubscribeForm } from "@/components/ui/SubscribeForm";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
     description:
       "Food wisdom is going extinct. Not because the products are worse. Because the tools are.",
     type: "article",
+    images: [{ url: "/api/og?title=Manifesto&subtitle=Food+wisdom+is+going+extinct&type=manifesto", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: `${SITE_URL}/manifesto`,
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
 export default function ManifestoPage() {
   return (
     <div className="min-h-screen">
+      <Breadcrumbs items={[{ label: "Manifesto", href: "/manifesto" }]} hidden />
       {/* Opening */}
       <section className="bg-dark min-h-svh flex items-center justify-center px-5 md:px-12 lg:px-20 pt-16">
         <div className="max-w-[65ch]">

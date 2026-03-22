@@ -6,6 +6,7 @@ import { getProject, getAllProjects } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx/MDXComponents";
 import { Tag } from "@/components/ui/Tag";
 import { SubscribeForm } from "@/components/ui/SubscribeForm";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SITE_URL } from "@/lib/constants";
 import type { ProjectTag } from "@/lib/constants";
 
@@ -30,7 +31,7 @@ export async function generateMetadata({
       openGraph: {
         title: project.title,
         description: project.question,
-        images: [{ url: project.ogImage || project.image }],
+        images: [{ url: project.ogImage || project.image || `/api/og?title=${encodeURIComponent(project.title)}&type=project`, width: 1200, height: 630 }],
         type: "article",
       },
       alternates: {
@@ -54,12 +55,12 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <div className="bg-dark min-h-screen pt-24 pb-section">
       <article className="mx-auto max-w-[800px] px-5 md:px-12">
-        <Link
-          href="/#work"
-          className="inline-flex items-center text-sm text-crosta hover:text-terra transition-colors mb-8 font-body"
-        >
-          ← Back to all projects
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: "Projects", href: "/#work" },
+            { label: project.title, href: `/projects/${slug}` },
+          ]}
+        />
 
         <div className="flex flex-wrap gap-2 mb-4">
           <Tag tag={project.tag as ProjectTag} />
@@ -100,8 +101,11 @@ export default async function ProjectPage({ params }: PageProps) {
             description: project.seoDescription,
             url: `${SITE_URL}/projects/${slug}`,
             startDate: project.date,
+            keywords: [project.sector, project.tag],
+            memberOf: { "@id": `${SITE_URL}/#organization` },
             funder: {
               "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
               name: "Food Tech Bootcamp",
             },
           }),

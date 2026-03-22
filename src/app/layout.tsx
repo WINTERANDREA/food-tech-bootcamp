@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "AI lab for Italy's artisanal food producers. Technology that amplifies craft, not replaces it.",
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: "/images/og/home.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Food+Tech+Bootcamp&subtitle=AI+tools+for+Italy%27s+best+artisanal+food+producers", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description: "AI lab for Italy's artisanal food producers.",
-    images: ["/images/og/home.jpg"],
+    images: ["/api/og?title=Food+Tech+Bootcamp&subtitle=AI+tools+for+Italy%27s+best+artisanal+food+producers"],
   },
   alternates: {
     canonical: SITE_URL,
@@ -84,25 +84,66 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Food Tech Bootcamp RSS Feed" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Food Tech Bootcamp",
-              alternateName: "FTB Lab",
-              url: SITE_URL,
-              logo: `${SITE_URL}/images/logo/logo-ftb.png`,
-              description:
-                "AI lab for Italy's artisanal food producers. Making food knowledge computable.",
-              foundingDate: "2018",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Milan",
-                addressRegion: "Lombardy",
-                addressCountry: "IT",
-              },
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_URL}/#organization`,
+                  name: "Food Tech Bootcamp",
+                  alternateName: "FTB Lab",
+                  url: SITE_URL,
+                  logo: `${SITE_URL}/images/logo/logo-ftb.png`,
+                  description:
+                    "AI lab building tools for Italy's best artisanal food producers. Making food knowledge computable.",
+                  foundingDate: "2018",
+                  founder: {
+                    "@type": "Person",
+                    name: "Andrea",
+                    jobTitle: "Founder",
+                    alumniOf: {
+                      "@type": "EducationalOrganization",
+                      name: "UNISG — University of Gastronomic Sciences Pollenzo",
+                    },
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Milan",
+                    addressRegion: "Lombardy",
+                    addressCountry: "IT",
+                  },
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    email: "hello@foodtechbootcamp.com",
+                    contactType: "general",
+                  },
+                  sameAs: [
+                    "https://www.linkedin.com/in/andreacasero/",
+                  ],
+                  areaServed: "IT",
+                  knowsAbout: [
+                    "Artisanal food production",
+                    "Artificial intelligence",
+                    "Food safety (HACCP)",
+                    "Italian DOP/IGP products",
+                    "Culinary intelligence",
+                    "AI sales coordination",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
+                  name: "Food Tech Bootcamp",
+                  url: SITE_URL,
+                  publisher: { "@id": `${SITE_URL}/#organization` },
+                  inLanguage: "en",
+                },
+              ],
             }),
           }}
         />
