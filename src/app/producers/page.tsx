@@ -17,8 +17,6 @@ const content = {
       "Food Tech Bootcamp is a lab born from gastronomic science. Founded by a graduate of the University of Gastronomic Sciences in Pollenzo — Slow Food's university — who then spent more than ten years building software. We exist at the intersection of deep food knowledge and artificial intelligence.",
     aboutP2:
       "We identify the rarest artisanal producers in Italy — across every sector, as many as deserve the name. The ones whose knowledge, methods, and standards are irreplaceable. Finding them requires knowing what to look for.",
-    aboutP3:
-      "We study their craft. We understand the knowledge embedded in every gesture — the aging process, the production standards, the sensory intelligence that no manual can capture. Then we build AI as insight and infrastructure: understanding what makes their product unique, strengthening the systems around it, and valorizing an artisan food system that the market has ignored.",
     howTitle: "How we work",
     howIntro:
       "We search for extraordinary producers across every sector — as many as deserve the name.",
@@ -92,8 +90,6 @@ const content = {
       "Food Tech Bootcamp è un lab nato dalla scienza gastronomica. Fondato da un laureato dell'Università di Scienze Gastronomiche di Pollenzo — l'università di Slow Food — che ha poi passato otto anni a costruire software. Esistiamo all'intersezione tra conoscenza profonda del cibo e intelligenza artificiale.",
     aboutP2:
       "Identifichiamo i produttori artigianali più rari d'Italia — in ogni settore, tutti quelli che meritano questo nome. Quelli la cui conoscenza, i cui metodi, i cui standard sono insostituibili. Trovarli richiede sapere cosa cercare.",
-    aboutP3:
-      "Studiamo il loro mestiere. Capiamo la conoscenza racchiusa in ogni gesto — la stagionatura, il disciplinare, l'intelligenza sensoriale che nessun manuale può catturare. Poi costruiamo AI come insight e infrastruttura: capire cosa rende il loro prodotto unico, rafforzare i sistemi che lo circondano, e valorizzare un sistema alimentare artigianale che il mercato ha ignorato.",
     howTitle: "Come lavoriamo",
     howIntro:
       "Cerchiamo produttori straordinari in ogni settore — tutti quelli che meritano questo nome.",
@@ -119,21 +115,21 @@ const content = {
         body: "L'AI diventa infrastruttura per tutta la tua operazione — insight su cosa rende il tuo prodotto unico, strumenti per rafforzare ciò che lo circonda, intelligenza che valorizza il tuo mestiere. Non marketing. Le fondamenta che il tuo sistema alimentare merita.",
       },
     ],
-    projectsTitle: "Cosa stiamo esplorando",
-    project1Tag: "Attivo",
-    project1Title: "Cattura della conoscenza artigianale",
+    projectsTitle: "Cosa stiamo costruendo",
+    project1Tag: "Esperimento attivo",
+    project1Title: "AI Sales Coordinator",
     project1Body:
-      "Ogni produttore artigianale porta con sé conoscenze che non esistono altrove — calibrazioni sensoriali, aggiustamenti stagionali, comportamenti dei materiali appresi in decenni. Costruiamo sistemi AI che comprendono questa conoscenza nel suo linguaggio, rendendola strutturata e trasferibile senza semplificarla.",
-    project1Note: "Primo produttore selezionato · Caseificio",
-    project2Tag: "Attivo",
-    project2Title: "Infrastruttura artigianale",
+      "Un caseificio artigianale DOP. 47 target commerciali a Milano. Un sistema AI che coordina la ricerca sui prospect, prepara schede informative per ogni target e gestisce il follow-up. Il team vendite fa ciò che l'AI non può: entrare dalla porta, far assaggiare il prodotto, costruire una relazione.",
+    project1Note: "Produttore selezionato · Dettagli in arrivo",
+    project2Tag: "Esperimento attivo",
+    project2Title: "Food Safety Automation",
     project2Body:
-      "Operazioni, compliance, filiera, trasferimento di conoscenza — i sistemi invisibili che sostengono un produttore alimentare. Costruiamo AI che rafforza questa infrastruttura così che l'artigiano possa concentrarsi interamente sul mestiere, mentre il sistema attorno a lui diventa forte quanto il suo prodotto.",
-    project2Note: "In sviluppo",
+      "Registri temperature, piani di pulizia, documenti fornitori, azioni correttive. Per un piccolo caseificio o panificio sono ore di burocrazia ogni settimana — ore sottratte alla produzione. Stiamo costruendo un sistema che rende la burocrazia invisibile.",
+    project2Note: "Produttore selezionato · Dettagli in arrivo",
     project3Tag: "Ricerca",
-    project3Title: "Intelligenza culinaria",
+    project3Title: "Culinary Intelligence",
     project3Body:
-      "Un sistema AI che ragiona sul cibo come un gastronomo — non ricette, ma la conoscenza profonda: perché l'impasto si comporta diversamente a gennaio, perché le olive di una collina hanno un sapore diverso dalla collina accanto. Conoscenza che scompare quando un artigiano va in pensione.",
+      "Un sistema AI che ragiona sul cibo come un gastronomo — non ricette, ma conoscenza profonda: perché l'impasto si comporta diversamente a gennaio, perché le olive di una collina hanno un sapore diverso dalla collina accanto. Conoscenza che scompare quando un artigiano va in pensione.",
     forWhoTitle: "Per chi è",
     forWhoIntro:
       "Cerchiamo produttori artigianali che riconoscono in queste parole la propria storia:",
@@ -264,7 +260,7 @@ export default function ProduttoriPage() {
               {t.aboutTitle}
             </p>
           </SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <SectionReveal>
               <p className="font-body text-base text-caglio/80 leading-relaxed">
                 {t.aboutP1}
@@ -273,11 +269,6 @@ export default function ProduttoriPage() {
             <SectionReveal>
               <p className="font-body text-base text-caglio/80 leading-relaxed">
                 {t.aboutP2}
-              </p>
-            </SectionReveal>
-            <SectionReveal>
-              <p className="font-body text-base text-caglio/80 leading-relaxed">
-                {t.aboutP3}
               </p>
             </SectionReveal>
           </div>

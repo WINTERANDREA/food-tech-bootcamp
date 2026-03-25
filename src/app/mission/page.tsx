@@ -175,41 +175,6 @@ export default function ManifestoPage() {
         </div>
       </section>
 
-      {/* Image break */}
-      <section className="relative w-full h-[50vh] md:h-[60vh]">
-        <Image
-          src="/images/projects/IMG_5658.jpg"
-          alt="Fresh curd draining in cloth — the first step of artisanal production"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-transparent to-dark/60" />
-      </section>
-
-      {/* The commitment */}
-      <section className="bg-dark py-section px-5 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-[65ch]">
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
-              We refuse to scale before proving. One experiment, documented
-              honestly, is worth more than fifty pitch decks. We ship
-              experiments, not strategies.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed">
-              We refuse to let artisanal knowledge disappear uncaptured.
-              Automation is coming. The question is not if, but what it learns
-              from. If the only data comes from industrial production, every
-              future product will taste the same. We collect craft knowledge
-              now, or it is gone.
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
-
       {/* The manifesto line */}
       <section className="bg-caglio py-section px-5 md:px-12 lg:px-20">
         <div className="mx-auto max-w-[65ch] text-center">
@@ -224,14 +189,15 @@ export default function ManifestoPage() {
       <section className="bg-dark py-section px-5 md:px-12 lg:px-20">
         <div className="mx-auto max-w-[65ch] text-center">
           <SectionReveal>
-            <p className="font-headline text-2xl md:text-3xl font-bold text-caglio mb-8">
-              The search has begun.
+            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
+              We refuse to scale before proving. One experiment, documented
+              honestly, is worth more than fifty pitch decks. We ship
+              experiments, not strategies.
             </p>
             <p className="font-body text-base text-caglio/80 leading-relaxed mb-12">
-              Twelve sectors. Hundreds of extraordinary producers waiting to be found.
-              Every experiment documented honestly — what works, what fails,
-              and what we learn. The first producer is selected. The search
-              continues.
+              One producer. One experiment. Everything documented honestly —
+              what works, what fails, and what we learn. The proof comes first.
+              Then we scale.
             </p>
             <Link
               href="/#work"
