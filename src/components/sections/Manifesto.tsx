@@ -26,10 +26,10 @@ export function Manifesto() {
           Il progresso che cancella ci&ograve; che siamo non &egrave; progresso.
         </p>
         <Link
-          href="/manifesto"
+          href="/mission"
           className="inline-flex items-center font-body font-medium text-sm text-carbone/60 hover:text-terra transition-colors group"
         >
-          Read the full manifesto
+          Read the full mission
           <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
             →
           </span>

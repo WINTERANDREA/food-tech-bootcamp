@@ -7,31 +7,31 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SubscribeForm } from "@/components/ui/SubscribeForm";
 
 export const metadata: Metadata = {
-  title: "Manifesto — Food Tech Bootcamp",
+  title: "Mission — Food Tech Bootcamp",
   description:
     "Food wisdom is disappearing. We find the best artisanal producers in Italy — one per sector — and build the AI tools they need to compete without compromising their craft.",
   openGraph: {
-    title: "Manifesto — Food Tech Bootcamp",
+    title: "Mission — Food Tech Bootcamp",
     description:
       "Food wisdom is disappearing. Not because the products are worse. Because the tools are.",
     type: "article",
-    images: [{ url: "/api/og?title=Manifesto&subtitle=Food+wisdom+is+disappearing&type=manifesto", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Mission&subtitle=Food+wisdom+is+disappearing&type=mission", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: `${SITE_URL}/manifesto`,
+    canonical: `${SITE_URL}/mission`,
   },
 };
 
 export default function ManifestoPage() {
   return (
     <div className="min-h-screen">
-      <Breadcrumbs items={[{ label: "Manifesto", href: "/manifesto" }]} hidden />
+      <Breadcrumbs items={[{ label: "Mission", href: "/mission" }]} hidden />
       {/* Opening */}
       <section className="bg-dark min-h-svh flex items-center justify-center px-5 md:px-12 lg:px-20 pt-16">
         <div className="max-w-[65ch]">
           <SectionReveal>
             <p className="font-mono text-sm text-terra/60 uppercase tracking-widest mb-12 text-center">
-              Manifesto
+              Mission
             </p>
             <p className="font-headline text-3xl md:text-4xl font-bold text-caglio mb-8">
               Food wisdom is disappearing.
@@ -223,11 +223,11 @@ export default function ManifestoPage() {
         <div className="mx-auto max-w-[65ch] text-center">
           <SectionReveal>
             <p className="font-headline text-2xl md:text-3xl font-bold text-caglio mb-8">
-              The first experiment is running.
+              The first producer is selected.
             </p>
             <p className="font-body text-base text-caglio/80 leading-relaxed mb-12">
-              An artisanal caseificio. An AI sales coordinator. A real market.
-              If it works, the model replicates. If it fails, we document why.
+              An extraordinary artisanal caseificio. An AI sales agent. A real market with 47 targets in Milan.
+              The experiment is being built. If it works, the model replicates. If it fails, we document why.
             </p>
             <Link
               href="/#work"

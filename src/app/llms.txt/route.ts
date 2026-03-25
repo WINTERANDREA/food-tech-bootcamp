@@ -27,8 +27,8 @@ Making food knowledge computable. Technology that amplifies craft, not replaces 
 ## Links
 
 - [Homepage](${SITE_URL})
-- [Manifesto](${SITE_URL}/manifesto)
-- [For Producers](${SITE_URL}/produttori)
+- [Mission](${SITE_URL}/mission)
+- [For Producers](${SITE_URL}/producers)
 - [Full LLMs.txt](${SITE_URL}/llms-full.txt)
 
 ## Projects

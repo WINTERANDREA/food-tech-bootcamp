@@ -8,9 +8,9 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 const content = {
   en: {
     label: "For artisanal producers",
-    heroTitle: "Your product is the best.\nThe market doesn't know yet.",
+    heroTitle: "Your product is extraordinary.\nThe market doesn't know — yet.",
     heroBody:
-      "You make cheese the way it was made before industrial shortcuts. You fire the wood oven at 4am. You harvest olives by hand in October. Your product is extraordinary — but you compete against those who make it worse and sell it better.",
+      "You make cheese the way it was made before industrial shortcuts. You fire the wood oven at 4am. You harvest olives by hand in October. Your craft is uncompromising — but you compete against those who cut corners and outsell you.",
     heroCta: "We build the tools that change this.",
     aboutTitle: "Who we are",
     aboutP1:
@@ -83,9 +83,9 @@ const content = {
   },
   it: {
     label: "Per i produttori artigianali",
-    heroTitle: "Il tuo prodotto è il migliore.\nMa il mercato non lo sa.",
+    heroTitle: "Il tuo prodotto è straordinario.\nIl mercato non lo sa — ancora.",
     heroBody:
-      "Fai il formaggio come si faceva prima delle scorciatoie industriali. Cuoci il pane nel forno a legna alle 4 di mattina. Spremi le olive a freddo, raccolte a mano in ottobre. Il tuo prodotto è straordinario — ma competi contro chi lo fa peggio e lo vende meglio.",
+      "Fai il formaggio come si faceva prima delle scorciatoie industriali. Cuoci il pane nel forno a legna alle 4 di mattina. Spremi le olive a freddo, raccolte a mano in ottobre. Il tuo mestiere non accetta compromessi — ma competi contro chi li fa e vende di più.",
     heroCta: "Costruiamo gli strumenti che cambiano questo.",
     aboutTitle: "Chi siamo",
     aboutP1:
@@ -243,7 +243,7 @@ export default function ProduttoriPage() {
             <p className="font-mono text-sm text-terra uppercase tracking-widest mb-8">
               {t.label}
             </p>
-            <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-caglio mb-8 whitespace-pre-line leading-tight">
+            <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-caglio mb-8 whitespace-pre-line leading-tight max-w-[18ch]">
               {t.heroTitle}
             </h1>
             <p className="font-body text-base md:text-lg text-caglio/80 leading-relaxed mb-8 max-w-[55ch]">

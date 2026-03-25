@@ -14,8 +14,8 @@ export async function GET(req: NextRequest) {
       ? "From the lab"
       : type === "project"
         ? "Experiment"
-        : type === "manifesto"
-          ? "Manifesto"
+        : type === "mission"
+          ? "Mission"
           : "";
 
   return new ImageResponse(
