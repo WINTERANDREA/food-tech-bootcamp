@@ -4,11 +4,11 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "For Producers — Food Tech Bootcamp",
   description:
-    "We build AI tools for Italy's best artisanal food producers. One producer per sector. If your product is extraordinary, let's talk.",
+    "We find Italy's rarest artisanal producers — the ones whose knowledge is irreplaceable. If your craft is uncompromising, we want to know you.",
   openGraph: {
     title: "For Producers — Food Tech Bootcamp",
     description:
-      "Your product is extraordinary. The market doesn't know — yet. We build the tools that change this.",
+      "Your product is extraordinary. Your knowledge is centuries deep. We build AI that makes artisanal craft knowledge computable.",
     type: "website",
     images: [{ url: "/api/og?title=For+Producers&subtitle=Your+product+is+extraordinary.+The+market+doesn%27t+know+%E2%80%94+yet.", width: 1200, height: 630 }],
   },

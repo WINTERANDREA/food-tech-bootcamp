@@ -9,11 +9,11 @@ import { SubscribeForm } from "@/components/ui/SubscribeForm";
 export const metadata: Metadata = {
   title: "Mission — Food Tech Bootcamp",
   description:
-    "Food wisdom is disappearing. We find the best artisanal producers in Italy — one per sector — and build the AI tools they need to compete without compromising their craft.",
+    "Food wisdom is disappearing. Not because the products are worse — because the tools are. We build AI that makes food knowledge computable.",
   openGraph: {
     title: "Mission — Food Tech Bootcamp",
     description:
-      "Food wisdom is disappearing. Not because the products are worse. Because the tools are.",
+      "Food wisdom is disappearing. We build the tools that keep artisanal producers competing.",
     type: "article",
     images: [{ url: "/api/og?title=Mission&subtitle=Food+wisdom+is+disappearing&type=mission", width: 1200, height: 630 }],
   },
@@ -38,8 +38,8 @@ export default function ManifestoPage() {
             </p>
             <p className="font-body text-base md:text-lg text-caglio/80 leading-relaxed mb-6">
               Not because the products are worse. Because the tools are. A market
-              built for volume has no patience for a cheesemaker who ages each wheel
-              on wooden shelves, a baker who fires a wood oven at 4am, an
+              built for volume has no patience for a cheesemaker who ages each
+              wheel on wooden shelves, a baker who fires a wood oven at 4am, an
               olive oil producer who harvests by hand in October.
             </p>
             <p className="font-body text-base md:text-lg text-caglio/80 leading-relaxed mb-6">
@@ -76,20 +76,12 @@ export default function ManifestoPage() {
           </SectionReveal>
 
           <SectionReveal>
-            <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
-              A cheesemaker who reads milk by smell is performing an analysis. A
-              baker who feels dough by touch is running a calibration. A
-              winemaker who tastes the season is evaluating a dataset. This
-              knowledge is precise, structured, and transferable — if you speak
-              the right language.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal>
             <p className="font-body text-base text-caglio/80 leading-relaxed">
-              AI can speak both. The language of the algorithm and the language
-              of the curd — the <em>cagliata</em>. Not automation. Translation. Not replacement.
-              Amplification.
+              A cheesemaker who reads milk by smell is performing an analysis. A
+              baker who feels dough by touch is running a calibration. A winemaker
+              who tastes the season is evaluating a dataset. This knowledge is
+              precise, structured, and transferable — if you speak the right
+              language.
             </p>
           </SectionReveal>
         </div>
@@ -100,7 +92,16 @@ export default function ManifestoPage() {
         <div className="mx-auto max-w-[65ch]">
           <SectionReveal>
             <p className="font-headline text-2xl md:text-3xl font-bold text-carbone mb-8">
-              One producer per sector. The best one.
+              Finding the extraordinary ones.
+            </p>
+          </SectionReveal>
+
+          <SectionReveal>
+            <p className="font-body text-base text-carbone/80 leading-relaxed mb-8">
+              Across every sector of Italian food, extraordinary producers
+              exist — rare, uncompromising, often invisible. Not one per
+              category. As many as deserve the name. We search for them
+              wherever craft knowledge runs deepest.
             </p>
           </SectionReveal>
 
@@ -123,10 +124,11 @@ export default function ManifestoPage() {
 
           <SectionReveal>
             <p className="font-body text-base text-carbone/80 leading-relaxed">
-              We identify the producer who represents true artisanal excellence.
-              Quality over quantity. Traditional methods. No compromises. We
-              build the AI tools for them. If the model works for one, it works
-              for the craft.
+              We study their craft. We map their knowledge. Then we build
+              AI that becomes infrastructure for their entire system —
+              insight into what makes their product unique, tools to
+              strengthen their operations, intelligence that valorizes
+              artisanal excellence on its own terms.
             </p>
           </SectionReveal>
         </div>
@@ -156,7 +158,7 @@ export default function ManifestoPage() {
           <SectionReveal>
             <p className="font-body text-base text-caglio/80 leading-relaxed mb-6">
               I studied gastronomy. I learned how cheese is made by making it.
-              Then I went to India and learned to code. For eight years, I built
+              Then I went to India and learned to code. For ten years, I built
               software while the food world I came from fell further behind.
             </p>
           </SectionReveal>
@@ -223,11 +225,13 @@ export default function ManifestoPage() {
         <div className="mx-auto max-w-[65ch] text-center">
           <SectionReveal>
             <p className="font-headline text-2xl md:text-3xl font-bold text-caglio mb-8">
-              The first producer is selected.
+              The search has begun.
             </p>
             <p className="font-body text-base text-caglio/80 leading-relaxed mb-12">
-              An extraordinary artisanal caseificio. An AI sales agent. A real market with 47 targets in Milan.
-              The experiment is being built. If it works, the model replicates. If it fails, we document why.
+              Twelve sectors. Hundreds of extraordinary producers waiting to be found.
+              Every experiment documented honestly — what works, what fails,
+              and what we learn. The first producer is selected. The search
+              continues.
             </p>
             <Link
               href="/#work"

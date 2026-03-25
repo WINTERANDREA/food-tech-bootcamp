@@ -22,13 +22,11 @@ export function GET() {
 
   sections.push(`# Food Tech Bootcamp — Full Content
 
-> AI lab building tools for Italy's best artisanal food producers. We find one producer per sector — the ones who chose craft over convenience — and build the AI they need to compete.
+> Food wisdom is disappearing. We build the tools that keep it alive. AI that speaks the language of the artisan — technology that amplifies craft instead of replacing it.
 
 ## About
 
-Food Tech Bootcamp is a one-person lab based in Milan, Italy. Founded by a gastronome trained in gastronomic sciences who codes. We identify the best artisanal food producer in each sector and build AI tools that help them compete without compromising their craft. Not an agency. Not a consultancy. A lab.
-
-Built on Claude by Anthropic. Every tool runs on Claude — AI that can reason about stagionatura, disciplinari, and production technique.
+AI lab based in Milan, Italy. We build tools for artisanal food producers — the ones who chose craft over convenience. Built on Claude by Anthropic.
 
 ## Mission
 

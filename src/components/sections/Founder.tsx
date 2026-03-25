@@ -9,15 +9,16 @@ export function Founder() {
             The Founder
           </h2>
           <p className="font-body text-base text-carbone leading-relaxed mb-6">
-            I&apos;m a gastronome who builds AI tools for artisanal food
-            producers. I studied how cheese is made by making it. Then I went
-            to India and learned to code. For eight years I built software while
-            the food world I came from fell further behind.
+            I'm Italian. I studied gastronomy. I learned how cheese is made by making it.
+            Then I went to India and learned to code. For ten years, I built
+            software while the food world I came from fell further behind.
           </p>
           <p className="font-body text-base text-carbone leading-relaxed mb-8">
-            Food Tech Bootcamp is my lab. Not a startup, not an agency. It&apos;s
-            where everything I learned about food and everything I learned about
-            code become tools for the producers who chose craft over convenience.
+            AI changed everything. A tool that understands both the precision
+            of code and the complexity of craft. Food Tech Bootcamp is my lab.
+            Not a startup. Not an agency. The place where everything I learned
+            about food and everything I learned about code become tools for the
+            producers who chose craft over convenience.
           </p>
           <a
             href="https://www.linkedin.com/in/andreacasero/"

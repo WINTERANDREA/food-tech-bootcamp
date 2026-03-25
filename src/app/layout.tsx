@@ -42,23 +42,23 @@ export const metadata: Metadata = {
     "food tech bootcamp",
     "cheesemaker AI",
     "food safety automation",
-    "HACCP AI",
+    "food safety AI",
   ],
   openGraph: {
     title: "Food Tech Bootcamp — Where Food Knowledge Becomes Computable",
     description:
-      "AI lab for Italy's artisanal food producers. Technology that amplifies craft, not replaces it.",
+      "Food wisdom is disappearing. We build AI tools that keep artisanal craft alive.",
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: "/api/og?title=Food+Tech+Bootcamp&subtitle=AI+tools+for+Italy%27s+best+artisanal+food+producers", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Food+Tech+Bootcamp&subtitle=Food+wisdom+is+disappearing.+We+build+the+tools+that+keep+it+alive.", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
-    description: "AI lab for Italy's artisanal food producers.",
-    images: ["/api/og?title=Food+Tech+Bootcamp&subtitle=AI+tools+for+Italy%27s+best+artisanal+food+producers"],
+    description: "Food wisdom is disappearing. We build the tools that keep it alive.",
+    images: ["/api/og?title=Food+Tech+Bootcamp&subtitle=Food+wisdom+is+disappearing.+We+build+the+tools+that+keep+it+alive."],
   },
   alternates: {
     canonical: SITE_URL,
@@ -101,7 +101,7 @@ export default function RootLayout({
                   url: SITE_URL,
                   logo: `${SITE_URL}/images/logo/logo-ftb.png`,
                   description:
-                    "AI lab building tools for Italy's best artisanal food producers. Making food knowledge computable.",
+                    "AI lab for Italy's artisanal food producers. Making food knowledge computable.",
                   foundingDate: "2018",
                   founder: {
                     "@type": "Person",
@@ -130,7 +130,7 @@ export default function RootLayout({
                   knowsAbout: [
                     "Artisanal food production",
                     "Artificial intelligence",
-                    "Food safety (HACCP)",
+                    "Food safety compliance",
                     "Italian DOP/IGP products",
                     "Culinary intelligence",
                     "AI sales coordination",

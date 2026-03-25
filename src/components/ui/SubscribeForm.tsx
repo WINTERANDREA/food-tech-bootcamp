@@ -7,7 +7,7 @@ const TOPICS = [
   { value: "producer", label: "I'm an artisanal producer" },
   { value: "ai-sales-agent", label: "AI Sales Agent" },
   { value: "cooking-intelligence-llm", label: "Cooking Intelligence LLM" },
-  { value: "haccp-automation", label: "HACCP Automation" },
+  { value: "food-safety-automation", label: "Food Safety Automation" },
   { value: "partnership", label: "Partnership opportunities" },
 ] as const;
 

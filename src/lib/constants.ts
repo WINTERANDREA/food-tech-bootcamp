@@ -1,7 +1,7 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://foodtechbootcamp.com";
 export const SITE_NAME = "Food Tech Bootcamp";
 export const SITE_DESCRIPTION =
-  "AI lab building tools for Italy's best artisanal food producers. We find one producer per sector — the ones who chose craft over convenience — and build the AI they need to compete.";
+  "AI lab for Italy's artisanal food producers. Food wisdom is disappearing — we build the tools that keep it alive.";
 export const CONTACT_EMAIL = "hello@foodtechbootcamp.com";
 
 export const SECTORS = [
@@ -65,12 +65,12 @@ export const PROJECTS: Project[] = [
     relatedBlog: "from-vending-machines-to-aging-rooms",
   },
   {
-    slug: "haccp-automation",
-    title: "HACCP Automation",
+    slug: "food-safety-automation",
+    title: "Food Safety Automation",
     question:
       "Can AI turn food safety compliance from hours into minutes?",
     tags: ["experiment", "producer selected"],
-    image: "/images/projects/haccp-automation.jpg",
+    image: "/images/projects/food-safety-automation.jpg",
     imageAlt: "Artisanal production environment inside an Italian caseificio",
     comingSoon: true,
   },

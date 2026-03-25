@@ -7,19 +7,18 @@ export function Manifesto() {
       <div className="mx-auto max-w-[65ch] text-center">
         <SectionReveal>
           <p className="font-body text-base text-carbone leading-relaxed mb-6">
-            Across Italy, the best artisanal food producers carry centuries of
-            knowledge in their hands. A cheesemaker who reads milk by smell. A baker
-            who feels dough by touch. A winemaker who tastes the season. This
-            knowledge is irreplaceable — and it&apos;s disappearing. Not because
-            the products are worse, but because the market rewards volume over
-            craft.
+            A cheesemaker who reads milk by smell is performing an analysis. A baker
+            who feels dough by touch is running a calibration. A winemaker who
+            tastes the season is evaluating a dataset. This knowledge is precise,
+            structured, and transferable — if you speak the right language.
           </p>
         </SectionReveal>
         <SectionReveal>
           <p className="font-body text-base text-carbone leading-relaxed mb-12">
-            We find these producers — one per sector — and build the AI tools
-            they need to compete. Not automation. Amplification. The craft stays
-            human. The tools get smarter.
+            We speak both. The language of the algorithm and the language of the
+            craft. We build AI that makes food knowledge computable — so the
+            producers who chose quality over volume can finally compete on
+            their own terms.
           </p>
         </SectionReveal>
         <p className="font-body text-lg italic text-terra mt-12 mb-8">

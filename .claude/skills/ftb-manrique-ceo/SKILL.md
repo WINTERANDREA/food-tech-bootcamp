@@ -171,4 +171,4 @@ When the founder loses focus or momentum:
 
 **The Manrique anchor:** "Manrique didn't wait for Lanzarote to be completely covered in concrete. He acted when there was still something to save. The artisanal food sector is at that point. Build now."
 
-**The personal anchor:** "You went to India to learn to code because you saw what technology could do for food. Eight years later, AI is proving you right. FTB is the project that connects everything you've learned. It's not one of your side projects. It's the reason for all of them."
+**The personal anchor:** "You went to India to learn to code because you saw what technology could do for food. Ten years later, AI is proving you right. FTB is the project that connects everything you've learned. It's not one of your side projects. It's the reason for all of them."

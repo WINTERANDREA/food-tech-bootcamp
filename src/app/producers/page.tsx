@@ -8,40 +8,40 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 const content = {
   en: {
     label: "For artisanal producers",
-    heroTitle: "Your product is extraordinary.\nThe market doesn't know — yet.",
+    heroTitle: "Your product is extraordinary.\nThe world should know.",
     heroBody:
-      "You make cheese the way it was made before industrial shortcuts. You fire the wood oven at 4am. You harvest olives by hand in October. Your craft is uncompromising — but you compete against those who cut corners and outsell you.",
-    heroCta: "We build the tools that change this.",
+      "You chose quality over profit. Traditional methods over industrial shortcuts. You age on wooden shelves because stainless steel changes the flavor. You harvest by hand because the machine bruises the fruit. Your product is extraordinary — what you lack is the infrastructure to valorize it.",
+    heroCta: "AI is that infrastructure.",
     aboutTitle: "Who we are",
     aboutP1:
-      "Food Tech Bootcamp is a lab. Not an agency, not a consultancy. We build AI tools for Italian artisanal producers — the ones who chose quality, traditional methods, no compromise.",
+      "Food Tech Bootcamp is a lab born from gastronomic science. Founded by a graduate of the University of Gastronomic Sciences in Pollenzo — Slow Food's university — who then spent more than ten years building software. We exist at the intersection of deep food knowledge and artificial intelligence.",
     aboutP2:
-      "The founder is a gastronome who learned how cheese is made by making it. Then he learned to code. For eight years he built software while the artisanal food world fell further behind. Now he combines both: craft knowledge and the technology needed to compete.",
+      "We identify the rarest artisanal producers in Italy — across every sector, as many as deserve the name. The ones whose knowledge, methods, and standards are irreplaceable. Finding them requires knowing what to look for.",
     aboutP3:
-      "We don't sell technology. We build concrete tools: a sales coordinator that finds the right buyers, a briefing card that tells your product story in the language buyers understand, a system that speaks of aging and production standards — stagionatura and disciplinare — not algorithms.",
+      "We study their craft. We understand the knowledge embedded in every gesture — the aging process, the production standards, the sensory intelligence that no manual can capture. Then we build AI as insight and infrastructure: understanding what makes their product unique, strengthening the systems around it, and valorizing an artisan food system that the market has ignored.",
     howTitle: "How we work",
     howIntro:
-      "We select one producer per sector. The best one. The one who represents true artisanal excellence.",
+      "We search for extraordinary producers across every sector — as many as deserve the name.",
     steps: [
       {
         num: "01",
-        title: "We get to know you",
-        body: "We visit your workshop. We see how you work. We understand your product, your clients, your challenges. We start from your craft — not from technology.",
+        title: "We find you",
+        body: "We research every sector — caseifici, panifici, frantoi, cantine, and beyond. We look for the producers whose knowledge, quality, and integrity are extraordinary.",
       },
       {
         num: "02",
-        title: "We build the tool",
-        body: "A system tailored to your specific problem. Sales, compliance, client management — what you need, not what we sell.",
+        title: "We understand your craft",
+        body: "We visit your production facility. We watch you work. We learn the knowledge embedded in your hands, your senses, your decisions. We start from the craft — never from the technology.",
       },
       {
         num: "03",
-        title: "We measure results",
-        body: "New clients, orders, revenue. Real numbers, not promises. If it works, we document it. If it doesn't, we understand why and improve.",
+        title: "We build with you",
+        body: "AI that speaks the language of your craft — not generic software adapted from another industry. Every tool is designed around your specific knowledge, your specific challenges.",
       },
       {
         num: "04",
-        title: "The craft stays yours",
-        body: "AI doesn't replace your hands. It doesn't change your product. It gives you the tools a 30-person sales department would have — without becoming a factory.",
+        title: "Your system grows stronger",
+        body: "AI becomes infrastructure for your entire operation — insight into what makes your product unique, tools to strengthen what surrounds it, intelligence that valorizes your craft. Not marketing. The foundation your food system deserves.",
       },
     ],
     projectsTitle: "What we're building",
@@ -51,7 +51,7 @@ const content = {
       "An artisanal DOP cheese dairy. 47 commercial targets in Milan. An AI system that coordinates prospect research, prepares briefing cards for each target, and manages follow-up. The sales team does what AI cannot: walk in the door, let the buyer taste the product, build a relationship.",
     project1Note: "Producer selected · Details coming soon",
     project2Tag: "Active experiment",
-    project2Title: "HACCP Automation",
+    project2Title: "Food Safety Automation",
     project2Body:
       "Temperature logs, cleaning schedules, supplier records, corrective actions. For a small caseificio or panificio, that's hours of paperwork every week — hours taken from production. We're building a system that makes the bureaucracy invisible.",
     project2Note: "Producer selected · Details coming soon",
@@ -63,15 +63,15 @@ const content = {
     forWhoIntro:
       "We look for artisanal producers who recognize their own story in these words:",
     forWhoItems: [
-      "Your product is excellent — but you compete against those who make it worse and have a sales team 10 times yours",
-      "You use traditional methods — not for marketing, because it's the only way to make the product right",
-      "You don't chase shortcuts for quick profit — quality comes before volume, always",
-      "You believe quality, tradition, and sustainability are the competitive advantage, not the obstacle",
+      "Your knowledge is deep — you understand your raw material, your territory, your tradition at a level that industrial producers cannot reach",
+      "You use traditional methods — not for marketing, because it is the only way to make the product right",
+      "You chose quality over volume, authenticity over optimization, craft over convenience — and you pay for it every day",
+      "You know the value of what you make — and you need infrastructure that finally valorizes it, not just sells it",
     ],
-    forWhoCta: "If this is you, let's talk.",
+    forWhoCta: "If this is you, we would love to hear from you.",
     contactTitle: "Let's talk about your product",
     contactBody:
-      "No commitment. Tell us what you make and what your challenges are. The first conversation is always free.",
+      "No commitment. Tell us what you make and what your challenges are.",
     contactBtn: "Write to us",
     stayUpdated: "Or stay updated",
     stayUpdatedSub: "Rare updates. Always concrete.",
@@ -83,53 +83,53 @@ const content = {
   },
   it: {
     label: "Per i produttori artigianali",
-    heroTitle: "Il tuo prodotto è straordinario.\nIl mercato non lo sa — ancora.",
+    heroTitle: "Il tuo prodotto è straordinario.\nIl mondo dovrebbe saperlo.",
     heroBody:
-      "Fai il formaggio come si faceva prima delle scorciatoie industriali. Cuoci il pane nel forno a legna alle 4 di mattina. Spremi le olive a freddo, raccolte a mano in ottobre. Il tuo mestiere non accetta compromessi — ma competi contro chi li fa e vende di più.",
-    heroCta: "Costruiamo gli strumenti che cambiano questo.",
+      "Hai scelto la qualità invece del profitto. I metodi tradizionali invece delle scorciatoie industriali. Stagioni su assi di legno perché l'acciaio cambia il sapore. Raccogli a mano perché la macchina rovina il frutto. Il tuo prodotto è straordinario — quello che ti manca è l'infrastruttura per valorizzarlo.",
+    heroCta: "L'AI è quell'infrastruttura.",
     aboutTitle: "Chi siamo",
     aboutP1:
-      "Food Tech Bootcamp è un lab. Non un'agenzia, non una consulenza. Costruiamo strumenti di intelligenza artificiale per i produttori artigianali italiani — quelli che hanno scelto la qualità, i metodi tradizionali, nessun compromesso.",
+      "Food Tech Bootcamp è un lab nato dalla scienza gastronomica. Fondato da un laureato dell'Università di Scienze Gastronomiche di Pollenzo — l'università di Slow Food — che ha poi passato otto anni a costruire software. Esistiamo all'intersezione tra conoscenza profonda del cibo e intelligenza artificiale.",
     aboutP2:
-      "Il fondatore è un gastronomo che ha studiato come si fa il formaggio facendolo. Poi ha imparato a programmare. Per otto anni ha costruito software mentre il mondo del cibo artigianale restava indietro. Oggi unisce le due cose: la conoscenza del mestiere e la tecnologia che serve per competere.",
+      "Identifichiamo i produttori artigianali più rari d'Italia — in ogni settore, tutti quelli che meritano questo nome. Quelli la cui conoscenza, i cui metodi, i cui standard sono insostituibili. Trovarli richiede sapere cosa cercare.",
     aboutP3:
-      "Non vendiamo tecnologia. Costruiamo strumenti concreti: un coordinatore commerciale che trova i clienti giusti, una scheda che racconta il tuo prodotto nel linguaggio che i buyer capiscono, un sistema che parla di stagionatura e disciplinare — non di algoritmi.",
+      "Studiamo il loro mestiere. Capiamo la conoscenza racchiusa in ogni gesto — la stagionatura, il disciplinare, l'intelligenza sensoriale che nessun manuale può catturare. Poi costruiamo AI come insight e infrastruttura: capire cosa rende il loro prodotto unico, rafforzare i sistemi che lo circondano, e valorizzare un sistema alimentare artigianale che il mercato ha ignorato.",
     howTitle: "Come lavoriamo",
     howIntro:
-      "Selezioniamo un produttore per settore. Il migliore. Quello che rappresenta l'eccellenza artigianale vera.",
+      "Cerchiamo produttori straordinari in ogni settore — tutti quelli che meritano questo nome.",
     steps: [
       {
         num: "01",
-        title: "Ti conosciamo",
-        body: "Veniamo nel tuo laboratorio. Vediamo come lavori. Capiamo il tuo prodotto, i tuoi clienti, i tuoi problemi. Non partiamo dalla tecnologia — partiamo dal tuo mestiere.",
+        title: "Ti troviamo",
+        body: "Studiamo ogni settore — caseifici, panifici, frantoi, cantine e oltre. Cerchiamo i produttori la cui conoscenza, qualità e integrità sono straordinarie.",
       },
       {
         num: "02",
-        title: "Costruiamo lo strumento",
-        body: "Un sistema su misura per il tuo problema concreto. Vendite, compliance, gestione clienti — quello che serve a te, non quello che vendiamo noi.",
+        title: "Capiamo il tuo mestiere",
+        body: "Veniamo nel tuo laboratorio. Ti guardiamo lavorare. Impariamo la conoscenza racchiusa nelle tue mani, nei tuoi sensi, nelle tue decisioni. Partiamo dal mestiere — mai dalla tecnologia.",
       },
       {
         num: "03",
-        title: "Misuriamo i risultati",
-        body: "Nuovi clienti, ordini, fatturato. Numeri veri, non promesse. Se funziona, lo documentiamo. Se non funziona, capiamo perché e miglioriamo.",
+        title: "Costruiamo insieme",
+        body: "AI che parla il linguaggio del tuo mestiere — non software generico adattato da un altro settore. Ogni strumento è progettato attorno alla tua conoscenza specifica, alle tue sfide specifiche.",
       },
       {
         num: "04",
-        title: "Il mestiere resta tuo",
-        body: "L'AI non sostituisce le tue mani. Non cambia il tuo prodotto. Ti dà gli strumenti che un reparto commerciale di 30 persone avrebbe — senza diventare un'industria.",
+        title: "Il tuo sistema si rafforza",
+        body: "L'AI diventa infrastruttura per tutta la tua operazione — insight su cosa rende il tuo prodotto unico, strumenti per rafforzare ciò che lo circonda, intelligenza che valorizza il tuo mestiere. Non marketing. Le fondamenta che il tuo sistema alimentare merita.",
       },
     ],
-    projectsTitle: "Cosa stiamo costruendo",
-    project1Tag: "Esperimento in corso",
-    project1Title: "Coordinatore commerciale AI",
+    projectsTitle: "Cosa stiamo esplorando",
+    project1Tag: "Attivo",
+    project1Title: "Cattura della conoscenza artigianale",
     project1Body:
-      "Un caseificio artigianale DOP. 47 obiettivi commerciali a Milano. Un sistema AI che coordina la ricerca clienti, prepara le schede per ogni prospect, e gestisce il follow-up. Il team commerciale fa quello che l'AI non può fare: entrare dalla porta, far assaggiare il prodotto, costruire una relazione.",
-    project1Note: "Produttore selezionato · Dettagli in arrivo",
-    project2Tag: "Esperimento in corso",
-    project2Title: "Automazione HACCP",
+      "Ogni produttore artigianale porta con sé conoscenze che non esistono altrove — calibrazioni sensoriali, aggiustamenti stagionali, comportamenti dei materiali appresi in decenni. Costruiamo sistemi AI che comprendono questa conoscenza nel suo linguaggio, rendendola strutturata e trasferibile senza semplificarla.",
+    project1Note: "Primo produttore selezionato · Caseificio",
+    project2Tag: "Attivo",
+    project2Title: "Infrastruttura artigianale",
     project2Body:
-      "Registri temperature, schede di pulizia, documenti fornitori, azioni correttive. Per un piccolo caseificio o panificio sono ore di lavoro ogni settimana — ore tolte alla produzione. Stiamo costruendo un sistema che rende la burocrazia invisibile.",
-    project2Note: "Produttore selezionato · Dettagli in arrivo",
+      "Operazioni, compliance, filiera, trasferimento di conoscenza — i sistemi invisibili che sostengono un produttore alimentare. Costruiamo AI che rafforza questa infrastruttura così che l'artigiano possa concentrarsi interamente sul mestiere, mentre il sistema attorno a lui diventa forte quanto il suo prodotto.",
+    project2Note: "In sviluppo",
     project3Tag: "Ricerca",
     project3Title: "Intelligenza culinaria",
     project3Body:
@@ -138,15 +138,15 @@ const content = {
     forWhoIntro:
       "Cerchiamo produttori artigianali che riconoscono in queste parole la propria storia:",
     forWhoItems: [
-      "Il tuo prodotto è eccellente — ma competi contro chi lo fa peggio e ha un reparto commerciale 10 volte il tuo",
+      "La tua conoscenza è profonda — capisci la tua materia prima, il tuo territorio, la tua tradizione a un livello che i produttori industriali non possono raggiungere",
       "Usi metodi tradizionali — non per marketing, perché è l'unico modo per fare il prodotto giusto",
-      "Non sei speculativo — la qualità viene prima del volume, sempre",
-      "Vuoi costruire un modello virtuoso — dove qualità, tradizione e sostenibilità sono il vantaggio competitivo, non l'ostacolo",
+      "Hai scelto la qualità invece del volume, l'autenticità invece dell'ottimizzazione, il mestiere invece della comodità — e lo paghi ogni giorno",
+      "Conosci il valore di ciò che fai — e hai bisogno di un'infrastruttura che finalmente lo valorizzi, non che lo venda e basta",
     ],
-    forWhoCta: "Se ti riconosci, parliamo.",
+    forWhoCta: "Se ti riconosci, ci piacerebbe sentirti.",
     contactTitle: "Parliamo del tuo prodotto",
     contactBody:
-      "Nessun impegno. Raccontaci cosa fai e quali sono le tue sfide. Il primo incontro è sempre gratuito.",
+      "Nessun impegno. Raccontaci cosa fai e quali sono le tue sfide.",
     contactBtn: "Scrivici",
     stayUpdated: "Oppure resta aggiornato",
     stayUpdatedSub: "Aggiornamenti rari. Sempre concreti.",
