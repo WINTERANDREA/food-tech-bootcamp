@@ -18,7 +18,7 @@ const content = {
     aboutP2:
       "The founder is a gastronome who learned how cheese is made by making it. Then he learned to code. For eight years he built software while the artisanal food world fell further behind. Now he combines both: craft knowledge and the technology needed to compete.",
     aboutP3:
-      "We don't sell technology. We build concrete tools: a sales coordinator that finds the right buyers, a briefing card that tells your product story in the language buyers understand, a system that speaks of stagionatura and disciplinare — not algorithms.",
+      "We don't sell technology. We build concrete tools: a sales coordinator that finds the right buyers, a briefing card that tells your product story in the language buyers understand, a system that speaks of aging and production standards — stagionatura and disciplinare — not algorithms.",
     howTitle: "How we work",
     howIntro:
       "We select one producer per sector. The best one. The one who represents true artisanal excellence.",
@@ -26,7 +26,7 @@ const content = {
       {
         num: "01",
         title: "We get to know you",
-        body: "We visit your lab. We see how you work. We understand your product, your clients, your challenges. We start from your craft — not from technology.",
+        body: "We visit your workshop. We see how you work. We understand your product, your clients, your challenges. We start from your craft — not from technology.",
       },
       {
         num: "02",
@@ -48,7 +48,7 @@ const content = {
     project1Tag: "Active experiment",
     project1Title: "AI Sales Coordinator",
     project1Body:
-      "An artisanal DOP caseificio. 47 commercial targets in Milan. An AI system that coordinates prospect research, prepares briefing cards for each target, and manages follow-up. The sales team does what AI cannot: walk in the door, let the buyer taste the product, build a relationship.",
+      "An artisanal DOP cheese dairy. 47 commercial targets in Milan. An AI system that coordinates prospect research, prepares briefing cards for each target, and manages follow-up. The sales team does what AI cannot: walk in the door, let the buyer taste the product, build a relationship.",
     project1Note: "Producer selected · Details coming soon",
     project2Tag: "Active experiment",
     project2Title: "HACCP Automation",
@@ -65,8 +65,8 @@ const content = {
     forWhoItems: [
       "Your product is excellent — but you compete against those who make it worse and have a sales team 10 times yours",
       "You use traditional methods — not for marketing, because it's the only way to make the product right",
-      "You're not speculative — quality comes before volume, always",
-      "You want to build a virtuous model — where quality, tradition, and sustainability are the competitive advantage, not the obstacle",
+      "You don't chase shortcuts for quick profit — quality comes before volume, always",
+      "You believe quality, tradition, and sustainability are the competitive advantage, not the obstacle",
     ],
     forWhoCta: "If this is you, let's talk.",
     contactTitle: "Let's talk about your product",
@@ -217,10 +217,10 @@ export default function ProduttoriPage() {
   return (
     <div className="min-h-screen">
       {/* Language toggle */}
-      <div className="fixed top-20 right-5 md:right-12 z-40">
+      <div className="fixed top-[4.5rem] right-5 md:top-20 md:right-12 z-40">
         <button
           onClick={() => setLang(lang === "en" ? "it" : "en")}
-          className="font-mono text-xs uppercase tracking-widest text-terra hover:text-crosta bg-dark/80 border border-[var(--border-medium)] px-4 py-2 transition-colors backdrop-blur-sm"
+          className="font-mono text-[0.6rem] md:text-xs uppercase tracking-widest text-terra hover:text-crosta bg-dark/80 border border-[var(--border-medium)] px-3 py-1.5 md:px-4 md:py-2 transition-colors backdrop-blur-sm"
         >
           {t.langSwitch}
         </button>

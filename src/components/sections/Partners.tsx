@@ -11,7 +11,7 @@ const LAYERS = [
     label: "AI",
     title: "Built on Claude",
     description:
-      "Every tool runs on Claude by Anthropic. AI that can reason about stagionatura, disciplinari, and production technique — not just process data.",
+      "Every tool runs on Claude by Anthropic. AI that can reason about aging, production standards, and technique — not just process data.",
   },
   {
     label: "Craft",

@@ -8,7 +8,7 @@ export function Manifesto() {
         <SectionReveal>
           <p className="font-body text-base text-carbone leading-relaxed mb-6">
             Across Italy, the best artisanal food producers carry centuries of
-            knowledge in their hands. A casaro who reads milk by smell. A baker
+            knowledge in their hands. A cheesemaker who reads milk by smell. A baker
             who feels dough by touch. A winemaker who tastes the season. This
             knowledge is irreplaceable — and it&apos;s disappearing. Not because
             the products are worse, but because the market rewards volume over

@@ -13,7 +13,7 @@ export const SECTORS = [
   "pastifici",
   "conservifici",
   "birrifici",
-  "apicultura",
+  "apicoltura",
   "cioccolateria",
   "oleifici",
   "gelaterie artigianali",

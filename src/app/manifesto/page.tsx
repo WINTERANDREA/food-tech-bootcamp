@@ -9,13 +9,13 @@ import { SubscribeForm } from "@/components/ui/SubscribeForm";
 export const metadata: Metadata = {
   title: "Manifesto — Food Tech Bootcamp",
   description:
-    "Food wisdom is going extinct. We find the best artisanal producers in Italy — one per sector — and build the AI tools they need to compete without compromising their craft.",
+    "Food wisdom is disappearing. We find the best artisanal producers in Italy — one per sector — and build the AI tools they need to compete without compromising their craft.",
   openGraph: {
     title: "Manifesto — Food Tech Bootcamp",
     description:
-      "Food wisdom is going extinct. Not because the products are worse. Because the tools are.",
+      "Food wisdom is disappearing. Not because the products are worse. Because the tools are.",
     type: "article",
-    images: [{ url: "/api/og?title=Manifesto&subtitle=Food+wisdom+is+going+extinct&type=manifesto", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Manifesto&subtitle=Food+wisdom+is+disappearing&type=manifesto", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: `${SITE_URL}/manifesto`,
@@ -34,7 +34,7 @@ export default function ManifestoPage() {
               Manifesto
             </p>
             <p className="font-headline text-3xl md:text-4xl font-bold text-caglio mb-8">
-              Food wisdom is going extinct.
+              Food wisdom is disappearing.
             </p>
             <p className="font-body text-base md:text-lg text-caglio/80 leading-relaxed mb-6">
               Not because the products are worse. Because the tools are. A market
@@ -88,7 +88,7 @@ export default function ManifestoPage() {
           <SectionReveal>
             <p className="font-body text-base text-caglio/80 leading-relaxed">
               AI can speak both. The language of the algorithm and the language
-              of the cagliata. Not automation. Translation. Not replacement.
+              of the curd — the <em>cagliata</em>. Not automation. Translation. Not replacement.
               Amplification.
             </p>
           </SectionReveal>
@@ -114,7 +114,7 @@ export default function ManifestoPage() {
               <p>Pastifici</p>
               <p>Conservifici</p>
               <p>Birrifici</p>
-              <p>Apicultura</p>
+              <p>Apicoltura</p>
               <p>Cioccolateria</p>
               <p>Oleifici</p>
               <p>Gelaterie artigianali</p>

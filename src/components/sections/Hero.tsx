@@ -25,7 +25,7 @@ export function Hero() {
         </p>
 
         <p className="font-body text-base text-caglio/80 max-w-[55ch] mb-4">
-          Food wisdom is going extinct. Not because the products are worse — because the tools are. When an artisan retires, centuries of technique disappear forever.
+          Food wisdom is disappearing. Not because the products are worse — because the tools are. When an artisan retires, centuries of technique disappear forever.
         </p>
 
         <p className="font-body text-sm text-terra font-medium max-w-[55ch] mb-12">

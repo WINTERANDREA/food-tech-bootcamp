@@ -16,7 +16,7 @@ export default function NotFound() {
         This page doesn&apos;t exist.
       </p>
       <p className="font-body text-base text-crosta mb-8">
-        Like a CRM in most caseifici.
+        Like a CRM in most cheese dairies.
       </p>
       <Link
         href="/"
