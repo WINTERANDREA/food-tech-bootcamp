@@ -5,6 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const ADMIN_EMAIL = process.env.EMAIL_ADMIN!;
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID!;
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY!;
 
 // Use verified domain or Resend's test sender
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "Food Tech Bootcamp <onboarding@resend.dev>";
@@ -13,6 +14,20 @@ interface SubscribeBody {
   email: string;
   firstName?: string;
   interest?: string;
+  turnstileToken: string;
+}
+
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      secret: TURNSTILE_SECRET,
+      response: token,
+    }),
+  });
+  const data = await res.json();
+  return data.success === true;
 }
 
 export async function POST(request: Request) {
@@ -20,7 +35,17 @@ export async function POST(request: Request) {
 
   try {
     const body: SubscribeBody = await request.json();
-    const { email, firstName, interest = "newsletter" } = body;
+    const { email, firstName, interest = "newsletter", turnstileToken } = body;
+
+    // Verify Turnstile token
+    if (!turnstileToken) {
+      return NextResponse.json({ error: "Bot verification required" }, { status: 400 });
+    }
+
+    const isHuman = await verifyTurnstile(turnstileToken);
+    if (!isHuman) {
+      return NextResponse.json({ error: "Bot verification failed" }, { status: 403 });
+    }
 
     if (!email || !email.includes("@")) {
       return NextResponse.json({ error: "Valid email required" }, { status: 400 });

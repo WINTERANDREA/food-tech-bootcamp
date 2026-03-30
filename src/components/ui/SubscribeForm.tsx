@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useRef, type FormEvent } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 const TOPICS = [
   { value: "newsletter", label: "Newsletter (All Topics)" },
@@ -21,17 +22,25 @@ export function SubscribeForm({ interest = "newsletter" }: SubscribeFormProps) {
   const [topic, setTopic] = useState(interest);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("loading");
     setErrorMsg("");
 
+    if (!turnstileToken) {
+      setStatus("error");
+      setErrorMsg("Please complete the verification");
+      return;
+    }
+
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, firstName: firstName || undefined, interest: topic }),
+        body: JSON.stringify({ email, firstName: firstName || undefined, interest: topic, turnstileToken }),
       });
 
       if (!res.ok) {
@@ -42,6 +51,8 @@ export function SubscribeForm({ interest = "newsletter" }: SubscribeFormProps) {
       setStatus("success");
       setEmail("");
       setFirstName("");
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
@@ -99,6 +110,18 @@ export function SubscribeForm({ interest = "newsletter" }: SubscribeFormProps) {
             </option>
           ))}
         </select>
+      </div>
+
+      {/* Turnstile */}
+      <div className="mb-5">
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onSuccess={setTurnstileToken}
+          onError={() => setTurnstileToken(null)}
+          onExpire={() => setTurnstileToken(null)}
+          options={{ theme: "dark" }}
+        />
       </div>
 
       {/* Submit */}

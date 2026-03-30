@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useRef, type FormEvent } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import Image from "next/image";
 import { CONTACT_EMAIL } from "@/lib/constants";
 import { SectionReveal } from "@/components/ui/SectionReveal";
@@ -161,19 +162,27 @@ function ProducerForm({ t }: { t: (typeof content)[Lang] }) {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!turnstileToken) {
+      setStatus("error");
+      return;
+    }
     setStatus("loading");
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, interest: "producer" }),
+        body: JSON.stringify({ email, interest: "producer", turnstileToken }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
       setEmail("");
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
     } catch {
       setStatus("error");
     }
@@ -186,23 +195,35 @@ function ProducerForm({ t }: { t: (typeof content)[Lang] }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 w-full max-w-md">
-      <input
-        type="email"
-        required
-        placeholder={t.formPlaceholder}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 min-w-0 bg-dark-surface border border-[var(--border-subtle)] text-caglio font-body text-sm px-4 py-3 placeholder:text-light-secondary focus:border-terra focus:outline-none transition-colors"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="shrink-0 font-body font-medium text-sm uppercase tracking-wide bg-terra text-caglio px-6 py-3 hover:brightness-110 transition-all disabled:opacity-50"
-      >
-        {status === "loading" ? t.formSending : t.formBtn}
-      </button>
-    </form>
+    <div className="w-full max-w-md">
+      <form onSubmit={handleSubmit} className="flex gap-2 w-full">
+        <input
+          type="email"
+          required
+          placeholder={t.formPlaceholder}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="flex-1 min-w-0 bg-dark-surface border border-[var(--border-subtle)] text-caglio font-body text-sm px-4 py-3 placeholder:text-light-secondary focus:border-terra focus:outline-none transition-colors"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="shrink-0 font-body font-medium text-sm uppercase tracking-wide bg-terra text-caglio px-6 py-3 hover:brightness-110 transition-all disabled:opacity-50"
+        >
+          {status === "loading" ? t.formSending : t.formBtn}
+        </button>
+      </form>
+      <div className="mt-3">
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onSuccess={setTurnstileToken}
+          onError={() => setTurnstileToken(null)}
+          onExpire={() => setTurnstileToken(null)}
+          options={{ theme: "dark" }}
+        />
+      </div>
+    </div>
   );
 }
 
