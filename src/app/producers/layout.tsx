@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Your product is extraordinary. Your knowledge is centuries deep. We build AI that makes artisanal craft knowledge computable.",
     type: "website",
-    images: [{ url: "/api/og?title=For+Producers&subtitle=Your+product+is+extraordinary.+The+market+doesn%27t+know+%E2%80%94+yet.", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/logo.png", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: `${SITE_URL}/producers`,

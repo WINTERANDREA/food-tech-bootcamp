@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Food wisdom is disappearing. We build AI tools that keep artisanal craft alive.",
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: "/api/og?title=Food+Tech+Bootcamp&subtitle=Food+wisdom+is+disappearing.+We+build+the+tools+that+keep+it+alive.", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/logo.png", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description: "Food wisdom is disappearing. We build the tools that keep it alive.",
-    images: ["/api/og?title=Food+Tech+Bootcamp&subtitle=Food+wisdom+is+disappearing.+We+build+the+tools+that+keep+it+alive."],
+    images: ["/images/og/logo.png"],
   },
   alternates: {
     canonical: SITE_URL,

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Food wisdom is disappearing. We build the tools that keep artisanal producers competing.",
     type: "article",
-    images: [{ url: "/api/og?title=Mission&subtitle=Food+wisdom+is+disappearing&type=mission", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/logo.png", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: `${SITE_URL}/mission`,

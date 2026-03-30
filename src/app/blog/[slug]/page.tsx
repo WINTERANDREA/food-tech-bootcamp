@@ -29,7 +29,7 @@ export async function generateMetadata({
       openGraph: {
         title: post.title,
         description: post.excerpt,
-        images: [{ url: post.ogImage || post.image || `/api/og?title=${encodeURIComponent(post.title)}&type=blog`, width: 1200, height: 630 }],
+        images: [{ url: post.ogImage || post.image || "/images/og/logo.png", width: 1200, height: 630 }],
         type: "article",
         publishedTime: post.date,
         authors: [post.author || "Andrea"],
@@ -126,7 +126,7 @@ export default async function BlogPost({ params }: PageProps) {
             "@type": "Article",
             headline: post.title,
             description: post.excerpt,
-            image: post.ogImage || post.image || `${SITE_URL}/images/og/home.jpg`,
+            image: post.ogImage || post.image || `${SITE_URL}/images/og/logo.png`,
             datePublished: post.date,
             mainEntityOfPage: {
               "@type": "WebPage",

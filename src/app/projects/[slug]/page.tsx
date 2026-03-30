@@ -31,7 +31,7 @@ export async function generateMetadata({
       openGraph: {
         title: project.title,
         description: project.question,
-        images: [{ url: project.ogImage || project.image || `/api/og?title=${encodeURIComponent(project.title)}&type=project`, width: 1200, height: 630 }],
+        images: [{ url: project.ogImage || project.image || "/images/og/logo.png", width: 1200, height: 630 }],
         type: "article",
       },
       alternates: {
