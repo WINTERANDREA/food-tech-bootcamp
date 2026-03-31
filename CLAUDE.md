@@ -6,14 +6,14 @@ FTB is a lab building AI tools for Italy's 300,000 artisanal food producers. Mis
 
 Not an agency. Not a consultancy. A lab. The work changes — the mission doesn't.
 
-## Current State (2026-03-14)
+## Current State (2026-03-31)
 
-- **Primary project:** Tosi AI Sales Agent — architecture designed, CRM with 47 targets imported as CSV. AI system not yet built. Phase 0 (baseline).
+- **Primary project:** Tosi AI Sales Agent — Phase 0 in progress. Proposal sent to Andrea Tosi (positive feedback). CRM exists at `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Scraping pipeline built and run: 250 prospects in zona Turati Milano, 123 with email. Next: import into CRM, build Digital Twin (Phase 1).
 - **Website:** In development. New design system and build prompt complete. No live site yet.
-- **Blog:** 0 posts published. 0 drafts ready.
-- **Partnerships:** Anthropic Ambassador application pending (March 2026). UNISG contact not yet initiated. Tosi case study permission not yet secured.
+- **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
+- **Partnerships:** Anthropic Ambassador application pending. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** Ship the website homepage. Then build the Tosi sales coordinator system prompt.
+- **Next milestone:** Import 250 prospects into CRM. Build Digital Twin system prompt. Start Phase 1.
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 
@@ -51,7 +51,7 @@ Media/
   Brand/                               → Logo variants, palette reference, brand images
 Projects/
   Tosi/
-    Docs/                              → Experiment docs, CRM exports, proposals
+    Docs/                              → Experiment docs, prefixed by phase (00-, 01-, ...)
     Media/
       Brand/                           → Tosi-specific brand assets
       Production/                      → Editorial production photography

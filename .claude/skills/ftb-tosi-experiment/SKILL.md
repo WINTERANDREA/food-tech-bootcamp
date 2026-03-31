@@ -10,17 +10,119 @@ description: >
 
 # Tosi Experiment — AI Sales Agent
 
-## Current State (2026-03-17)
+## Current State (2026-03-31)
 
-- **Phase:** 0 (baseline). No AI-assisted outreach has happened yet.
-- **CRM:** 47 prospects in `Projects/Tosi/Docs/TOSI_LISTA_CLIENTI_BOT.xlsx`. Not yet in Supabase.
-- **Claude coordinator prompt:** Not written.
-- **Prospect briefing cards:** 0 generated.
-- **Dashboard:** Not built.
-- **Baseline metrics:** Not collected from the Andreases.
-- **Case study permission from Andrea (owner):** Not yet secured.
+- **Phase:** 0 → 1 transition. Scraping complete, ready for CRM import and Digital Twin build.
+- **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). React + Vite + Supabase. 1400+ companies imported, agent assignment, auth, filters, bulk actions working.
+- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub/tosi-scraping). Pipeline built and run.
+- **Prospect list:** 252 prospects zona Turati Milano, 125 with email (50%). In `tosi-scraping/output/prospects_turati.csv`. NOT yet imported into CRM.
+- **Proposal:** Sent to Andrea Tosi via email (PDF). Feedback received — positive. Source: `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md`
+- **Scraping methodology:** `Projects/Tosi/Docs/00-TOSI-Scraping-Methodology.md`
+- **Phase 1 planning:** `Projects/Tosi/Docs/01-TOSI-Phase1-Plan.md`
+- **Team:** Andrea C. (FTB founder) = builds the system AND does field sales. Andrea M. (Tosi CEO) = supervises, approves emails, final decisions.
+- **Location:** Caseificio Tosi is in Gattico (NO).
+- **Target zone:** Zona Turati, Milano (2km radius: Brera, Porta Nuova, Garibaldi, Isola, Porta Venezia, Moscova).
+- **Logistica:** Stocking point available in zona Turati (bar run by family contact).
+- **Claude coordinator prompt:** Not written. Will be `/prompts/digital-twin-v1.md` in CRM repo.
+- **Prospect briefing cards:** 0 generated. Template exists. UI component planned for Phase 1.
+- **AI integration:** Planned via Supabase Edge Functions.
+- **Email outreach:** Will use `hello@tosigorgonzola.com` via Resend. Phase 3. Andrea Tosi flagged email deliverability as biggest risk.
+- **Baseline metrics:** Not collected. Need interview with Andrea Tosi.
+- **Case study permission:** Secured (2026-03-20). Enthusiastic about Anthropic partnership.
+- **Closed businesses discovered:** Panini Durini (2024), Chic & Go — removed from lists.
 
 > Update this section as the experiment progresses. The agent needs to know what exists.
+
+---
+
+## Two-Repo Workflow
+
+This project spans two repos. Know which one you're in.
+
+| | **FTB repo** (this one) | **Tosi CRM repo** |
+|---|---|---|
+| **Path** | `~/Projects/FTB/food-tech-bootcamp` | `~/Projects/TOSI/WEB/tosi-mini-crm` |
+| **Branch** | `main` | `feat/ai-sales-agent` |
+| **Purpose** | Document, plan, track, write proposals/content | Build the CRM + AI sales agent |
+| **What lives here** | Skills, STATUS.md, proposals in Projects/Tosi/Docs/, blog content, case study | React frontend, Supabase queries, Edge Functions, Digital Twin prompt |
+| **Claude session** | Open Claude Code in FTB dir for documentation work | Open Claude Code in CRM dir for development work |
+
+**Rule:** After every CRM development session, update STATUS.md and this skill file in the FTB repo.
+
+### All Tosi Project Directories
+
+| Path | Purpose |
+|---|---|
+| `~/Projects/TOSI/WEB/tosi-mini-crm` | CRM + AI sales agent (React + Supabase) |
+| `~/Projects/TOSI/WEB/tosi-scraping` | Scraping pipeline for zona Turati prospects |
+| `~/Projects/TOSI/WEB/APP-TOOL/Scraping-cheese-shop` | Existing scraper (fromagerie Francia/Germania) — reference for reuse |
+| `~/Projects/FTB/food-tech-bootcamp` | Documentation, strategy, proposals, blog content |
+
+---
+
+## Documentation Guide
+
+### What to document in FTB (this repo)
+
+| What | Where | When |
+|---|---|---|
+| Phase progress, session logs | `STATUS.md` | After every work session |
+| Architecture decisions, corrected context | This skill file | When something structural changes |
+| Proposals, emails, feedback from Andrea Tosi | `Projects/Tosi/Docs/` | Every document sent or feedback received |
+| Scraping methodology and results | `Projects/Tosi/Docs/` | After each scraping run |
+| Blog posts about the experiment | `src/content/blog/` | End of each phase |
+| Public project page updates | `src/content/projects/ai-sales-agent.mdx` | When there are results to show |
+
+### What NOT to document here
+
+- Code (lives in CRM repo or APP-TOOL)
+- Prospect data (lives in Supabase)
+- API keys, credentials (lives in .env files, never committed)
+
+### Per-phase documentation outputs
+
+| Phase | Document to produce |
+|---|---|
+| 0: Baseline | Baseline interview notes, current process metrics |
+| 0: Scraping | Scraping methodology doc: queries used, filters applied, how many results, data quality |
+| 1: Digital Twin | System prompt rationale: why each section, what knowledge was included, calibration notes |
+| 2: Pipeline | Mid-experiment blog draft, weekly metrics snapshots |
+| 3: Email | Email template analysis: what worked, what got overridden, response rates |
+| 4: Measurement | Full case study (3 versions: Anthropic, UNISG, public blog) |
+
+---
+
+## Prospect Scraping Pipeline
+
+### Existing Reference: `~/Projects/TOSI/WEB/APP-TOOL/Scraping-cheese-shop`
+
+Node.js pipeline used for fromageries in France/Germany:
+- **Source:** OpenStreetMap → Google Places API (New) Text Search for enrichment
+- **Stack:** Node.js, axios, csv-parser, csv-writer
+- **API:** Google Places API (New) — `places:searchText` endpoint
+- **Fields:** displayName, formattedAddress, rating, userRatingCount, businessStatus, websiteUri, internationalPhoneNumber
+- **Rate limit:** 100ms delay between requests (~10/sec)
+
+### New: `~/Projects/TOSI/WEB/tosi-scraping`
+
+Same stack, adapted for Milano zona Turati. Key differences:
+- **No OSM step needed** — start directly with Google Places Text Search
+- **Queries:** Multiple searches to cover the area: `"panineria Milano Turati"`, `"panini gourmet Brera Milano"`, `"bar panini Porta Nuova Milano"`, `"pizzeria gourmet Porta Venezia Milano"`, etc.
+- **Location bias:** Use `locationBias` parameter to restrict results to zona Turati radius (~1.5km around Piazza Turati)
+- **Extra fields:** Add `places.googleMapsUri`, `places.priceLevel`, `places.primaryType`
+- **Dedup:** Same locale may appear in multiple queries — deduplicate by `places.id`
+- **Output:** JSON → CSV → import into Supabase via CRM import function
+- **Target:** ~47 validated prospects with menu online (key requirement from Andrea Tosi feedback)
+
+### Scraping → CRM Import Flow
+
+```
+Google Places API    →  JSON (raw results)
+  ↓ filter + dedup
+Clean JSON           →  CSV (formatted for CRM import)
+  ↓ import via CRM UI or Supabase direct insert
+Supabase companies   →  Visible in CRM, ready for AI enrichment (Phase 1)
+```
 
 ---
 

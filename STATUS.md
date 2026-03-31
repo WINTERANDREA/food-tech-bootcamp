@@ -4,17 +4,42 @@
 
 ## Tosi AI Sales Agent — The Seed
 
-### System Build Status
+### Infrastructure
 
-| Component | Status | Notes |
-|-----------|--------|-------|
-| 47-target CRM (CSV) | Done | Imported. Not in Supabase yet. |
-| Supabase database schema | Not started | Need: prospects, interactions, scores tables |
-| Claude sales coordinator prompt | Not started | Architecture designed in Tosi-Experiment skill |
-| Prospect briefing cards | Not started | Template exists, no cards generated |
-| Dashboard (Next.js) | Not started | Mobile-friendly for field use |
-| WhatsApp integration | Not started | For quick field reporting |
-| Baseline measurement (Phase 0) | Not started | Need pre-AI metrics from Andreases |
+- **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`)
+- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub/tosi-scraping)
+- **CRM stack:** React 18 + TypeScript + Vite + Supabase + TanStack Query + Zustand
+- **Current CRM:** 1400+ companies imported, agent assignment, groups, filters, auth
+- **Scraping results:** 250 prospects zona Turati Milano, 123 with email. Ready for CRM import.
+- **Proposal:** `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md` (sent, feedback received)
+- **Scraping methodology:** `Projects/Tosi/Docs/00-TOSI-Scraping-Methodology.md`
+- **Email:** `hello@tosigorgonzola.com` (confirmed for AI-drafted outreach)
+- **Team:** Andrea C. (builds + field sales), Andrea M. / Tosi (supervises, approves)
+- **Target zone:** Zona Turati Milano (2km radius: Brera, Porta Nuova, Garibaldi, Isola, Porta Venezia)
+
+### Phase Roadmap
+
+| Phase | Timeline | Status | Key Deliverables |
+|-------|----------|--------|-----------------|
+| **0: Baseline** | Week 1-2 | **In progress** | ~~Prospect scraping~~ Done (252 prospects, 125 emails). ~~Proposal sent~~ Done (feedback received). Next: import into CRM, baseline interview with Andrea Tosi, new Supabase tables. |
+| **1: Digital Twin + Briefing Cards** | Week 3-5 | Not started | Digital Twin system prompt (`/prompts/digital-twin-v1.md`). Supabase Edge Function `generate-briefing-card`. BriefingCardPanel component in CRM. 47 cards generated. |
+| **2: Pipeline + Interaction Logging** | Week 6-8 | Not started | InteractionLog + InteractionForm components. Pipeline kanban view (`/pipeline` route). AI follow-up suggestions via `suggest-followup` edge function. React Router added. |
+| **3: Email Outreach + Coordinator** | Week 9-12 | Not started | Email draft generation + review UI (`/email` route). Resend integration from hello@tosigorgonzola.com. Coordinator dashboard (`/coordinator` route). Weekly strategy generation. |
+| **4: Measurement + Case Study** | Week 13-16 | Not started | Metrics dashboard (`/metrics` route). 4-week feature freeze. Data export. Case study production (3 versions: Anthropic, UNISG, public). |
+
+### Technical Architecture
+
+**AI integration:** Supabase Edge Functions calling Claude API (Sonnet for routine, Opus for strategy). Digital Twin system prompt versioned in CRM repo.
+
+**New Supabase tables:**
+- `interactions` — channel, outcome, ai_suggestion_followed, learning
+- `briefing_cards` — menu_type, approach_angle, priority_score, personalized_script
+- `email_drafts` — subject, body, status (draft/approved/sent/rejected)
+- `experiment_metrics` — weekly snapshots for baseline comparison
+
+**New CRM pages:** Dashboard (existing) → Pipeline → Coordinator → Email → Metrics
+
+**Edge Functions:** generate-briefing-card, suggest-followup, generate-email-draft, send-email, get-daily-priorities
 
 ### Six Outputs from One Project
 
@@ -75,3 +100,5 @@ Record what you shipped, not what you planned.
 | 2026-03-14 | Brand identity skill + website build prompt + CLAUDE.md restructure | 3 skill files ready for dev |
 | 2026-03-20 | Met with Tosi — he endorses Anthropic partnership, case study permission secured | Partnership narrative validated |
 | 2026-03-21 | Created FTB-Andrea-CEO skill — strategic positioning + partnership comms | Skill file in .claude/skills/ |
+| 2026-03-27 | Created AI Sales Agent proposal for Andrea Tosi. Forked CRM to feat/ai-sales-agent branch. Designed 5-phase roadmap. | Proposal in Projects/Tosi/Docs/, CRM branch ready |
+| 2026-03-31 | Built scraping pipeline (tosi-scraping repo). 18 optimized queries, zona Turati 2km. Run: 250 prospects, 123 emails. Deep email extraction (regex+cheerio+mailto+JSON-LD). Documented methodology. Updated all docs with corrected context (team, location, target zone). | 250 prospects in CSV, scraping methodology doc, all repos synced |
