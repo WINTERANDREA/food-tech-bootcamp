@@ -38,7 +38,6 @@ yarn-error.log*
 
 # raw assets (not for deployment)
 /Media/
-/Projects/
 /Skills/
 *.MOV
 *.mp4
