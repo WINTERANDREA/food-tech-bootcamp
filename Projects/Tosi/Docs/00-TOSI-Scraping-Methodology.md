@@ -45,8 +45,9 @@ Non cerchiamo "ristoranti a Milano". Cerchiamo locali specifici dove il formato 
 
 | Tool | Ruolo |
 |---|---|
-| **Google Places API (New)** | Text Search con locationBias per trovare locali in zona |
-| **Node.js + axios** | Esecuzione delle query API |
+| **Google Places API (New)** | Text Search con locationBias per trovare locali in zona + Place Details per recensioni |
+| **registroaziende.it** | Tipo societa' (SRL/SPA/Ditta Individuale) e fatturato per prospect con bilancio pubblico |
+| **Node.js + axios + cheerio** | Esecuzione query API e scraping HTML |
 | **csv-writer** | Export dati in formato CRM |
 | **dotenv** | Gestione sicura della API key |
 
@@ -57,13 +58,22 @@ Step 1: npm run search
   18 query → Google Places API → output/raw_results.json (~270 risultati)
 
 Step 2: npm run dedup
-  Deduplica per Google Place ID → output/deduped_results.json (~110 unici)
+  Deduplica per Google Place ID → output/deduped_results.json (~252 unici)
 
 Step 3: npm run enrich
-  Estrai email dai siti web → output/enriched_results.json (~70% con email)
+  Estrai email + social (Instagram, Facebook, TikTok, LinkedIn) → output/enriched_results.json (~48% con email)
 
-Step 4: npm run export-csv
-  Formatta per import CRM → output/prospects_turati.csv (~50-70 qualificati)
+Step 4: npm run enrich-reviews
+  Top 5 recensioni Google per locale → output/enriched_results.json
+
+Step 5: npm run enrich-ra
+  Tipo societa' + fatturato da registroaziende.it → output/enriched_results.json
+
+Step 6: npm run enrich-menu
+  Scraping menu dai siti web → output/enriched_results.json (~54% con menu, ~4% menzionano gorgonzola)
+
+Step 7: npm run export-csv
+  Formatta per import CRM → output/prospects_turati.csv (250 prospect)
 ```
 
 ### Repository
@@ -162,6 +172,13 @@ Per ogni locale l'API restituisce:
 | Fascia prezzo | Indica posizionamento premium |
 | Coordinate | Calcolo distanza esatta da Piazza Turati |
 | Google Place ID | Deduplicazione + riferimento unico |
+| **Top 5 recensioni Google** | Testo, rating, autore — indicatori di percezione clienti |
+| **Tipo societa'** | SRL, SPA, SAS, SNC, SRLS, Cooperativa, Ditta Individuale |
+| **Fatturato** | Solo per societa' di capitali con bilancio pubblico (da registroaziende.it) |
+| **Link Registro Aziende** | Pagina dettaglio azienda su registroaziende.it |
+| **TikTok** | Handle TikTok (se presente sul sito) |
+| **LinkedIn** | Pagina LinkedIn aziendale (se presente sul sito) |
+| **Menu (testo)** | Contenuto menu estratto dal sito web — per analisi AI in Fase 1 |
 
 ---
 
@@ -232,7 +249,93 @@ Quando Claude analizza un sito, non si limita all'email. Estrae anche:
 
 ---
 
-## 9. Target gia' Noti
+## 9. Arricchimento Recensioni Google
+
+### Il dato
+
+Per ogni locale, l'API Place Details restituisce fino a 5 recensioni (le "piu' rilevanti" secondo Google). Ogni recensione contiene:
+- Rating (1-5 stelle)
+- Testo della recensione
+- Nome dell'autore
+- Data di pubblicazione
+
+### Perche' sono utili
+
+Le recensioni sono il miglior proxy per capire il **tipo di servizio** di un locale prima ancora di visitarlo. Se un cliente scrive "panino col gorgonzola spettacolare", sappiamo che quel locale usa gia' gorgonzola. Se scrive "tagliere di formaggi ottimo", sappiamo che c'e' spazio per il cremoso DOP.
+
+Nella Fase 1 (briefing cards), l'AI usera' queste recensioni per generare talking points personalizzati per ogni prospect.
+
+### Limiti
+
+- Google restituisce massimo 5 recensioni per locale (hard limit dell'API)
+- Non sono le piu' recenti ma le "piu' rilevanti" (algoritmo di Google)
+- Non c'e' modo di richiederne di piu' tramite API ufficiale
+
+---
+
+## 10. Arricchimento Registro Aziende
+
+### Il dato
+
+registroaziende.it e' un database pubblico delle imprese italiane. Per ogni locale trovato su Google, cerchiamo il corrispondente su registroaziende.it per ottenere:
+
+- **Tipo societa':** SRL, SPA, SRLS, SAS, SNC, Cooperativa, Ditta Individuale
+- **Fatturato:** ultimo bilancio depositato (solo per societa' di capitali)
+- **Link:** pagina dettaglio su registroaziende.it
+
+### Come funziona
+
+1. Cerca il nome del locale su `/ricerca?q={nome}`
+2. Filtra i risultati per comune = MILANO (evita omonimi in altre citta')
+3. Estrae tipo societa' dalla ragione sociale e fatturato dalla tabella risultati
+
+### Perche' e' utile
+
+Il fatturato indica la **scala** del locale. Un bar SRL con fatturato € 2M ha volumi (e budget) molto diversi da una ditta individuale. Questo influenza:
+- Il prezzo proposto (un locale con alti volumi puo' comprare quantita' maggiori)
+- Il canale di contatto (le SRL tendono ad avere procedure d'acquisto piu' strutturate)
+- La priorita' nella lista prospect
+
+### Copertura e limiti
+
+- ~46% dei locali trovati su registroaziende.it (116/252)
+- ~16% con fatturato disponibile (41/252)
+- Le ditte individuali (bar gestiti da persona fisica) non depositano bilancio — fatturato non disponibile
+- Molti locali sono registrati con ragioni sociali diverse dal nome commerciale (es. "Pizzeria Da Marco" registrata come "Marco Rossi") — non trovabili con ricerca per nome
+
+---
+
+## 11. Scraping Menu
+
+### Il dato
+
+Lo script prima identifica il **tipo di menu** presente sul sito, poi agisce di conseguenza:
+
+- **PDF** (40 locali): scarica il PDF linkato dalla pagina e ne estrae il testo con pdf-parse. Molto comune in Italia.
+- **HTML** (28 locali): estrae elementi strutturati (nome piatto, descrizione, prezzo) da container, liste, tabelle. Filtra noise di navigazione e deduplica.
+- **Tabs/accordion** (2 locali): estrae il contenuto dei pannelli nascosti nel DOM.
+
+Per ogni locale con sito web, controlla homepage + 17 percorsi comuni (`/menu`, `/il-menu`, `/carta`, etc.) e scopre link aggiuntivi dalla navigazione.
+
+### Perche' e' utile
+
+Il testo del menu e' il dato piu' prezioso per la Fase 1 (briefing cards). Permette all'AI di:
+- Verificare se il locale **usa gia' gorgonzola** (e quale tipo)
+- Capire il **tipo di offerta** (panini gourmet vs toast semplici)
+- Identificare **piatti specifici** da menzionare nel primo contatto
+- Valutare il **posizionamento** del locale (prezzi, ingredienti premium vs industriali)
+
+### Copertura e limiti
+
+- ~28% dei locali con menu estratto (70/250): 40 PDF, 28 HTML, 2 tabs
+- ~5% menzionano gia' "gorgonzola" nel menu (12/250) — prospect ad alta priorita'
+- ~15% non ha sito web → nessun menu disponibile
+- ~57% ha sito web ma menu non estraibile: siti JS-rendered (React/SPA), menu come immagini, widget di terze parti
+- Il testo e' grezzo — servira' Claude per analizzarlo nella Fase 1
+
+---
+
+## 12. Target gia' Noti
 
 Prima dello scraping, avevamo identificato 6 locali dalla lista nazionale Mondo Panini che si trovano in zona Turati:
 
@@ -251,7 +354,7 @@ Questi locali servono come validazione: se lo scraping li trova, conferma che la
 
 ---
 
-## 10. Limiti
+## 13. Limiti
 
 Lo scraping ci da' **chi esiste e dove**. Non ci dice:
 
@@ -266,7 +369,7 @@ Lo scraping trasforma "zona Turati" da un'idea geografica a una lista concreta d
 
 ---
 
-## 11. Riproducibilita'
+## 14. Riproducibilita'
 
 La pipeline e' progettata per essere riutilizzata. Per qualsiasi produttore artigianale in qualsiasi zona d'Italia:
 
