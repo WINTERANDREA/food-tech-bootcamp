@@ -21,7 +21,7 @@
 
 | Phase | Timeline | Status | Key Deliverables |
 |-------|----------|--------|-----------------|
-| **0: Baseline** | Week 1-2 | **In progress** | ~~Prospect scraping~~ Done (252 prospects, 125 emails). ~~Proposal sent~~ Done (feedback received). Next: import into CRM, baseline interview with Andrea Tosi, new Supabase tables. |
+| **0: Baseline** | Week 1-2 | **Near-complete** | ~~Scraping~~ Done (250 prospects, 7-step pipeline). ~~Proposal~~ Done (feedback received). ~~CRM refactoring~~ Done (schema + import + UI + map). ~~Deploy~~ Done (Vercel). Remaining: baseline interview with Andrea Tosi. |
 | **1: Digital Twin + Briefing Cards** | Week 3-5 | Not started | Digital Twin system prompt (`/prompts/digital-twin-v1.md`). Supabase Edge Function `generate-briefing-card`. BriefingCardPanel component in CRM. 47 cards generated. |
 | **2: Pipeline + Interaction Logging** | Week 6-8 | Not started | InteractionLog + InteractionForm components. Pipeline kanban view (`/pipeline` route). AI follow-up suggestions via `suggest-followup` edge function. React Router added. |
 | **3: Email Outreach + Coordinator** | Week 9-12 | Not started | Email draft generation + review UI (`/email` route). Resend integration from hello@tosigorgonzola.com. Coordinator dashboard (`/coordinator` route). Weekly strategy generation. |
@@ -102,3 +102,4 @@ Record what you shipped, not what you planned.
 | 2026-03-21 | Created FTB-Andrea-CEO skill — strategic positioning + partnership comms | Skill file in .claude/skills/ |
 | 2026-03-27 | Created AI Sales Agent proposal for Andrea Tosi. Forked CRM to feat/ai-sales-agent branch. Designed 5-phase roadmap. | Proposal in Projects/Tosi/Docs/, CRM branch ready |
 | 2026-03-31 | Built scraping pipeline (tosi-scraping repo). 18 optimized queries, zona Turati 2km. Run: 250 prospects, 123 emails. Deep email extraction (regex+cheerio+mailto+JSON-LD). Documented methodology. Updated all docs with corrected context (team, location, target zone). | 250 prospects in CSV, scraping methodology doc, all repos synced |
+| 2026-04-03 | Full CRM refactoring: new schema (20+ columns for Google Places data), import script, 250 prospects in Supabase. New UI: rating/tipo/contatti columns, detail panel with phone/email/social/reviews/registro aziende, Google Maps view at /map, React Router, sidebar nav. Scraping pipeline expanded: reviews, registro aziende, menu enrichment. .claude/skills added to CRM and scraping repos. | CRM deployed on Vercel (feat/ai-sales-agent), 3 repos fully synced with skills |
