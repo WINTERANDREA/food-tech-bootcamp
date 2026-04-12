@@ -22,43 +22,136 @@ Al termine della Fase 1, Andrea C. entra in ogni incontro sapendo:
 
 Prima di costruire il Digital Twin, servono input da Andrea M. che solo lui puo' dare.
 
-### Intervista baseline (15 min)
+**15 minuti non bastano.** La prima versione del piano prevedeva una call veloce, ma una review delle aree necessarie al Digital Twin (storytelling, operations, escalation, red flags, definizione di successo) mostra che servono piu' di 15 minuti e che alcune risposte richiedono il contesto del caseificio per venire fuori bene.
 
-Domande per Andrea Tosi:
+### Struttura a due sessioni
 
-**Sul prodotto:**
+**Sessione 1 — Call da 20 minuti (veloce, per sbloccare)**
+Focus: operations, escalation, stile comunicativo, definizione di successo. Sono le risposte che servono per scrivere il Digital Twin v1 e per impostare i guardrail AI. Richiedono dialogo, non raccontino.
+
+**Sessione 2 — Visita al caseificio (1h, con registratore acceso)**
+Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste risposte vengono meglio quando Andrea M ti mostra le assi di legno mentre ne parla. Cattura **tutto** con registratore — vale come materiale per il Digital Twin, per il case study finale, e come asset video/foto per la Fase 3.
+
+**Materiali in parallelo via WhatsApp/email:** listino, lista clienti Milano, competitor+prezzi, foto/video. Non richiedono presenza.
+
+---
+
+### Sessione 1 — Domande per la call (20 min)
+
+**A. Prodotto (rapido, 3 min)**
 - Quali sono i 3 argomenti di vendita piu' forti per il cremoso 1kg?
-- Cosa dice di solito quando un cliente chiede "perche' dovrei pagare di piu' del gorgonzola industriale?"
+- Cosa dice quando un cliente chiede "perche' dovrei pagare di piu' del gorgonzola industriale?"
 - Qual e' la differenza concreta che un cliente sente al primo assaggio?
-- Ci sono abbinamenti specifici che funzionano meglio? (con che tipo di pane, condimenti, piatti)
+- Ci sono abbinamenti specifici che funzionano meglio? (pane, condimenti, piatti)
+- Che differenza c'e' tra il dolce e il cucchiaio?
 
-**Sul mercato:**
+**B. Mercato e posizionamento (3 min)**
 - Chi sono i competitor diretti a Milano per il cremoso? (nomi, prezzi)
-- Quanto costa il cremoso 1kg al locale? Qual e' il margine per loro?
-- Qual e' il volume minimo d'ordine che ha senso per una consegna?
+- Quanto costa il cremoso 1kg al locale e qual e' il margine per loro?
 - Quali obiezioni sente piu' spesso? (prezzo, conservazione, volume, logistica)
 
-**Sul processo attuale:**
-- Quanti nuovi clienti ha acquisito nell'ultimo trimestre? Come?
-- Quanto tempo dedica alla parte commerciale a settimana?
-- Ha un CRM, un foglio Excel, o tiene tutto a mente?
-- Qual e' il suo canale di contatto preferito? (telefono, email, visita diretta, WhatsApp)
+**C. Operations concrete (4 min)** — *cosa un prospect chiede al primo contatto*
+- **Lead time:** da ordine a consegna quanti giorni?
+- **Minimo d'ordine:** in pezzi o in euro? Qual e' il volume che ha senso per una consegna?
+- **Frequenza consegna possibile:** settimanale, bisettimanale?
+- **Come avviene la consegna:** corriere refrigerato, lui di persona? Come si integra con lo stock del bar in zona Turati?
+- **Pagamento:** 30gg, bonifico, contanti alla consegna?
+- **Shelf life** aperto e chiuso
+- **Reso/sostituzione** se prodotto arriva male
 
-**Sulla comunicazione:**
+**D. Protocollo degustazione (2 min)** — *primo passo di ogni vendita*
+- Porta campioni gratuiti? Quanti grammi? Costo per Tosi?
+- Come si organizza: appuntamento fisso, passaggio al volo, invio campione?
+- Chi fa la degustazione: Andrea C da solo o serve Andrea M?
+- Dopo la degustazione qual e' il follow-up tipico? Quanti giorni prima di richiamare?
+
+**E. Cliente ideale vs red flags (2 min)** — *per priority scoring nelle briefing card*
+- Oltre a "paninerie gourmet": quali caratteristiche rendono un locale *perfetto* per Tosi?
+- **Con chi NON vuole lavorare?** (catene, chi lo mette nella pizza industriale, chi tratta il prezzo come unico criterio, chi non ha frigo adatto...)
+- Ha gia' clienti top a Milano che usano il cremoso? Possono essere citati come social proof nelle briefing card?
+
+**F. Escalation — guardrail AI (3 min) ⚠️ CRITICO**
+Questa e' la cosa che Andrea M ha flaggato nel feedback al proposal ("servono controlli/filtri, l'umano interviene solo in fase finale"). Serve sapere esattamente:
+- Quali decisioni puo' prendere Andrea C da solo?
+- Quali richiedono ok di Andrea M? (sconti, volumi grandi, condizioni pagamento non standard)
+- Qual e' la soglia di sconto massimo senza chiedere?
+- Ci sono clienti/zone/tipologie dove vuole essere informato *prima* del contatto?
+- Vuole approvare ogni email che l'AI scrive, o solo quelle sopra una certa soglia?
+
+**G. Stile comunicativo (2 min)**
 - Come si presenta di solito? Qual e' la frase di apertura tipica?
 - Ci sono cose che non vuole mai dire o promettere?
 - Qual e' il tono: formale, amichevole, tecnico, passionale?
 - Vuole che l'AI usi il "tu" o il "voi" con i prospect?
+- **Parole bandite:** ci sono termini marketing-speak che non vuole mai vedere? ("eccellenza", "unico", "premium"...)
+- Dialettismi o termini tecnici che usa sempre?
 
-### Materiali da raccogliere
+**H. Processo attuale + definizione di successo (2 min)**
+- Quanti nuovi clienti Milano ha acquisito nell'ultimo trimestre? Come?
+- Quanto tempo dedica alla parte commerciale a settimana?
+- Ha un CRM, un foglio Excel, o tiene tutto a mente?
+- Canale di contatto preferito? (telefono, email, visita, WhatsApp)
+- **Quanti nuovi clienti Milano considera un successo a fine esperimento?** (calibra target Fase 2)
+- Qual e' il fatturato/volume che rende l'operazione sostenibile?
+- Cosa sarebbe un fallimento accettabile vs un fallimento grave?
+
+**I. Stagionalita' e timing (1 min)**
+- Il cremoso ha picchi di consumo? (autunno/inverno per taglieri/panini caldi?)
+- Quando e' il momento sbagliato per approcciare un paninaro? (agosto, feste)
+- Ci sono fiere/eventi dove e' presente e puo' invitare prospect?
+
+---
+
+### Sessione 2 — Visita al caseificio (1h, registratore acceso)
+
+Obiettivo: catturare **storia, processo, aneddoti, narrativa personale**. Sono le risposte che rendono il Digital Twin capace di *raccontare* Tosi invece di descriverlo. Vengono meglio mentre Andrea M ti mostra fisicamente il caseificio.
+
+**Traccia (non rigida — lasciare parlare, intervenire solo per scavare):**
+
+**Storia e famiglia**
+- Come e' nato il caseificio? Storia della famiglia, generazioni.
+- Perche' fa questo lavoro? Qual e' stato il momento in cui ha capito "questo e' il mio mestiere"?
+- Cosa fa lui *personalmente* ogni giorno in caseificio?
+- 2-3 aneddoti che racconta sempre durante le degustazioni con i clienti.
+
+**Prodotto — genesi e filosofia**
+- Quando e come e' nata l'idea del cucchiaio?
+- Perche' "senza crosta"? Perche' 1kg? Decisioni progettuali.
+- Cosa fa lui che un industriale **non puo' fare**? (punti tecnici precisi, non slogan)
+
+**Processo produttivo (mentre mostra)**
+- Provenienza latte: allevamenti, distanza, razza delle bovine.
+- Stagionatura 90 gg su assi di legno: dove, come, chi controlla.
+- Controlli qualita' — cosa guarda, cosa sente, cosa assaggia.
+- Certificazioni oltre DOP: Slow Food? Presidi? Premi vinti? Articoli stampa?
+
+**Clienti e storie**
+- 2-3 storie di clienti attuali felici. Chi sono, cosa fanno con il cremoso, come li ha conquistati.
+- Ricette signature che i suoi clienti migliori hanno creato col cremoso.
+- Testimonial o quote che puo' riutilizzare.
+
+**Competizione profonda**
+- Oltre a nomi e prezzi: *perche'* un cliente sceglie Tosi vs Palzola vs Igor vs Arrigoni?
+- Cosa fanno i competitor che lui non fa? E viceversa?
+
+**Asset da catturare durante la visita**
+- Video processo (anche col telefono va benissimo)
+- Foto alta qualita': Andrea al lavoro, assi di legno, interno caseificio
+- Audio della narrazione (registratore acceso dall'inizio)
+
+---
+
+### Materiali da raccogliere via WhatsApp/email
 
 | Materiale | Stato | Serve per |
 |---|---|---|
 | Scheda tecnica cremoso 1kg | Abbiamo gia' | Conoscenza prodotto nel Digital Twin |
 | Listino prezzi aggiornato | **Da chiedere** | Calcolo margini, obiezioni prezzo |
-| Foto prodotto alta qualita' | Abbiamo gia' | Eventuale allegato email Fase 3 |
-| Lista clienti attuali a Milano | **Da chiedere** | Evitare di contattare chi e' gia' cliente |
+| Lista clienti attuali Milano | **Da chiedere** | Evitare contatti doppi + social proof |
 | Competitor e prezzi loro | **Da chiedere** | Posizionamento nel Digital Twin |
+| Foto prodotto alta qualita' | Abbiamo gia' | Allegato email Fase 3 |
+| Video/foto produzione | **Da catturare in visita** | Case study + asset email |
+| Menu/ricette di clienti attuali | **Da chiedere** | Briefing card — esempi d'uso |
 
 ---
 
@@ -193,8 +286,9 @@ BLOCCO 1: Cose che Andrea C. puo' fare subito (senza Andrea Tosi)
 └── Briefing Card UI component nel CRM (shell, senza dati)
 
 BLOCCO 2: Cose che richiedono Andrea Tosi
-├── Intervista baseline (15 min)
-├── Raccolta materiali (listino, competitor, clienti attuali)
+├── Sessione 1: call 20 min (operations, escalation, stile, successo)
+├── Sessione 2: visita caseificio 1h con registratore (storia, processo, aneddoti)
+├── Raccolta materiali via WhatsApp (listino, clienti Milano, competitor)
 └── Revisione 3-4 briefing cards campione per calibrare il tono
 
 BLOCCO 3: Dopo l'intervista
@@ -206,21 +300,28 @@ BLOCCO 3: Dopo l'intervista
 
 ### Priorita' immediata
 
-**Fissare l'intervista con Andrea Tosi.** Tutto il resto (import, tabelle, UI) si puo' fare in parallelo, ma il Digital Twin — il cuore della Fase 1 — e' bloccato fino all'intervista.
+**Fissare le due sessioni con Andrea Tosi.** Tutto il resto (import, tabelle, UI) si puo' fare in parallelo, ma il Digital Twin — il cuore della Fase 1 — e' bloccato fino a quando non abbiamo le sue risposte.
 
-**Proposta email ad Andrea Tosi:**
+**Proposta messaggio ad Andrea Tosi:**
 
 > Ciao Andre,
 >
-> Aggiornamento veloce: ho completato la ricerca dei prospect nella zona Turati.
-> 252 locali mappati (paninerie, hamburgherie, pizzerie, wine bar, bistrot),
-> 125 con email diretta. Tutto pronto per il CRM.
+> Aggiornamento: ho completato la ricerca dei prospect nella zona Turati.
+> 250 locali mappati (paninerie, hamburgherie, pizzerie, wine bar, bistrot),
+> 121 con email diretta. Tutto pronto nel CRM.
 >
-> Per il passo successivo (le schede informative per ogni locale) mi serve
-> una chiacchierata di 15 minuti con te. Devo capire come presenti il prodotto,
-> quali obiezioni senti di solito, e come vuoi che l'AI parli a nome tuo.
+> Per il passo successivo — le schede informative che useremo su ogni locale —
+> mi servono due momenti con te:
 >
-> Quando hai un buco questa settimana o la prossima?
+> 1. Una call veloce di 20 minuti su come gestisci ordini, consegne, degustazioni,
+>    e su cosa vuoi che io possa decidere da solo vs cosa vuoi approvare tu.
+>
+> 2. Una visita in caseificio di circa un'ora, quando ti fa comodo. Vorrei registrare
+>    mentre mi racconti la storia, il processo, e gli aneddoti che usi con i clienti.
+>    Mi serve per costruire bene il "gemello digitale" e mi serve anche come
+>    materiale per il case study con Anthropic.
+>
+> Quando hai spazio nelle prossime due settimane?
 >
 > Andrea
 

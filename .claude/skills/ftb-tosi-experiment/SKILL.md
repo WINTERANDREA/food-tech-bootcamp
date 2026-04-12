@@ -10,53 +10,52 @@ description: >
 
 # Tosi Experiment — AI Sales Agent
 
-## Current State (2026-04-03)
+## Current State (2026-04-12)
 
-- **Phase:** 0 near-complete. CRM refactored and imported. Next: baseline interview with Andrea Tosi → Phase 1 (Digital Twin).
-- **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Fully refactored for Google Places data. Deployed on Vercel.
-- **CRM features built:** 250 prospect table (rating, tipo, contatti, address), detail panel with phone/email/social/reviews/registro aziende, Google Maps view at `/map`, sidebar filters by primary_type/status/group, sort by rating/reviews.
-- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub/tosi-scraping). Full pipeline: search → dedup → enrich emails → enrich reviews → enrich registro aziende → enrich menu → export CSV.
-- **Data in Supabase:** 250 Google Places prospects imported (data_source='google_places'). 121 with email, 231 with phone, 250 with reviews (5 each), 114 with registro aziende, 133 with menu text. Old 1400 registry records hidden (filtered by data_source).
-- **Proposal:** Sent to Andrea Tosi via email (PDF). Feedback received — positive. Source: `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md`
-- **Documentation:** `00-TOSI-Scraping-Methodology.md`, `01-TOSI-Phase1-Plan.md`
-- **Team:** Andrea C. (FTB founder) = builds the system AND does field sales. Andrea M. (Tosi CEO) = supervises, approves emails, final decisions.
-- **Location:** Caseificio Tosi is in Gattico (NO).
+- **Phase:** 0 complete → Phase 1 in progress. CRM deployed, menu extraction running, priority scoring done.
+- **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Fully refactored. Deployed on Vercel.
+- **CRM features:** 250 prospect table (rating, tipo, contatti), detail panel (phone/email/social/reviews/registro/menu), Google Maps at `/map`, priority score with top-50 view, briefing card types defined.
+- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping`. Full pipeline + menu extraction bridge to Claude Agent SDK.
+- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top`. Uses Claude Agent SDK + Playwright MCP. 192 prospects ready for batch. Tested: Pizzeria Sapo (38+ items with allergeni + gorgonzola), Borgo in Centrale (135 items, 12 sections, gorgonzola found in 4+ piatti). Bridge: `npm run menu-generate` → run agent → `npm run menu-collect-push`.
+- **Data in Supabase:** 250 Google Places prospects (data_source='google_places'). 121 email, 231 phone, 250 reviews, 114 registro aziende, 133 menu text (v1). Priority scores assigned.
+- **Proposal:** Sent + positive feedback. Source: `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md`
+- **Unicorn analysis:** `Projects/Tosi/Docs/00-Analisi-Produttori-Gorgonzola-Unicorni-v2.pdf` + `00-TOSI-Unicorn-Discovery.md`. Tosi #1.
+- **Team:** Andrea C. (FTB founder) = builds + field sales. Andrea M. (Tosi CEO) = supervises, approves.
+- **Location:** Caseificio Tosi, Gattico (NO). Stocking point: Bar Turati (Via Turati 7, Milano).
 - **Target zone:** Zona Turati, Milano (2km radius: Brera, Porta Nuova, Garibaldi, Isola, Porta Venezia, Moscova).
-- **Logistica:** Stocking point available in zona Turati (bar run by family contact).
-- **Claude coordinator prompt:** Not written. Will be `/prompts/digital-twin-v1.md` in CRM repo. Blocked by baseline interview.
-- **Prospect briefing cards:** 0 generated. Template exists. UI component planned for Phase 1.
-- **AI integration:** Planned via Supabase Edge Functions.
+- **Digital Twin:** Not written. Blocked by baseline interview. Questions prepared (01-TOSI-Phase1-Plan.md, 2 sessions: call 20min + visita caseificio 1h).
 - **Email outreach:** Will use `hello@tosigorgonzola.com` via Resend. Phase 3. Andrea Tosi flagged email deliverability as biggest risk.
-- **Baseline metrics:** Not collected. Need interview with Andrea Tosi (questions prepared in 01-TOSI-Phase1-Plan.md).
-- **Case study permission:** Secured (2026-03-20). Enthusiastic about Anthropic partnership.
-- **Closed businesses discovered:** Panini Durini (2024), Chic & Go — removed from lists.
+- **Baseline metrics:** Not collected. Need interview with Andrea Tosi.
+- **Case study permission:** Secured (2026-03-20).
+- **Closed businesses:** Panini Durini (2024), Chic & Go — removed.
 
 > Update this section as the experiment progresses. The agent needs to know what exists.
 
 ---
 
-## Three-Repo Workflow
+## Four-Project Workflow
 
-This project spans three repos. Each has its own `.claude/skills/` for autonomous Claude Code operation.
+This project spans four repos/projects. Each has its own `.claude/skills/` for autonomous Claude Code operation.
 
-| | **FTB** (this repo) | **CRM** | **Scraping** |
-|---|---|---|---|
-| **Path** | `~/Projects/FTB/food-tech-bootcamp` | `~/Projects/TOSI/WEB/tosi-mini-crm` | `~/Projects/TOSI/WEB/tosi-scraping` |
-| **GitHub** | `WINTERANDREA/food-tech-bootcamp` | `caseificiotosi-hub/tosi-mini-crm` | `caseificiotosi-hub/tosi-scraping` |
-| **Branch** | `main` | `feat/ai-sales-agent` | `main` |
-| **Purpose** | Document, plan, track | Build CRM + AI features | Prospect research pipeline |
-| **Skills** | ftb-tosi-experiment, strategy, content-engine... | crm-development, data-import, tosi-context | scraping-pipeline, tosi-context |
+| | **FTB** (this repo) | **CRM** | **Scraping** | **Menu Extraction** |
+|---|---|---|---|---|
+| **Path** | `~/Projects/FTB/food-tech-bootcamp` | `~/Projects/TOSI/WEB/tosi-mini-crm` | `~/Projects/TOSI/WEB/tosi-scraping` | `~/Projects/FTB/menu-extraction-agents-sdk_top` |
+| **GitHub** | `WINTERANDREA/food-tech-bootcamp` | `caseificiotosi-hub/tosi-mini-crm` | `caseificiotosi-hub/tosi-scraping` | local only |
+| **Branch** | `main` | `feat/ai-sales-agent` | `main` | `main` |
+| **Purpose** | Document, plan, track | Build CRM + AI features | Prospect research pipeline | Deep menu extraction (Claude Agent SDK) |
+| **Skills** | ftb-tosi-experiment, strategy, unicorn-discovery... | crm-development, data-import, tosi-context | scraping-pipeline, tosi-context | browser-automation, menu-parsing |
 
 **Rule:** After every dev session, update STATUS.md and this skill file in the FTB repo.
 
-### Data Flow Between Repos
+### Data Flow Between Projects
 
 ```
-tosi-scraping                          tosi-mini-crm                    food-tech-bootcamp
-  npm run search → dedup →               data/enriched_results.json       Projects/Tosi/Docs/
-  enrich → enrich-reviews →    cp →      npm run import →                   00-Proposal
-  enrich-ra → enrich-menu →              Supabase                           00-Scraping-Methodology
-  output/enriched_results.json           CRM UI (/ + /map)                  01-Phase1-Plan
+tosi-scraping              menu-extraction-agents-sdk_top      tosi-mini-crm          food-tech-bootcamp
+  npm run search →           input/restaurants.json               data/enriched.json      Projects/Tosi/Docs/
+  dedup → enrich →  ←──────  npm run menu-generate     cp →      npm run import →          00-Unicorn-Discovery
+  enrich-reviews →           python batch_smart.py                Supabase                  00-Proposal
+  enrich-ra →                output/menus/*.json                  CRM (/ + /map)            00-Scraping-Methodology
+  output/enriched.json  ←──  npm run menu-collect-push                                     01-Phase1-Plan
 ```
 
 ---
