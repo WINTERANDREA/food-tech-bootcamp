@@ -1,0 +1,8 @@
+Domande
+- Il cremoso ha picchi di consumo? (autunno/inverno per taglieri/panini caldi?)
+- Quando e' il momento sbagliato per approcciare un paninaro? (agosto, feste)
+- Ci sono fiere/eventi dove e' presente e puo' invitare prospect?
+
+Intervista con domande e risposte:
+
+Stagionalità e timing, il cremoso a picchi di consumo, autunno, inverno per taglieri, panini caldi. Ma è chiaro che il gorgonzola, soprattutto in Italia ha una sua stagionalità legata ai periodi più freddi e piovosi Questo non toglie che nell'uso panino questa stagione età tende un pochettino aperta se è chiaro che in un periodo nei periodi caldi caldi caldi estremamente caldi, ma sono anche quelli in cui in una grande città come Milano tenti a svuotarsi essere un po' per 1000 motivi sotto sottoutilizzato perché ci sono meno studenti perché ci sono i periodi di ferie che si stanno allungando e cose E quindi c'è un calo generale, quindi magari si ota più su dei piatti più freddi e cose, ma comunque può anche essere usato freddo. lo sposteremo sul gelato nel momento in cui cala così ci sono fiere eventi o eventi dove saremo presenti a stretto nei prossimi mesi e possiamo pensare di invitare un potenziale cliente. le fiere che faremo nei prossimi le fiere che faremo nei prossimi mesi e mesi fondamentalmente sono più sui mercati esteri dove ci stiamo concentrando per gli sviluppi tradizionali e meno su quelle italiane.

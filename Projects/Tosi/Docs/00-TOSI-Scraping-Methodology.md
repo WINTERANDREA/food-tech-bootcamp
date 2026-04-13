@@ -10,7 +10,7 @@
 
 Fase 0 — Baseline e costruzione lista prospect.
 
-Questo e' il primo passo operativo del progetto Tosi AI Sales Agent: prima di costruire il Digital Twin (Fase 1), prima di tracciare la pipeline (Fase 2), prima di inviare email (Fase 3) — serve sapere **a chi vendere**.
+Questo e' il primo passo operativo del progetto Tosi AI Sales Agent: prima di costruire il Voice Twin (Fase 1), prima di tracciare la pipeline (Fase 2), prima di inviare email (Fase 3) — serve sapere **a chi vendere**.
 
 ---
 

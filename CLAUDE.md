@@ -6,10 +6,14 @@ FTB is a lab building AI tools for Italy's 300,000 artisanal food producers. Mis
 
 Not an agency. Not a consultancy. A lab. The work changes — the mission doesn't.
 
-## Current State (2026-04-12)
+## Current State (2026-04-13)
 
-- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress (menu extraction rolling out, briefing cards pending Voice Twin + baseline interview).
+- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. **Baseline interview sessione 1 completata e sintetizzata** → Voice Twin system prompt sbloccato.
 - **Agent identity:** The AI agent that executes the Voice Twin is named **Claudio** — italianization of Claude. The name makes the stack visible: Anthropic's intelligence, rendered Italian for Italian artisans. Claudio acts through the Voice Twin of the Maestro (in Tosi's case, Andrea Tosi).
+- **Baseline interview:** Sessione 1 svolta 2026-04-12. Sintesi master in `Projects/Tosi/Docs/02-TOSI-Baseline-Interview-Synthesis.md` (12 sezioni autoconsistenti, integra `NOTE TOSI.xlsx` + scheda tecnica cucchiaio 1kg). Questa è la fonte autoritativa per il Voice Twin e per tutti gli artefatti Fase 1.
+- **Positioning consolidato:** Claim firma **"Latte, Uomo, Legno, Tempo"**. Asse narrativo in sviluppo "Le mani sono il nostro manifesto / maniaci". Parole bandite: `eccellenza`, `unico`, `premium`. Concetti `qualità/artigianalità/tradizione` sottintesi, mai nominati. Claim numerici autorizzati: `600L caldaia → 6 forme`, `1.5% sale`, `zero scarto`, `TMC 30gg`.
+- **Modello Ambassador logistico** (decisione nuova critica): Tosi Gattico → Ambassador locale (zona Turati, stocca 20-30kg, fattura come rivenditore autorizzato) → rider refrigerato (Glovo/Deliveroo) → paninoteca/pizzeria. Velocità target ordine → consegna in ore ("1×2, non B2B"). Pagamento carta immediato. Replicabile Roma/Napoli — **questa è la dimensione replicabile da vendere ad Anthropic/EU**.
+- **Fase 1 prospect pool:** paninerie/focaccerie/bistrot **+ pizzerie gourmet** (nessuna esclusione a priori per `tipo locale`). Campo esistente sufficiente — nessun nuovo attributo CRM.
 - **CRM:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Deployed on Vercel. Features: Dashboard, Map, Priority Score, Top-50 view, BriefingCardSection, StructuredMenuSection with gorgonzola highlighting.
 - **Scraping:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub). 250 prospects with phone/email/reviews/registro aziende. Menu extraction bridge to Claude Agent SDK working.
 - **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top` (WINTERANDREA). Claude Agent SDK + Playwright MCP. Dedicated `output/tosi/` folder (--tosi flag). 5 menus extracted so far in Supabase (Borgo 135 items, Sapo 62, Cesarino 65, San Giorgio 51, Cecino 40). 187 remaining.
@@ -19,7 +23,7 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 - **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
 - **Partnerships:** Anthropic Ambassador application submitted. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** Batch menu extraction for remaining 187 prospects. Baseline interview with Andrea Tosi. Build Voice Twin system prompt.
+- **Next milestone:** (1) Draft `03-TOSI-Voice-Twin-System-Prompt.md` usando §1/§2/§4/§8 della sintesi. (2) Batch menu extraction 187 prospects rimanenti. (3) Sessione 2 intervista Andrea Tosi (10 open questions, incluso modello Ambassador operativo). (4) Prima cold email pilota con validazione stile.
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 

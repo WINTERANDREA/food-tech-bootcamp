@@ -128,7 +128,7 @@ FTB entra esattamente qui:
 - **AI Sales Agent** per moltiplicare la capacita' commerciale senza assumere persone
 - **CRM con briefing cards** per dare a un commerciale solo le informazioni che un team di 30 avrebbe
 - **Scraping e prospect research** per identificare i target in modo sistematico
-- **Digital Twin** per preservare la voce e la conoscenza di Andrea Tosi nel sistema
+- **Voice Twin** per preservare la voce e la conoscenza di Andrea Tosi nel sistema
 
 ---
 
@@ -143,7 +143,7 @@ Scraping Pipeline (00-TOSI-Scraping-Methodology.md)
   ↓ 250 prospect in zona Turati
 CRM Refactoring + Import
   ↓ Prospect nel CRM con mappa
-Phase 1: Digital Twin + Briefing Cards (01-TOSI-Phase1-Plan.md)
+Phase 1: Voice Twin + Briefing Cards (01-TOSI-Phase1-Plan.md)
   ↓ AI che "pensa" come Andrea Tosi
 Phase 2-4: Pipeline, Email, Measurement
   ↓ Risultati → Case Study
