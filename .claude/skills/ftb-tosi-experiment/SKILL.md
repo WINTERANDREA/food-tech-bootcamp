@@ -53,10 +53,14 @@ This project spans four repos/projects. Each has its own `.claude/skills/` for a
 tosi-scraping              menu-extraction-agents-sdk_top      tosi-mini-crm          food-tech-bootcamp
   npm run search →           input/restaurants.json               data/enriched.json      Projects/Tosi/Docs/
   dedup → enrich →  ←──────  npm run menu-generate     cp →      npm run import →          00-Unicorn-Discovery
-  enrich-reviews →           python batch_smart.py                Supabase                  00-Proposal
-  enrich-ra →                output/menus/*.json                  CRM (/ + /map)            00-Scraping-Methodology
+  enrich-reviews →           python batch_smart.py --tosi         Supabase                  00-Proposal
+  enrich-ra →                output/tosi/*.json (dedicated!)      CRM (/ + /map)            00-Scraping-Methodology
   output/enriched.json  ←──  npm run menu-collect-push                                     01-Phase1-Plan
 ```
+
+**Important:** The `--tosi` flag on `batch_smart.py` routes outputs to `output/tosi/` instead
+of the default `output/menus/`. This keeps Tosi project data cleanly separated from historical
+test data (Villa Crespi, Osteria Francescana, etc.) in the menu-extraction repo.
 
 ---
 
