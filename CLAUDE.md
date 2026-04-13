@@ -8,16 +8,17 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 
 ## Current State (2026-04-12)
 
-- **Primary project:** Tosi AI Sales Agent — Phase 0 complete (scraping, CRM, import, priority scoring). Phase 1 in progress (menu extraction, briefing cards, Digital Twin).
-- **CRM:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). React + Vite + Supabase + Google Maps. Dashboard + Map + Priority Score. 250 prospects with phone/email/reviews/menu/registro aziende. Deployed on Vercel.
-- **Scraping:** `~/Projects/TOSI/WEB/tosi-scraping`. Full pipeline: search → dedup → emails → reviews → registro aziende → menu → CSV. Plus: menu-extraction bridge to Claude Agent SDK (135 items from Borgo in Centrale, gorgonzola detected).
-- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top`. Claude Agent SDK + Playwright MCP. 192 prospect ready for batch extraction. Tested: Pizzeria Sapo (38+ items), Borgo in Centrale (135 items with gorgonzola mentions).
+- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress (menu extraction rolling out, briefing cards pending Digital Twin).
+- **CRM:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Deployed on Vercel. Features: Dashboard, Map, Priority Score, Top-50 view, BriefingCardSection, StructuredMenuSection with gorgonzola highlighting.
+- **Scraping:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub). 250 prospects with phone/email/reviews/registro aziende. Menu extraction bridge to Claude Agent SDK working.
+- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top` (WINTERANDREA). Claude Agent SDK + Playwright MCP. Dedicated `output/tosi/` folder (--tosi flag). 5 menus extracted so far in Supabase (Borgo 135 items, Sapo 62, Cesarino 65, San Giorgio 51, Cecino 40). 187 remaining.
 - **Unicorn discovery:** Skill `ftb-unicorn-discovery` with 5-category references. Tosi identified as #1 (Mayfair bar + Gambero Rosso).
+- **Four-project workflow:** All synced on GitHub. Bridge is idempotent — next `menu-generate` will skip the 5 already-processed and target only the remaining 187.
 - **Website:** In development. New design system and build prompt complete. No live site yet.
 - **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
 - **Partnerships:** Anthropic Ambassador application submitted. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** Batch menu extraction (192 prospects). Baseline interview with Andrea Tosi. Build Digital Twin system prompt.
+- **Next milestone:** Batch menu extraction for remaining 187 prospects. Baseline interview with Andrea Tosi. Build Digital Twin system prompt.
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 

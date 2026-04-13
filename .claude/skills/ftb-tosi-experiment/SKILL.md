@@ -12,12 +12,12 @@ description: >
 
 ## Current State (2026-04-12)
 
-- **Phase:** 0 complete → Phase 1 in progress. CRM deployed, menu extraction running, priority scoring done.
+- **Phase:** 0 complete → Phase 1 in progress. CRM deployed, menu extraction rolling out, priority scoring done.
 - **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Fully refactored. Deployed on Vercel.
-- **CRM features:** 250 prospect table (rating, tipo, contatti), detail panel (phone/email/social/reviews/registro/menu), Google Maps at `/map`, priority score with top-50 view, briefing card types defined.
-- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping`. Full pipeline + menu extraction bridge to Claude Agent SDK.
-- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top`. Uses Claude Agent SDK + Playwright MCP. 192 prospects ready for batch. Tested: Pizzeria Sapo (38+ items with allergeni + gorgonzola), Borgo in Centrale (135 items, 12 sections, gorgonzola found in 4+ piatti). Bridge: `npm run menu-generate` → run agent → `npm run menu-collect-push`.
-- **Data in Supabase:** 250 Google Places prospects (data_source='google_places'). 121 email, 231 phone, 250 reviews, 114 registro aziende, 133 menu text (v1). Priority scores assigned.
+- **CRM features:** 250 prospect table (rating, tipo, contatti), detail panel (phone/email/social/reviews/registro/menu), Google Maps at `/map`, priority score with top-50 view, briefing card types defined, **StructuredMenuSection with gorgonzola highlighting** (collapsible categories, per-dish name/description/price).
+- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping`. Full pipeline + menu extraction bridge to Claude Agent SDK. Bridge filters idempotent — skips prospects with `_menuV2.status === "success"`.
+- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top` (GitHub: WINTERANDREA). Claude Agent SDK + Playwright MCP. Dedicated `output/tosi/` folder (via `--tosi` flag). **5 menus extracted and in Supabase** (Borgo in Centrale 135 items, Pizzeria Sapo 62, Cesarino 65, San Giorgio 51, Focacceria Cecino 40). **187 remaining** in next batch. Bridge: `npm run menu-generate` → `python src/batch_smart.py --tosi` → `npm run menu-collect-push`.
+- **Data in Supabase:** 250 Google Places prospects (data_source='google_places'). 121 email, 231 phone, 250 reviews, 114 registro aziende, 133 menu text (v1), **5 menu_structured** (Claude Agent SDK). Priority scores assigned.
 - **Proposal:** Sent + positive feedback. Source: `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md`
 - **Unicorn analysis:** `Projects/Tosi/Docs/00-Analisi-Produttori-Gorgonzola-Unicorni-v2.pdf` + `00-TOSI-Unicorn-Discovery.md`. Tosi #1.
 - **Team:** Andrea C. (FTB founder) = builds + field sales. Andrea M. (Tosi CEO) = supervises, approves.
@@ -40,7 +40,7 @@ This project spans four repos/projects. Each has its own `.claude/skills/` for a
 | | **FTB** (this repo) | **CRM** | **Scraping** | **Menu Extraction** |
 |---|---|---|---|---|
 | **Path** | `~/Projects/FTB/food-tech-bootcamp` | `~/Projects/TOSI/WEB/tosi-mini-crm` | `~/Projects/TOSI/WEB/tosi-scraping` | `~/Projects/FTB/menu-extraction-agents-sdk_top` |
-| **GitHub** | `WINTERANDREA/food-tech-bootcamp` | `caseificiotosi-hub/tosi-mini-crm` | `caseificiotosi-hub/tosi-scraping` | local only |
+| **GitHub** | `WINTERANDREA/food-tech-bootcamp` | `caseificiotosi-hub/tosi-mini-crm` | `caseificiotosi-hub/tosi-scraping` | `WINTERANDREA/menu-extraction-agents-sdk` |
 | **Branch** | `main` | `feat/ai-sales-agent` | `main` | `main` |
 | **Purpose** | Document, plan, track | Build CRM + AI features | Prospect research pipeline | Deep menu extraction (Claude Agent SDK) |
 | **Skills** | ftb-tosi-experiment, strategy, unicorn-discovery... | crm-development, data-import, tosi-context | scraping-pipeline, tosi-context | browser-automation, menu-parsing |
