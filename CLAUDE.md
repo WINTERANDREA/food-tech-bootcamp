@@ -8,7 +8,8 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 
 ## Current State (2026-04-12)
 
-- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress (menu extraction rolling out, briefing cards pending Digital Twin).
+- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress (menu extraction rolling out, briefing cards pending Voice Twin + baseline interview).
+- **Agent identity:** The AI agent that executes the Voice Twin is named **Claudio** — italianization of Claude. The name makes the stack visible: Anthropic's intelligence, rendered Italian for Italian artisans. Claudio acts through the Voice Twin of the Maestro (in Tosi's case, Andrea Tosi).
 - **CRM:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Deployed on Vercel. Features: Dashboard, Map, Priority Score, Top-50 view, BriefingCardSection, StructuredMenuSection with gorgonzola highlighting.
 - **Scraping:** `~/Projects/TOSI/WEB/tosi-scraping` (caseificiotosi-hub). 250 prospects with phone/email/reviews/registro aziende. Menu extraction bridge to Claude Agent SDK working.
 - **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top` (WINTERANDREA). Claude Agent SDK + Playwright MCP. Dedicated `output/tosi/` folder (--tosi flag). 5 menus extracted so far in Supabase (Borgo 135 items, Sapo 62, Cesarino 65, San Giorgio 51, Cecino 40). 187 remaining.
@@ -18,7 +19,7 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 - **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
 - **Partnerships:** Anthropic Ambassador application submitted. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** Batch menu extraction for remaining 187 prospects. Baseline interview with Andrea Tosi. Build Digital Twin system prompt.
+- **Next milestone:** Batch menu extraction for remaining 187 prospects. Baseline interview with Andrea Tosi. Build Voice Twin system prompt.
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 

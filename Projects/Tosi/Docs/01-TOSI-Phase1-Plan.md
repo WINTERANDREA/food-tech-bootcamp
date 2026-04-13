@@ -1,4 +1,4 @@
-# Fase 1 — Digital Twin + Schede Informative
+# Fase 1 — Voice Twin + Schede Informative
 
 **Data:** 2026-03-31
 **Stato:** Pianificazione
@@ -8,9 +8,20 @@
 
 ## 1. Obiettivo
 
-Creare un "gemello digitale" di Andrea Tosi — un'AI che conosce prodotti, storia, mercato e competitor — e usarlo per generare schede informative (briefing cards) per i prospect nella zona Turati.
+Costruire un **Voice Twin** del maestro artigiano — in parole semplici: un'AI che ha imparato _come parla_ e _come decide_ il maestro (il suo tono, le sue obiezioni ricorrenti, cosa non direbbe mai, cosa considera un buon cliente) — e usarla per generare schede informative (briefing cards) per i prospect nella zona Turati.
+
+> **Terminologia a tre livelli.**
+>
+> - **Maestro** = la persona la cui voce e il cui criterio vengono catturati nel system prompt. Nel caso Tosi il maestro e' **Andrea Tosi**. Il pattern e' parametrico: se un Voice Twin basato sulla voce del produttore non performa, il maestro puo' diventare un sales specialist esterno o una voce costruita a tavolino. Il sistema non cambia — cambia la sorgente della voce.
+> - **Voice Twin** = il system prompt + il pattern di ragionamento che codifica la voce e il criterio del maestro. E' il "cosa" dell'AI — il contenuto del modello mentale.
+> - **Claudio** = il nome dell'agente AI che agisce usando il Voice Twin. E' il "chi" dell'AI — l'entita' che scrive email, legge menu, genera briefing card, chiama l'API di Claude. **Claudio e' l'italianizzazione di Claude**: non nascondiamo lo stack, lo rendiamo italiano. Il nome dichiara cio' che e' — l'intelligenza di Anthropic messa al servizio di un artigiano italiano, attraverso la voce del maestro.
+
+> **Perche' "Voice Twin" e non "Digital Twin".** Il termine "gemello digitale" (Tesla, NVIDIA Omniverse) nasce nell'industria pesante e implica sensori IoT che trasmettono dati real-time da un oggetto fisico. Qui non c'e' nulla di tutto cio': stiamo gemellando solo la **voce** — tono, stile, criterio decisionale — di un maestro. "Voice Twin" mantiene la parola evocativa ma stringe il claim a cio' che il sistema contiene davvero, evitando il buzzword che farebbe perdere credibilita' con interlocutori come Anthropic, UNISG o grant reviewer EU.
+
+> **Perche' "Claudio".** Claudio Monteverdi (1567–1643) ha fatto il ponte tra la musica rinascimentale e il barocco preservando la tradizione polifonica mentre inventava l'opera. Non ha distrutto il passato per costruire il futuro — ha costruito il futuro *dentro* il passato. Questo e' il manifesto di FTB, e Claudio lo porta nel nome. Bonus: ogni volta che nomini Claudio, stai raccontando anche l'alleanza tecnologica con Anthropic — l'angolo chiave per l'Ambassador application e il posizionamento strategico del lab.
 
 Al termine della Fase 1, Andrea C. entra in ogni incontro sapendo:
+
 - Che tipo di locale e'
 - Che formaggio usano (se visibile dal menu)
 - Qual e' l'angolo di approccio migliore
@@ -20,17 +31,17 @@ Al termine della Fase 1, Andrea C. entra in ogni incontro sapendo:
 
 ## 2. Cosa Serve da Andrea Tosi
 
-Prima di costruire il Digital Twin, servono input da Andrea M. che solo lui puo' dare.
+Prima di costruire il Voice Twin, servono input da Andrea M. che solo lui puo' dare.
 
-**15 minuti non bastano.** La prima versione del piano prevedeva una call veloce, ma una review delle aree necessarie al Digital Twin (storytelling, operations, escalation, red flags, definizione di successo) mostra che servono piu' di 15 minuti e che alcune risposte richiedono il contesto del caseificio per venire fuori bene.
+**15 minuti non bastano.** La prima versione del piano prevedeva una call veloce, ma una review delle aree necessarie al Voice Twin (storytelling, operations, escalation, red flags, definizione di successo) mostra che servono piu' di 15 minuti e che alcune risposte richiedono il contesto del caseificio per venire fuori bene.
 
 ### Struttura a due sessioni
 
 **Sessione 1 — Call da 20 minuti (veloce, per sbloccare)**
-Focus: operations, escalation, stile comunicativo, definizione di successo. Sono le risposte che servono per scrivere il Digital Twin v1 e per impostare i guardrail AI. Richiedono dialogo, non raccontino.
+Focus: operations, escalation, stile comunicativo, definizione di successo. Sono le risposte che servono per scrivere il Voice Twin v1 e per impostare i guardrail AI. Richiedono dialogo, non raccontino.
 
 **Sessione 2 — Visita al caseificio (1h, con registratore acceso)**
-Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste risposte vengono meglio quando Andrea M ti mostra le assi di legno mentre ne parla. Cattura **tutto** con registratore — vale come materiale per il Digital Twin, per il case study finale, e come asset video/foto per la Fase 3.
+Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste risposte vengono meglio quando Andrea M ti mostra le assi di legno mentre ne parla. Cattura **tutto** con registratore — vale come materiale per il Voice Twin, per il case study finale, e come asset video/foto per la Fase 3.
 
 **Materiali in parallelo via WhatsApp/email:** listino, lista clienti Milano, competitor+prezzi, foto/video. Non richiedono presenza.
 
@@ -39,6 +50,7 @@ Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste rispos
 ### Sessione 1 — Domande per la call (20 min)
 
 **A. Prodotto (rapido, 3 min)**
+
 - Quali sono i 3 argomenti di vendita piu' forti per il cremoso 1kg?
 - Cosa dice quando un cliente chiede "perche' dovrei pagare di piu' del gorgonzola industriale?"
 - Qual e' la differenza concreta che un cliente sente al primo assaggio?
@@ -46,11 +58,13 @@ Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste rispos
 - Che differenza c'e' tra il dolce e il cucchiaio?
 
 **B. Mercato e posizionamento (3 min)**
+
 - Chi sono i competitor diretti a Milano per il cremoso? (nomi, prezzi)
 - Quanto costa il cremoso 1kg al locale e qual e' il margine per loro?
 - Quali obiezioni sente piu' spesso? (prezzo, conservazione, volume, logistica)
 
-**C. Operations concrete (4 min)** — *cosa un prospect chiede al primo contatto*
+**C. Operations concrete (4 min)** — _cosa un prospect chiede al primo contatto_
+
 - **Lead time:** da ordine a consegna quanti giorni?
 - **Minimo d'ordine:** in pezzi o in euro? Qual e' il volume che ha senso per una consegna?
 - **Frequenza consegna possibile:** settimanale, bisettimanale?
@@ -59,26 +73,30 @@ Focus: storia, processo produttivo, aneddoti, narrativa personale. Queste rispos
 - **Shelf life** aperto e chiuso
 - **Reso/sostituzione** se prodotto arriva male
 
-**D. Protocollo degustazione (2 min)** — *primo passo di ogni vendita*
+**D. Protocollo degustazione (2 min)** — _primo passo di ogni vendita_
+
 - Porta campioni gratuiti? Quanti grammi? Costo per Tosi?
 - Come si organizza: appuntamento fisso, passaggio al volo, invio campione?
 - Chi fa la degustazione: Andrea C da solo o serve Andrea M?
 - Dopo la degustazione qual e' il follow-up tipico? Quanti giorni prima di richiamare?
 
-**E. Cliente ideale vs red flags (2 min)** — *per priority scoring nelle briefing card*
-- Oltre a "paninerie gourmet": quali caratteristiche rendono un locale *perfetto* per Tosi?
+**E. Cliente ideale vs red flags (2 min)** — _per priority scoring nelle briefing card_
+
+- Oltre a "paninerie gourmet": quali caratteristiche rendono un locale _perfetto_ per Tosi?
 - **Con chi NON vuole lavorare?** (catene, chi lo mette nella pizza industriale, chi tratta il prezzo come unico criterio, chi non ha frigo adatto...)
 - Ha gia' clienti top a Milano che usano il cremoso? Possono essere citati come social proof nelle briefing card?
 
 **F. Escalation — guardrail AI (3 min) ⚠️ CRITICO**
 Questa e' la cosa che Andrea M ha flaggato nel feedback al proposal ("servono controlli/filtri, l'umano interviene solo in fase finale"). Serve sapere esattamente:
+
 - Quali decisioni puo' prendere Andrea C da solo?
 - Quali richiedono ok di Andrea M? (sconti, volumi grandi, condizioni pagamento non standard)
 - Qual e' la soglia di sconto massimo senza chiedere?
-- Ci sono clienti/zone/tipologie dove vuole essere informato *prima* del contatto?
+- Ci sono clienti/zone/tipologie dove vuole essere informato _prima_ del contatto?
 - Vuole approvare ogni email che l'AI scrive, o solo quelle sopra una certa soglia?
 
 **G. Stile comunicativo (2 min)**
+
 - Come si presenta di solito? Qual e' la frase di apertura tipica?
 - Ci sono cose che non vuole mai dire o promettere?
 - Qual e' il tono: formale, amichevole, tecnico, passionale?
@@ -87,6 +105,7 @@ Questa e' la cosa che Andrea M ha flaggato nel feedback al proposal ("servono co
 - Dialettismi o termini tecnici che usa sempre?
 
 **H. Processo attuale + definizione di successo (2 min)**
+
 - Quanti nuovi clienti Milano ha acquisito nell'ultimo trimestre? Come?
 - Quanto tempo dedica alla parte commerciale a settimana?
 - Ha un CRM, un foglio Excel, o tiene tutto a mente?
@@ -96,45 +115,56 @@ Questa e' la cosa che Andrea M ha flaggato nel feedback al proposal ("servono co
 - Cosa sarebbe un fallimento accettabile vs un fallimento grave?
 
 **I. Stagionalita' e timing (1 min)**
+
 - Il cremoso ha picchi di consumo? (autunno/inverno per taglieri/panini caldi?)
 - Quando e' il momento sbagliato per approcciare un paninaro? (agosto, feste)
 - Ci sono fiere/eventi dove e' presente e puo' invitare prospect?
+
+**L. Idee gestione logistica (1 min)**
+
+- Immaginiamo come possiamo gestire last maile delivery per creare un modello riutilizzabile e punto stoccaggio zona turati esmepio di ambassador
 
 ---
 
 ### Sessione 2 — Visita al caseificio (1h, registratore acceso)
 
-Obiettivo: catturare **storia, processo, aneddoti, narrativa personale**. Sono le risposte che rendono il Digital Twin capace di *raccontare* Tosi invece di descriverlo. Vengono meglio mentre Andrea M ti mostra fisicamente il caseificio.
+Obiettivo: catturare **storia, processo, aneddoti, narrativa personale**. Sono le risposte che rendono il Voice Twin capace di _raccontare_ Tosi invece di descriverlo. Vengono meglio mentre Andrea M ti mostra fisicamente il caseificio.
 
 **Traccia (non rigida — lasciare parlare, intervenire solo per scavare):**
 
 **Storia e famiglia**
+
 - Come e' nato il caseificio? Storia della famiglia, generazioni.
 - Perche' fa questo lavoro? Qual e' stato il momento in cui ha capito "questo e' il mio mestiere"?
-- Cosa fa lui *personalmente* ogni giorno in caseificio?
+- Cosa fa lui _personalmente_ ogni giorno in caseificio?
 - 2-3 aneddoti che racconta sempre durante le degustazioni con i clienti.
 
 **Prodotto — genesi e filosofia**
+
 - Quando e come e' nata l'idea del cucchiaio?
 - Perche' "senza crosta"? Perche' 1kg? Decisioni progettuali.
 - Cosa fa lui che un industriale **non puo' fare**? (punti tecnici precisi, non slogan)
 
 **Processo produttivo (mentre mostra)**
+
 - Provenienza latte: allevamenti, distanza, razza delle bovine.
 - Stagionatura 90 gg su assi di legno: dove, come, chi controlla.
 - Controlli qualita' — cosa guarda, cosa sente, cosa assaggia.
 - Certificazioni oltre DOP: Slow Food? Presidi? Premi vinti? Articoli stampa?
 
 **Clienti e storie**
+
 - 2-3 storie di clienti attuali felici. Chi sono, cosa fanno con il cremoso, come li ha conquistati.
 - Ricette signature che i suoi clienti migliori hanno creato col cremoso.
 - Testimonial o quote che puo' riutilizzare.
 
 **Competizione profonda**
-- Oltre a nomi e prezzi: *perche'* un cliente sceglie Tosi vs Palzola vs Igor vs Arrigoni?
+
+- Oltre a nomi e prezzi: _perche'_ un cliente sceglie Tosi vs Palzola vs Igor vs Arrigoni?
 - Cosa fanno i competitor che lui non fa? E viceversa?
 
 **Asset da catturare durante la visita**
+
 - Video processo (anche col telefono va benissimo)
 - Foto alta qualita': Andrea al lavoro, assi di legno, interno caseificio
 - Audio della narrazione (registratore acceso dall'inizio)
@@ -143,15 +173,15 @@ Obiettivo: catturare **storia, processo, aneddoti, narrativa personale**. Sono l
 
 ### Materiali da raccogliere via WhatsApp/email
 
-| Materiale | Stato | Serve per |
-|---|---|---|
-| Scheda tecnica cremoso 1kg | Abbiamo gia' | Conoscenza prodotto nel Digital Twin |
-| Listino prezzi aggiornato | **Da chiedere** | Calcolo margini, obiezioni prezzo |
-| Lista clienti attuali Milano | **Da chiedere** | Evitare contatti doppi + social proof |
-| Competitor e prezzi loro | **Da chiedere** | Posizionamento nel Digital Twin |
-| Foto prodotto alta qualita' | Abbiamo gia' | Allegato email Fase 3 |
-| Video/foto produzione | **Da catturare in visita** | Case study + asset email |
-| Menu/ricette di clienti attuali | **Da chiedere** | Briefing card — esempi d'uso |
+| Materiale                       | Stato                      | Serve per                             |
+| ------------------------------- | -------------------------- | ------------------------------------- |
+| Scheda tecnica cremoso 1kg      | Abbiamo gia'               | Conoscenza prodotto nel Voice Twin  |
+| Listino prezzi aggiornato       | **Da chiedere**            | Calcolo margini, obiezioni prezzo     |
+| Lista clienti attuali Milano    | **Da chiedere**            | Evitare contatti doppi + social proof |
+| Competitor e prezzi loro        | **Da chiedere**            | Posizionamento nel Voice Twin       |
+| Foto prodotto alta qualita'     | Abbiamo gia'               | Allegato email Fase 3                 |
+| Video/foto produzione           | **Da catturare in visita** | Case study + asset email              |
+| Menu/ricette di clienti attuali | **Da chiedere**            | Briefing card — esempi d'uso          |
 
 ---
 
@@ -164,27 +194,30 @@ I 252 prospect sono in `tosi-scraping/output/prospects_turati.csv`. Vanno import
 ### Decisioni da prendere
 
 **A. Sostituire o aggiungere?**
+
 - Il CRM ha gia' 1400+ companies (scraping nazionale precedente)
 - I 252 nuovi sono specifici per zona Turati
 - **Opzione consigliata:** Creare un gruppo "Zona Turati" nel CRM e importare i 252 come nuove companies assegnate a quel gruppo. Non eliminare le vecchie — potrebbero servire per fasi future.
 
 **B. Colonne aggiuntive?**
+
 - Il CSV ha campi che il CRM non ha ancora: `email`, `instagram`, `google_rating`, `google_reviews`, `google_maps`
 - **Serve:** Aggiungere queste colonne alla tabella `companies` in Supabase prima dell'import
 - Lavoro nel CRM repo, branch `feat/ai-sales-agent`
 
 **C. Filtro qualita'?**
+
 - 252 e' troppo per la Fase 1 (briefing cards costano tempo e attenzione)
 - **Proposta:** Filtrare i top ~50 per priority (rating alto + reviews + ha website + ha email) e generare briefing cards solo per quelli
 - I restanti 200 restano nel CRM come pipeline futura
 
 ---
 
-## 4. Digital Twin — System Prompt v1
+## 4. Voice Twin — System Prompt v1 (caricato in Claudio)
 
 ### Struttura del prompt
 
-Il Digital Twin sara' un system prompt che viene caricato in ogni chiamata Claude API. Vive in `/prompts/digital-twin-v1.md` nel CRM repo.
+Il Voice Twin sara' il system prompt che Claudio (l'agent AI) carica in ogni chiamata Claude API. Vive in `/prompts/voice-judgment-model-v1.md` nel CRM repo. Ogni volta che Claudio scrive una briefing card, propone uno script di apertura, valuta un prospect o draftizza un'email, sta eseguendo il Voice Twin del maestro.
 
 **Sezioni previste:**
 
@@ -227,15 +260,15 @@ Il Digital Twin sara' un system prompt che viene caricato in ogni chiamata Claud
 
 ### Cosa serve PRIMA di scrivere il prompt
 
-| Input | Fonte | Stato |
-|---|---|---|
-| Risposte intervista | Andrea Tosi | **Da fare** |
-| Schede tecniche | Docs esistenti | Disponibile |
-| Listino prezzi | Andrea Tosi | **Da chiedere** |
-| Competitor/prezzi | Andrea Tosi | **Da chiedere** |
-| Tono comunicativo | Intervista | **Da fare** |
+| Input               | Fonte          | Stato           |
+| ------------------- | -------------- | --------------- |
+| Risposte intervista | Andrea Tosi    | **Da fare**     |
+| Schede tecniche     | Docs esistenti | Disponibile     |
+| Listino prezzi      | Andrea Tosi    | **Da chiedere** |
+| Competitor/prezzi   | Andrea Tosi    | **Da chiedere** |
+| Tono comunicativo   | Intervista     | **Da fare**     |
 
-**Non possiamo scrivere il Digital Twin senza l'intervista.** E' il passo bloccante.
+**Non possiamo scrivere il Voice Twin senza l'intervista.** E' il passo bloccante.
 
 ---
 
@@ -243,7 +276,8 @@ Il Digital Twin sara' un system prompt che viene caricato in ogni chiamata Claud
 
 ### Come funzionano
 
-Per ogni prospect, Claude (con il Digital Twin system prompt) analizza:
+Per ogni prospect, Claude (con il Voice Twin system prompt) analizza:
+
 1. Dati Google Places (rating, tipo, indirizzo, fascia prezzo)
 2. Sito web del locale (menu, posizionamento, stile)
 3. Contesto zona (vicinanza ad altri prospect, logistica)
@@ -282,7 +316,7 @@ SCRIPT APERTURA: [2-3 frasi personalizzate per questo locale]
 BLOCCO 1: Cose che Andrea C. puo' fare subito (senza Andrea Tosi)
 ├── Import 252 prospect nel CRM (aggiungere colonne + gruppo)
 ├── Nuove tabelle Supabase (interactions, briefing_cards, email_drafts)
-├── Preparare la struttura del Digital Twin prompt (sezioni vuote)
+├── Preparare la struttura del Voice Twin prompt (sezioni vuote)
 └── Briefing Card UI component nel CRM (shell, senza dati)
 
 BLOCCO 2: Cose che richiedono Andrea Tosi
@@ -292,7 +326,7 @@ BLOCCO 2: Cose che richiedono Andrea Tosi
 └── Revisione 3-4 briefing cards campione per calibrare il tono
 
 BLOCCO 3: Dopo l'intervista
-├── Compilare il Digital Twin v1 con le risposte
+├── Compilare il Voice Twin v1 con le risposte
 ├── Generare briefing cards per i top ~50 prospect
 ├── Andrea Tosi revisiona le prime cards → feedback → calibrazione
 └── Fase 1 completata → si passa alla Fase 2 (pipeline)
@@ -300,7 +334,7 @@ BLOCCO 3: Dopo l'intervista
 
 ### Priorita' immediata
 
-**Fissare le due sessioni con Andrea Tosi.** Tutto il resto (import, tabelle, UI) si puo' fare in parallelo, ma il Digital Twin — il cuore della Fase 1 — e' bloccato fino a quando non abbiamo le sue risposte.
+**Fissare le due sessioni con Andrea Tosi.** Tutto il resto (import, tabelle, UI) si puo' fare in parallelo, ma il Voice Twin — il cuore della Fase 1 — e' bloccato fino a quando non abbiamo le sue risposte.
 
 **Proposta messaggio ad Andrea Tosi:**
 
@@ -315,11 +349,10 @@ BLOCCO 3: Dopo l'intervista
 >
 > 1. Una call veloce di 20 minuti su come gestisci ordini, consegne, degustazioni,
 >    e su cosa vuoi che io possa decidere da solo vs cosa vuoi approvare tu.
->
 > 2. Una visita in caseificio di circa un'ora, quando ti fa comodo. Vorrei registrare
 >    mentre mi racconti la storia, il processo, e gli aneddoti che usi con i clienti.
->    Mi serve per costruire bene il "gemello digitale" e mi serve anche come
->    materiale per il case study con Anthropic.
+>    Mi serve per insegnare al sistema AI come parli e come decidi tu, e
+>    mi serve anche come materiale per il case study con Anthropic.
 >
 > Quando hai spazio nelle prossime due settimane?
 >
@@ -329,15 +362,15 @@ BLOCCO 3: Dopo l'intervista
 
 ## 7. Rischi e Mitigazioni
 
-| Rischio | Mitigazione |
-|---|---|
+| Rischio                                   | Mitigazione                                                               |
+| ----------------------------------------- | ------------------------------------------------------------------------- |
 | Andrea Tosi non ha tempo per l'intervista | Mandare le domande via email/WhatsApp. Anche risposte scritte funzionano. |
-| Il Digital Twin non cattura bene il tono | Generare 3-4 cards campione e farle revisionare. Iterare. |
-| 252 prospect sono troppi per la Fase 1 | Filtrare top ~50 per priority. I restanti entrano dopo. |
-| Briefing cards sono troppo generiche | Aggiungere analisi menu dal sito web (il 84% ha websiteUri). |
-| Il CRM non ha le colonne per i nuovi dati | Aggiungere prima dell'import. Schema migration. |
+| Il Voice Twin non cattura bene il tono  | Generare 3-4 cards campione e farle revisionare. Iterare.                 |
+| 252 prospect sono troppi per la Fase 1    | Filtrare top ~50 per priority. I restanti entrano dopo.                   |
+| Briefing cards sono troppo generiche      | Aggiungere analisi menu dal sito web (il 84% ha websiteUri).              |
+| Il CRM non ha le colonne per i nuovi dati | Aggiungere prima dell'import. Schema migration.                           |
 
 ---
 
-*Questo documento viene aggiornato man mano che la Fase 1 progredisce.*
-*Prossimo aggiornamento: dopo l'intervista con Andrea Tosi.*
+_Questo documento viene aggiornato man mano che la Fase 1 progredisce._
+_Prossimo aggiornamento: dopo l'intervista con Andrea Tosi._

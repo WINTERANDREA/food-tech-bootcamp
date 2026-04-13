@@ -48,9 +48,13 @@ Come possiamo misurare come funzionano le cose oggi, senza AI. Quanti contatti a
 
 ---
 
-### Fase 1 — Digital Twin + Schede Informative (Settimana 3-5)
+### Fase 1 — Voice Twin + Schede Informative (Settimana 3-5)
 
-Costruiamo un "gemello digitale" di Andrea M — un'AI che conosce i vostri prodotti, la vostra storia, il posizionamento di mercato, i competitor.
+Costruiamo un **Voice Twin** del maestro artigiano — in parole semplici: un'AI che impara *come parla* e *come decide* il maestro (tono, obiezioni tipiche, cosa non direbbe mai, cosa considera un buon cliente), sulla base dei vostri prodotti, della vostra storia, del posizionamento di mercato e dei competitor. Nel caso Tosi il maestro sara' Andrea M.
+
+> **Nota terminologica.** Usiamo "Voice Twin" (non "gemello digitale" / "digital twin") perche' quel termine nasce nell'industria pesante (Tesla, NVIDIA) e implica sensori real-time su un oggetto fisico. Qui l'oggetto e' la conoscenza tacita di un maestro artigiano, quindi "Voice Twin" e' piu' onesto: il sistema gemella solo la **voce** e il criterio decisionale di chi conosce il prodotto meglio di chiunque altro. "Maestro" e' un parametro — oggi e' il produttore, domani potrebbe essere un sales specialist esterno se la voce del produttore non funziona.
+>
+> **L'agente si chiama Claudio.** Claudio e' l'italianizzazione di Claude (il modello di Anthropic che sta sotto). Il nome dichiara cosa c'e': l'intelligenza di Anthropic, resa italiana, al servizio di un artigiano italiano. Claudio e' l'agente che *agisce* (scrive email, legge menu, genera briefing card, chiama telefono); il Voice Twin e' il *cosa* (come parla e decide il maestro); il Maestro e' *chi* presta la voce (Andrea Tosi, in questo caso). Tre livelli ben distinti.
 
 Poi la usiamo per generare schede informative per tutti i 47 target nella zona Turati di Milano.
 
@@ -198,7 +202,7 @@ L'AI fa il lavoro di un analista commerciale a tempo pieno. Gli Andrea continuan
 Aprile 2026         Maggio 2026         Giugno 2026         Luglio 2026
 |----- Fase 0 ------|----- Fase 1 ------|----- Fase 2 ------|- Fase 3 → ...
   Baseline             Schede              Pipeline            Email +
-  + Database           + Digital Twin      + Follow-up         Coordinatore
+  + Database           + Voice Twin         + Follow-up         Coordinatore
 
                      Primo output AI      Pipeline live        Sistema completo
                      nel CRM              in tempo reale       operativo

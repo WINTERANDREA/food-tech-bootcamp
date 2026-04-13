@@ -23,7 +23,8 @@ description: >
 - **Team:** Andrea C. (FTB founder) = builds + field sales. Andrea M. (Tosi CEO) = supervises, approves.
 - **Location:** Caseificio Tosi, Gattico (NO). Stocking point: Bar Turati (Via Turati 7, Milano).
 - **Target zone:** Zona Turati, Milano (2km radius: Brera, Porta Nuova, Garibaldi, Isola, Porta Venezia, Moscova).
-- **Digital Twin:** Not written. Blocked by baseline interview. Questions prepared (01-TOSI-Phase1-Plan.md, 2 sessions: call 20min + visita caseificio 1h).
+- **Agent identity: Claudio.** The AI agent that executes the Voice Twin is named **Claudio** — italianization of Claude. Three-layer model: (1) **Maestro** = the human whose voice and judgment are captured (Andrea Tosi for this experiment, parametric for others); (2) **Voice Twin** = the system prompt encoding the maestro's voice + decision criteria; (3) **Claudio** = the agent that acts using the Voice Twin (sends emails, generates briefing cards, scores prospects). Claudio is the "who", Voice Twin is the "what", Maestro is the "whose voice".
+- **Voice Twin:** Not written. Blocked by baseline interview. Questions prepared (01-TOSI-Phase1-Plan.md, 2 sessions: call 20min + visita caseificio 1h). Lives at `/prompts/voice-judgment-model-v1.md` in the CRM repo.
 - **Email outreach:** Will use `hello@tosigorgonzola.com` via Resend. Phase 3. Andrea Tosi flagged email deliverability as biggest risk.
 - **Baseline metrics:** Not collected. Need interview with Andrea Tosi.
 - **Case study permission:** Secured (2026-03-20).
@@ -89,7 +90,7 @@ test data (Villa Crespi, Osteria Francescana, etc.) in the menu-extraction repo.
 |---|---|
 | 0: Baseline | Baseline interview notes, current process metrics |
 | 0: Scraping | Scraping methodology doc: queries used, filters applied, how many results, data quality |
-| 1: Digital Twin | System prompt rationale: why each section, what knowledge was included, calibration notes |
+| 1: Voice Twin | System prompt rationale: why each section, what knowledge was included, calibration notes |
 | 2: Pipeline | Mid-experiment blog draft, weekly metrics snapshots |
 | 3: Email | Email template analysis: what worked, what got overridden, response rates |
 | 4: Measurement | Full case study (3 versions: Anthropic, UNISG, public blog) |

@@ -40,9 +40,13 @@ The 3 Andreas stay in control. They review every email before it's sent. They de
 
 ---
 
-### Phase 1 — Digital Twin + Briefing Cards (Week 3-5)
+### Phase 1 — Voice Twin + Briefing Cards (Week 3-5)
 
-**What happens:** We build an AI "digital twin" of Andrea Tosi — an AI that knows your products, your story, your market positioning, your competitors. Then we use it to generate intelligence briefing cards for all 47 Mondo Panini targets.
+**What happens:** We build a **Voice Twin** of the master artisan — in plain language: an AI that learns *how the master talks* and *how the master decides* (tone, recurring objections, what they'd never say, what they consider a good customer), grounded in your products, your story, your market positioning, and your competitors. In the Tosi case, the master is Andrea Tosi himself. Then we use the Voice Twin to generate intelligence briefing cards for all 47 Mondo Panini targets.
+
+> **Terminology note.** We deliberately avoid the phrase "digital twin" — that term comes from heavy industry (Tesla, NVIDIA Omniverse) and implies real-time sensor telemetry from a physical object. What we're capturing here is the tacit knowledge of a master artisan, so "Voice Twin" is the accurate description: the system twins the **voice** and decision criteria, nothing more. The "master" role is a parameter — today it's Andrea Tosi, tomorrow it could be another producer or an external sales specialist whose voice proves to work better for the same product.
+>
+> **The agent's name is Claudio.** Claudio is the Italianization of Claude (Anthropic's model, which powers the stack). The name makes the tech visible: Anthropic's intelligence, rendered Italian for an Italian artisan. Three-layer model: **Claudio** is the *who* (the agent that writes emails, reads menus, generates briefing cards, makes calls); the **Voice Twin** is the *what* (how the master talks and decides); the **Master** is *whose voice* is captured (Andrea Tosi, in this case). Named after Claudio Monteverdi — the composer who built the Baroque future *inside* the Renaissance tradition, which is our manifesto in one name.
 
 **What a briefing card looks like:**
 
@@ -190,7 +194,7 @@ The AI does the work of a full-time sales analyst. The 3 Andreas keep doing what
 April 2026          May 2026            June 2026           July 2026
 |----- Phase 0 -----|----- Phase 1 -----|----- Phase 2 -----|- Phase 3 → ...
   Baseline             Briefing Cards      Pipeline            Email +
-  + Database           + Digital Twin      + Follow-ups        Coordinator
+  + Database           + Voice Twin         + Follow-ups        Coordinator
 
                      First AI output      Live pipeline        Full system
                      in CRM               tracking             operational
