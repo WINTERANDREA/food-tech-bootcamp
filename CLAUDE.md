@@ -6,11 +6,15 @@ FTB is a lab building AI tools for Italy's 300,000 artisanal food producers. Mis
 
 Not an agency. Not a consultancy. A lab. The work changes — the mission doesn't.
 
-## Current State (2026-04-13)
+## Current State (2026-04-15)
 
-- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. **Baseline interview sessione 1 completata e sintetizzata** → Voice Twin system prompt sbloccato.
-- **Agent identity:** The AI agent that executes the Voice Twin is named **Claudio** — italianization of Claude. The name makes the stack visible: Anthropic's intelligence, rendered Italian for Italian artisans. Claudio acts through the Voice Twin of the Maestro (in Tosi's case, Andrea Tosi).
+- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. Baseline interview sessione 1 sintetizzata → Voice Twin v0.1 draft prodotto → call validazione stile (04b) → risposte Andrea M (04c) → **agenda decisioni Fase 1 pronta (04d), 10 min call con Andrea M pendente per sbloccare v0.2**.
+- **Agent identity:** Proposta in corso — **Claudia** (non più Claudio). Andrea M in 04c: *"Claudio come nome non mi piace tantissimo, capisco derivi da Claude, ci rifletto"*. Andrea C ha proposto Claudia come alternativa: stessa etimologia Claude, suono più pulito in italiano. **In attesa di conferma call 04d.** Il principio non cambia: agent AI dichiarato, non finge di essere umano. Il Voice Twin resta italianizzato — la traccia di Anthropic nello stack rimane visibile.
+- **Decisioni proposte a Andrea M in call 04d (pendenti):** (1) Naming → Claudia. (2) Offerta asimmetrica **1 kg gratis: *"se non lo trovate più buono del vostro, lo paghiamo noi"*** — derivata letteralmente dal reframing del Maestro nella baseline. Costo ipotesi peggiore su 30 prospect ~€400. (3) Disclosure AI stratificata: non più in riga 1, ma apertura neutra + middle esplicativo + firma esplicita *agent AI del Caseificio Tosi*. (4) Firma S2 con contatti umani reali di Andrea Casero. (5) Follow-up: una sola mail a 7 giorni poi stop. (6) Gesto singolo di default per nuovi prospect (Andrea M sceglie tra 4 candidati). (7) "Tutto fatto a mano" come cornice usata in combinazione con un gesto concreto, mai da sola.
+- **Decisione Andrea C consolidata (non negoziata con Andrea M):** **Nessuna menzione di altri clienti nelle cold email di Fase 1.** La regola *"mai citare altri clienti, inclusa Berberè"* esistente resta in vigore e il tema non si riapre in Fase 1. Vedi memoria `project_tosi_phase1_rules.md`.
 - **Baseline interview:** Sessione 1 svolta 2026-04-12. Sintesi master in `Projects/Tosi/Docs/02-TOSI-Baseline-Interview-Synthesis.md` (12 sezioni autoconsistenti, integra `NOTE TOSI.xlsx` + scheda tecnica cucchiaio 1kg). Questa è la fonte autoritativa per il Voice Twin e per tutti gli artefatti Fase 1.
+- **Voice Twin artifacts chain:** `02-TOSI-Baseline-Interview-Synthesis.md` (fonte) → `03-TOSI-Voice-Twin-System-Prompt.md` v0.1 (draft) → `04-TOSI-Call-Validazione-Stile-Claudio.md` + `04b-*-COMPACT.md/pdf` (call di stile) → `04c-*-Risposte.pdf` (Andrea M answers 2026-04-15) → `04d-TOSI-Call-Decisioni-Fase1-Agenda.md` + `-COMPACT.md/pdf` + `-Email-Aggancio-Andrea-M.md` (nuova agenda strategica 10 min, in attesa call).
+- **Contatti umani Andrea Casero (per firma Claudia e mail aggancio):** Head of Research and Development · Caseificio Tosi · Via Maggiate 6, Gattico-Veruno (NO), Italia · `+39 379 132 3187` · `sviluppo@tosigorgonzola.com`. Il dominio corretto è `tosigorgonzola.com` (il draft v0.1 del Voice Twin aveva erroneamente `caseificiotosi.it` → da correggere in v0.2).
 - **Positioning consolidato:** Claim firma **"Latte, Uomo, Legno, Tempo"**. Asse narrativo in sviluppo "Le mani sono il nostro manifesto / maniaci". Parole bandite: `eccellenza`, `unico`, `premium`. Concetti `qualità/artigianalità/tradizione` sottintesi, mai nominati. Claim numerici autorizzati: `600L caldaia → 6 forme`, `1.5% sale`, `zero scarto`, `TMC 30gg`.
 - **Modello Ambassador logistico** (decisione nuova critica): Tosi Gattico → Ambassador locale (zona Turati, stocca 20-30kg, fattura come rivenditore autorizzato) → rider refrigerato (Glovo/Deliveroo) → paninoteca/pizzeria. Velocità target ordine → consegna in ore ("1×2, non B2B"). Pagamento carta immediato. Replicabile Roma/Napoli — **questa è la dimensione replicabile da vendere ad Anthropic/EU**.
 - **Fase 1 prospect pool:** paninerie/focaccerie/bistrot **+ pizzerie gourmet** (nessuna esclusione a priori per `tipo locale`). Campo esistente sufficiente — nessun nuovo attributo CRM.
@@ -27,7 +31,7 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 - **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
 - **Partnerships:** Anthropic Ambassador application submitted. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** (1) Draft `03-TOSI-Voice-Twin-System-Prompt.md` usando §1/§2/§4/§8 della sintesi. (2) Batch menu extraction 156 prospect rimanenti (pipeline stabile 100%, blacklist primary_type attiva). (3) Sessione 2 intervista Andrea Tosi (10 open questions, incluso modello Ambassador operativo). (4) Prima cold email pilota con validazione stile.
+- **Next milestone:** (1) Call 10 min con Andrea M sull'agenda 04d per sbloccare naming Claudia + offerta 1 kg + firma + disclosure stratificata + gesto default. (2) Aggiornare `03-TOSI-Voice-Twin-System-Prompt.md` → v0.2 con tutte le decisioni post-call + rename Claudio→Claudia + domain fix `caseificiotosi.it` → `tosigorgonzola.com`. (3) Rigenerare le tre email esempio con v0.2 + offerta 1 kg per OK finale di Andrea M. (4) Batch menu extraction 156 prospect rimanenti (pipeline stabile 100%). (5) Prima cold email pilota su 10 prospect selezionati entro la settimana successiva all'OK. (6) Sessione 2 intervista Andrea Tosi (10 open questions, incluso modello Ambassador operativo).
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 
@@ -96,6 +100,27 @@ Only load the skills you need. Every skill costs context.
 | **Strategy / partnerships / pitches** | Strategy + Manrique-CEO |
 | **Emails / formal communication** | Manrique-CEO |
 | **Cortilia work / general dev** | CLAUDE.md alone — no skills needed |
+
+## Generating PDFs from Markdown (without installing libraries)
+
+Per convertire un `.md` in `.pdf` senza installare `pandoc`, `weasyprint` o `wkhtmltopdf` — usa lo script already-in-repo `/tmp/md_to_pdf.py` che fa **Markdown → HTML → Chrome headless → PDF**. Dipende solo da Python 3 (stdlib) e Google Chrome (già installato su macOS).
+
+```bash
+python3 /tmp/md_to_pdf.py input.md output.pdf
+```
+
+Lo script:
+- Ha un mini-parser Markdown inline (headings, liste, blockquote, code fence, bold/italic, HR, paragraph)
+- Include CSS inline stile materic-minimal (sans-serif Helvetica, accent `#b4896d` sui blockquote, header con underline grigio)
+- Scrive `/tmp/_doc.html` come intermedio
+- Invoca `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=...`
+
+Gotchas noti:
+- Il parser spezza le liste numerate se ci sono righe vuote tra gli item (1. ... / blank / 2. ...) → risultano tre liste separate che ripartono da "1.". Fix: niente blank lines dentro la lista.
+- Checkbox unicode `☐` renderizzano nativamente, non serve HTML
+- Se lo script `/tmp/md_to_pdf.py` non c'è più (tmp wiped), lo ricreo al volo dalla memoria `reference_pdf_generation.md`.
+
+Pattern usato per i doc 04b/04d. Per stile diverso (es. case study formale), duplicare lo script e modificare la costante `CSS`.
 
 ## Key Rules
 
