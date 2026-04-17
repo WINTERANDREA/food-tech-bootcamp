@@ -38,13 +38,13 @@
 
 > Buongiorno,
 >
-> mi chiamo Claudia. Scrivo per il **Caseificio Tosi** di Gattico-Veruno, sul Lago Maggiore. Vi cerco perche il vostro menu mostra un'attenzione alla materia prima che non e comune nemmeno a Brera, e perche tra i formaggi nei vostri panini non vedo un gorgonzola con un'identita forte.
+> mi chiamo Claudia. Scrivo per il **Caseificio Tosi** di Gattico-Veruno, sul Lago Maggiore. Vi cerco perché il vostro menu mostra un'attenzione alla materia prima che non è comune nemmeno a Brera, e perché tra i formaggi nei vostri panini non vedo un gorgonzola con un'identità forte.
 >
-> Produciamo un Gorgonzola Dolce a Cucchiaio in vaschetta da circa un chilo, senza crosta, zero scarto. Il nostro casaro lavora in caldaie da seicento litri — sei forme alla volta — e ogni forma la segue dall'inizio alla fine, con le mani.
+> Produciamo un Gorgonzola Dolce a Cucchiaio che confezioniamo in vaschetta da circa un chilo, senza crosta, zero scarto. Il nostro casaro lavora in caldaie da seicento litri — sei forme alla volta — e ogni forma la segue dall'inizio alla fine, con le mani.
 >
-> Le email le scrivo io. Andrea — il mio collega, umano — preferisce spendere il suo tempo in degustazione.
+> Le email le scrivo io. Andrea, che segue lo sviluppo dei nostri prodotti, preferisce dedicarsi alla degustazione.
 >
-> Se vi va, passa di persona con una vaschetta da lasciarvi qualche giorno. La provate sui vostri panini, senza impegno. Se poi vi fa piacere dirci com'e andata, e il vostro giudizio di mestiere che ci interessa.
+> Se vi va, passa di persona con una vaschetta da lasciarvi qualche giorno. La provate sui vostri panini, senza impegno. Se ci fate sapere come va sui vostri panini, per noi è un aiuto.
 >
 > Un caro saluto,
 >
@@ -71,11 +71,11 @@
 
 > Buongiorno,
 >
-> mi chiamo Claudia, scrivo per il **Caseificio Tosi** di Gattico-Veruno. Vi cerco perche tra le pizzerie di Milano la vostra cura particolarmente i topping fuori forno — qualcosa che emerge anche dalle recensioni dei vostri clienti.
+> mi chiamo Claudia, scrivo per il **Caseificio Tosi** di Gattico-Veruno. Vi cerco perché tra le pizzerie di Milano la vostra cura particolarmente i topping fuori forno — qualcosa che emerge anche dalle recensioni dei vostri clienti.
 >
-> Produciamo un Gorgonzola Dolce a Cucchiaio in vaschetta da un chilo, senza crosta, con trenta giorni di TMC. Non serve cuocerlo per renderlo cremoso: e gia la sua natura. Basta il calore della pizza in uscita per valorizzarlo ancora di piu in sapore e texture, senza alterarne il gusto.
+> Produciamo un Gorgonzola Dolce a Cucchiaio che confezioniamo in vaschetta da un chilo, senza crosta, con trenta giorni di TMC. Non serve cuocerlo per renderlo cremoso: è già la sua natura. Basta il calore della pizza in uscita per valorizzarlo ancora di più in sapore e consistenza, senza alterarne il gusto.
 >
-> Le email le scrivo io. Andrea — il mio collega, umano — preferisce spendere il suo tempo in degustazione.
+> Le email le scrivo io. Andrea, che di gorgonzola se ne intende da anni, preferisce dedicarsi alla degustazione.
 >
 > Se vi va, passa una mattina con una vaschetta da lasciarvi qualche giorno. La provate su una delle vostre pizze, senza impegno. Se poi vi fa piacere dirci cosa ne pensate, meglio ancora.
 >
@@ -104,9 +104,9 @@
 
 > Buongiorno,
 >
-> mi chiamo Claudia e scrivo per il **Caseificio Tosi**. Tra le focaccerie di Milano la vostra e una delle poche che tratta il ripieno con lo stesso peso dell'impasto — e un gorgonzola dolce sa entrare in una focaccia meglio di quanto si pensi.
+> mi chiamo Claudia e scrivo per il **Caseificio Tosi**. Tra le focaccerie di Milano la vostra è una delle poche che tratta il ripieno con lo stesso peso dell'impasto — e un gorgonzola dolce sa entrare in una focaccia meglio di quanto si pensi.
 >
-> Il nostro e un cucchiaio in vaschetta da un chilo, senza crosta. Tutto — caldaia, insacco, salatura — lo fa il casaro con le mani: non c'e un punto del processo dove una macchina sostituisce un gesto. L'azienda lo riassume in una frase: *Latte, Uomo, Legno, Tempo*.
+> Il nostro è un cucchiaio in vaschetta da un chilo, senza crosta. Tutto — caldaia, insacco, salatura — lo fa il casaro con le mani: non c'è un punto del processo dove una macchina sostituisce un gesto. L'azienda lo riassume in una frase: *Latte, Uomo, Legno, Tempo*.
 >
 > Io ricerco i locali di Milano che potrebbero valorizzare al meglio il nostro prodotto. Andrea — laureato in Scienze Gastronomiche — viene di persona per farvi provare il nostro fiore all'occhiello, il Tosi a Cucchiaio.
 >
