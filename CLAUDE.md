@@ -97,6 +97,7 @@ Only load the skills you need. Every skill costs context.
 | **Website development** | Brand-Identity-Website + Website-Build-Prompt |
 | **Blog / LinkedIn / content** | Content-Engine + Manrique-CEO |
 | **Tosi experiment** | Tosi-Experiment (+ Manrique-CEO if writing about it) |
+| **Generate / regenerate Claudia cold emails (CLI, subscription)** | Claudia-Email-Generator |
 | **EU funding applications** | EU-Bandi-Navigator + Content-Engine |
 | **Producer field research** | Artisan-Discovery |
 | **Strategy / partnerships / pitches** | Strategy + Manrique-CEO |
