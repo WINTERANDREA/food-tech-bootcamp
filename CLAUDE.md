@@ -82,6 +82,7 @@ Skills/
   FTB-EU-Bandi-Navigator.skill.md      → EU funding landscape, application writing
   FTB-Manrique-CEO.skill.md            → Communication voice, strategic push-back
   FTB-Rebrand-Lab-Identity.md          → LEGACY (superseded by Brand-Identity-Website)
+  FTB-Roadmap-2026-2027.skill.md       → Master phased roadmap: fasi, cash flow, decisione fiscale, cosa NON faccio
   FTB-Strategy.skill.md               → Partnerships, funding pipeline, legal, timeline
   FTB-Tosi-Experiment.skill.md         → AI sales agent architecture, metrics, documentation
   FTB-Website-Build-Prompt.md          → Routing, SEO, Next.js structure, deployment
@@ -99,6 +100,7 @@ Only load the skills you need. Every skill costs context.
 | **EU funding applications** | EU-Bandi-Navigator + Content-Engine |
 | **Producer field research** | Artisan-Discovery |
 | **Strategy / partnerships / pitches** | Strategy + Manrique-CEO |
+| **Roadmap / phase priorities / fiscal / "do I accept this client?"** | Roadmap-2026-2027 (+ Strategy if partnership/funding angle) |
 | **Emails / formal communication** | Manrique-CEO |
 | **Cortilia work / general dev** | CLAUDE.md alone — no skills needed |
 
