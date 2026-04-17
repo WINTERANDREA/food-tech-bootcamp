@@ -1,12 +1,10 @@
-# Tre email esempio v0.2 — per OK finale
+# Tre email esempio v0.2 (revisione Andrea C 2026-04-18) — per OK finale
 
-**Cosa e cambiato rispetto alla v0.1 (04b):**
-- Naming: **Claudia** (non Claudio)
-- **Offerta 1 kg rimossa** (come da tua indicazione: *"invogliare all'assaggio, incentivare il feedback"*)
-- Proposta ridotta alla **sola Fase 1** del tuo modello: Andrea viene, porta una vaschetta, zero impegno
-- Disclosure AI stratificata: **non piu in riga 1**, ma nell'apertura neutra + middle + firma esplicita
-- Firma S2 con i tuoi contatti reali (`sviluppo@tosigorgonzola.com`)
-- Gesto default: caldaia 600l → 6 forme (come da tuo OK)
+**Cosa e cambiato in questa revisione (post primo feedback):**
+- **Middle block riscritto su tutte e 3**: disclosure + motivo di Andrea in persona separati dal paragrafo della proposta. Due paragrafi corti invece di uno denso.
+- **Nuova firma**: tolto *"vi risponde di persona"*, sostituito con cornice *"Riferimento per la degustazione"*.
+- **Email 2**: riformulato l'aggancio alle recensioni (non piu un confronto condimenti vs impasto). Invertita la logica sulla cremosita come suggerito.
+- **Email 3**: sostituito *"il Maestro ha una frase"* con *"l'azienda lo riassume"*. Middle block riscritto con *"io ricerco i locali a Milano che potrebbero valorizzare al meglio il nostro prodotto"* + *"Andrea laureato in Scienze Gastronomiche"* + *"il nostro fiore all'occhiello, il Tosi a Cucchiaio"*.
 
 Alla fine di ognuna: ☐ giusta ☐ quasi ☐ falsa, piu una riga note libere.
 
@@ -22,16 +20,18 @@ mi chiamo Claudia. Scrivo per il **Caseificio Tosi** di Gattico-Veruno, sul Lago
 
 Produciamo un Gorgonzola Dolce a Cucchiaio in vaschetta da circa un chilo, senza crosta, zero scarto. Il nostro casaro lavora in caldaie da seicento litri — sei forme alla volta — e ogni forma la segue dall'inizio alla fine, con le mani.
 
-Scrivo io le email cosi che il mio collega Andrea possa spendere il suo tempo in degustazione — lui e umano, e da voi arriva lui in persona. Se vi va, Andrea vi porta una vaschetta da provare sui vostri panini per qualche giorno. Nessun impegno. Dopo, se vi fa piacere, ci dite come l'avete trovata — e il vostro giudizio di mestiere che ci interessa.
+Le email le scrivo io. Andrea — il mio collega, umano — preferisce spendere il suo tempo in degustazione.
+
+Se vi va, passa di persona con una vaschetta da lasciarvi qualche giorno. La provate sui vostri panini, senza impegno. Se poi vi fa piacere dirci com'e andata, e il vostro giudizio di mestiere che ci interessa.
 
 Un caro saluto,
 
 Claudia — agent AI del Caseificio Tosi
 
-Andrea Casero vi risponde di persona
-Head of Research and Development · Caseificio Tosi
+Riferimento per la degustazione
+Andrea Casero · Head of R&D, Caseificio Tosi
 +39 379 132 3187 · sviluppo@tosigorgonzola.com
-Via Maggiate 6 · Gattico-Veruno (NO) · Italia
+Via Maggiate 6 · Gattico-Veruno (NO)
 
 ☐ giusta  ☐ quasi  ☐ falsa   note: _______________________________________
 
@@ -43,20 +43,22 @@ Via Maggiate 6 · Gattico-Veruno (NO) · Italia
 
 Buongiorno,
 
-mi chiamo Claudia, scrivo per il **Caseificio Tosi** di Gattico-Veruno. Vi cerco perche tra le pizzerie di Milano la vostra e tra quelle che curano i topping fuori forno — si capisce dalle recensioni, che parlano piu dei condimenti che dell'impasto (che comunque e buono).
+mi chiamo Claudia, scrivo per il **Caseificio Tosi** di Gattico-Veruno. Vi cerco perche tra le pizzerie di Milano la vostra cura particolarmente i topping fuori forno — qualcosa che emerge anche dalle recensioni dei vostri clienti.
 
-Produciamo un Gorgonzola Dolce a Cucchiaio in vaschetta da un chilo, senza crosta, con trenta giorni di TMC. E il tipo di prodotto che ha senso aggiungere a pizza finita: la cremosita c'e gia, non serve fondere nulla per tirarla fuori.
+Produciamo un Gorgonzola Dolce a Cucchiaio in vaschetta da un chilo, senza crosta, con trenta giorni di TMC. Non serve cuocerlo per renderlo cremoso: e gia la sua natura. Basta il calore della pizza in uscita per valorizzarlo ancora di piu in sapore e texture, senza alterarne il gusto.
 
-Le email le scrivo io, cosi il mio collega Andrea puo spendere il suo tempo in degustazione — e lui, umano, che da voi arriva in persona. Se vi va, Andrea passa una mattina con una vaschetta. La lasciate in cucina, la provate su una delle vostre pizze per qualche giorno. Senza impegno. Poi, se vi va, ci dite cosa ne pensate.
+Le email le scrivo io. Andrea — il mio collega, umano — preferisce spendere il suo tempo in degustazione.
+
+Se vi va, passa una mattina con una vaschetta da lasciarvi qualche giorno. La provate su una delle vostre pizze, senza impegno. Se poi vi fa piacere dirci cosa ne pensate, meglio ancora.
 
 Un saluto,
 
 Claudia — agent AI del Caseificio Tosi
 
-Andrea Casero vi risponde di persona
-Head of Research and Development · Caseificio Tosi
+Riferimento per la degustazione
+Andrea Casero · Head of R&D, Caseificio Tosi
 +39 379 132 3187 · sviluppo@tosigorgonzola.com
-Via Maggiate 6 · Gattico-Veruno (NO) · Italia
+Via Maggiate 6 · Gattico-Veruno (NO)
 
 ☐ giusta  ☐ quasi  ☐ falsa   note: _______________________________________
 
@@ -70,18 +72,20 @@ Buongiorno,
 
 mi chiamo Claudia e scrivo per il **Caseificio Tosi**. Tra le focaccerie di Milano la vostra e una delle poche che tratta il ripieno con lo stesso peso dell'impasto — e un gorgonzola dolce sa entrare in una focaccia meglio di quanto si pensi.
 
-Il nostro e un cucchiaio in vaschetta da un chilo, senza crosta. Tutto — caldaia, insacco, salatura — lo fa il casaro con le mani: non c'e un punto del processo dove una macchina sostituisce un gesto. Il Maestro ha una frase che riassume tutto: *Latte, Uomo, Legno, Tempo*.
+Il nostro e un cucchiaio in vaschetta da un chilo, senza crosta. Tutto — caldaia, insacco, salatura — lo fa il casaro con le mani: non c'e un punto del processo dove una macchina sostituisce un gesto. L'azienda lo riassume in una frase: *Latte, Uomo, Legno, Tempo*.
 
-Io scrivo, ma da voi arriva Andrea, umano e collega del casaro. Se vi va, Andrea passa con una vaschetta, la lasciate qualche giorno sul vostro bancone, la provate nelle vostre focacce. Nessun impegno, nessun discorso commerciale. Se ci raccontate com'e andata, ci fara piacere.
+Io ricerco i locali di Milano che potrebbero valorizzare al meglio il nostro prodotto. Andrea — laureato in Scienze Gastronomiche — viene di persona per farvi provare il nostro fiore all'occhiello, il Tosi a Cucchiaio.
+
+Se vi va, passa con una vaschetta da lasciarvi qualche giorno sul bancone: la provate nelle vostre focacce, senza impegno. Se ci raccontate com'e andata, meglio ancora.
 
 A presto,
 
 Claudia — agent AI del Caseificio Tosi
 
-Andrea Casero vi risponde di persona
-Head of Research and Development · Caseificio Tosi
+Riferimento per la degustazione
+Andrea Casero · Head of R&D, Caseificio Tosi
 +39 379 132 3187 · sviluppo@tosigorgonzola.com
-Via Maggiate 6 · Gattico-Veruno (NO) · Italia
+Via Maggiate 6 · Gattico-Veruno (NO)
 
 ☐ giusta  ☐ quasi  ☐ falsa   note: _______________________________________
 
