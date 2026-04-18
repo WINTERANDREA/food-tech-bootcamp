@@ -8,15 +8,15 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 
 > **Per capire come i 4 repo si tengono insieme, il data flow della pipeline, e lo schema Supabase**: leggi [`ARCHITECTURE.md`](./ARCHITECTURE.md). Questo file (CLAUDE.md) tratta stato corrente + convenzioni. L'architettura è separata perché cambia poco.
 
-## Current State (2026-04-17)
+## Current State (2026-04-18)
 
-- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. Baseline interview sintetizzata → Voice Twin v0.1 → call validazione stile (04b/04c) → agenda decisioni Fase 1 (04d) → **risposte Andrea M (04d-risposte, 2026-04-17)** → **Voice Twin v0.2 scritto e pronto** + tre email esempio rigenerate (doc `05-*`) in attesa di OK finale di Andrea M. CRM: route `/review` con toast notification e Resend live da `hello@tosigorgonzola.com`.
+- **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. Baseline interview sintetizzata → Voice Twin v0.1 → call validazione stile (04b/04c) → agenda decisioni Fase 1 (04d) → risposte Andrea M (04d-risposte, 2026-04-17) → Voice Twin v0.2 validato → **parere legale L. 34/2026 + DOP (doc 06, 2026-04-18)** → **Voice Twin v0.3 validato Andrea M (OK tutto, 2026-04-18)** + tre email esempio v0.3 validate. **Blocker unico per il deploy**: numero esatto di iscrizione all'Albo delle Imprese Artigiane CCIAA Novara (da Andrea Casero), placeholder `[XXX]` in firma S2. CRM: route `/review` con toast notification e Resend live da `hello@tosigorgonzola.com`.
 - **Agent identity:** **Claudia** (confermato Andrea M 2026-04-17). Etimologia Claude, suono piu pulito in italiano. Resta agent AI dichiarato, non finge di essere umana. La traccia di Anthropic nello stack rimane visibile.
 - **STRATEGIA CENTRALE: modello a 4 fasi** (proposta Andrea M, 2026-04-17 — sostituisce l'offerta asimmetrica 1kg). Scala di impegno progressivo: **Fase 1 → Sei interessato: Andrea C viene, lascia 1 vaschetta per provare, zero impegno** / Fase 2 → Hai provato, ti piace: Andrea torna con 2 vaschette, 1 paghi 1 no (mai menzionato in email) / Fase 3 → Vuoi diventare cliente: contrattualizzazione / Fase 4 → Ambassador: il locale ci nomina in menu/social, lo supportiamo. **Claudia opera SOLO in Fase 1.** Andrea M: *"se dobbiamo fare una prova non convenzionale, tanto vale farla bene. Forse ci costa il doppio, ma forse e meglio."* Memoria autoritativa: `project_tosi_four_phase_model.md`.
 - **Decisioni consolidate v0.2 (Andrea M 2026-04-17):** (1) Naming: Claudia ✓. (2) **Offerta 1kg "paghiamo noi se non e piu buono" RIMOSSA** — Andrea M: *"sembra quasi presuntuoso"*. Sostituita dalla logica a fasi. (3) Disclosure AI stratificata ✓. (4) Firma S2 con contatti Andrea Casero ✓. (5) Follow-up: una sola mail a 7 giorni, poi stop ✓. (6) Gesto default: `caldaia 600l → 6 forme` ✓. (7) "Tutto fatto a mano" come cornice con gesto concreto ✓.
 - **Decisione Andrea C consolidata:** Nessuna menzione di altri clienti nelle cold email di Fase 1. Regola hard, non si riapre. Vedi `project_tosi_phase1_rules.md`.
 - **Baseline interview:** Sessione 1 svolta 2026-04-12. Sintesi master in `Projects/Tosi/Docs/02-TOSI-Baseline-Interview-Synthesis.md` (12 sezioni autoconsistenti, integra `NOTE TOSI.xlsx` + scheda tecnica cucchiaio 1kg). Questa è la fonte autoritativa per il Voice Twin e per tutti gli artefatti Fase 1.
-- **Voice Twin artifacts chain:** `02-TOSI-Baseline-Interview-Synthesis.md` (fonte) → `03-TOSI-Voice-Twin-System-Prompt.md` **v0.2 (attivo, validato Andrea M)** → `04-TOSI-Call-Validazione-Stile-Claudio.md` + `04b-*-COMPACT.md/pdf` (call di stile) → `04c-*-Risposte.pdf` (risposte validazione) → `04d-TOSI-Call-Decisioni-Fase1-Agenda.md` + `-COMPACT.md/pdf` (agenda decisioni) → `04d-TOSI-Call-Decisioni-Fase1-COMPACT-risposte.pdf` (**risposte Andrea M 2026-04-17, include modello a 4 fasi**) → `05-TOSI-Email-Esempio-v0.2.md` + `-COMPACT.md/pdf` (tre email rigenerate per OK finale).
+- **Voice Twin artifacts chain:** `02-TOSI-Baseline-Interview-Synthesis.md` (fonte) → `03-TOSI-Voice-Twin-System-Prompt.md` **v0.3 (attivo, validato Andrea M 2026-04-18)** → `03b-TOSI-Voice-Twin-v0.2-vs-v0.3-DIFF.md/pdf` (delta v0.2→v0.3, OK Andrea M registrato) → `04-TOSI-Call-Validazione-Stile-Claudio.md` + `04b-*-COMPACT.md/pdf` (call di stile) → `04c-*-Risposte.pdf` (risposte validazione) → `04d-TOSI-Call-Decisioni-Fase1-Agenda.md` + `-COMPACT.md/pdf` (agenda decisioni) → `04d-TOSI-Call-Decisioni-Fase1-COMPACT-risposte.pdf` (risposte Andrea M 2026-04-17, include modello a 4 fasi) → `05-TOSI-Email-Esempio-v0.2.md` (storico) → `05-TOSI-Email-Esempio-v0.3.md/pdf` (tre email validate v0.3) → **`06-Tosi-Legge-34-2026-Parere-Legale.pdf` (parere legale DOP + artigianato, 2026-04-18)** + varianti mia analisi `06-TOSI-Parere-Legale-DOP-Artigianale.md/pdf` e `-COMPACT.md/pdf`.
 - **Contatti umani Andrea Casero (per firma Claudia e mail aggancio):** Head of Research and Development · Caseificio Tosi · Via Maggiate 6, Gattico-Veruno (NO), Italia · `+39 379 132 3187` · `sviluppo@tosigorgonzola.com`. Il dominio corretto è `tosigorgonzola.com` (il draft v0.1 del Voice Twin aveva erroneamente `caseificiotosi.it` → da correggere in v0.2).
 - **Positioning consolidato:** Claim firma **"Latte, Uomo, Legno, Tempo"**. Asse narrativo in sviluppo "Le mani sono il nostro manifesto / maniaci". Parole bandite: `eccellenza`, `unico`, `premium`. Concetti `qualità/artigianalità/tradizione` sottintesi, mai nominati. Claim numerici autorizzati: `600L caldaia → 6 forme`, `1.5% sale`, `zero scarto`, `TMC 30gg`.
 - **Modello Ambassador logistico** (decisione nuova critica): Tosi Gattico → Ambassador locale (zona Turati, stocca 20-30kg, fattura come rivenditore autorizzato) → rider refrigerato (Glovo/Deliveroo) → paninoteca/pizzeria. Velocità target ordine → consegna in ore ("1×2, non B2B"). Pagamento carta immediato. Replicabile Roma/Napoli — **questa è la dimensione replicabile da vendere ad Anthropic/EU**.
@@ -34,7 +34,7 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 - **Blog:** 1 post published ("From Vending Machines to Aging Rooms").
 - **Partnerships:** Anthropic Ambassador application submitted. Tosi case study permission secured (2026-03-20).
 - **EU funding:** 0 applications submitted. Landscape research complete.
-- **Next milestone:** (1) **Inviare le 3 email esempio v0.2 ad Andrea M** (`05-TOSI-Email-Esempio-v0.2-COMPACT.pdf`) per OK finale sullo stile + modello a 4 fasi. (2) Al suo OK: deploy del Voice Twin v0.2 nel `tosi-mini-crm` (prompt file + cadenza follow-up 7gg + gesto default 600l). (3) **Website profiling batch** sui 15 prospect con menu gia in Supabase (`python -m batch.batch_profiling --tosi`). (4) **Briefing cards batch** per gli stessi 15 (`python -m batch.batch_cards --tosi`). (5) Selezione dei **10 prospect pilota** tra i 15 → prima cold email generata da Claudia in `/review`. (6) Batch menu extraction 156 prospect rimanenti (pipeline stabile 100%). (7) Sessione 2 intervista Andrea Tosi (10 open questions, incluso modello Ambassador operativo e dettagli logistici per Fase 3-4).
+- **Next milestone:** (1) **Recuperare numero iscrizione Albo CCIAA Novara** da Andrea Casero (blocker unico al deploy v0.3). (2) **Deploy Voice Twin v0.3** nel `tosi-mini-crm` (`/prompts/voice-judgment-model-v1.md`, branch `feat/ai-sales-agent`, `prompt_version` → `voice-twin-v0.3-fase1`). (3) **Website profiling batch** sui 15 prospect con menu gia in Supabase (`python -m batch.batch_profiling --tosi`). (4) **Briefing cards batch** per gli stessi 15 (`python -m batch.batch_cards --tosi`). (5) Selezione dei **10 prospect pilota** tra i 15 → prima cold email generata da Claudia in `/review`. (6) Batch menu extraction 156 prospect rimanenti (pipeline stabile 100%). (7) Sessione 2 intervista Andrea Tosi (10 open questions, incluso modello Ambassador operativo e dettagli logistici per Fase 3-4).
 
 > Update this section after every meaningful work session. If it's stale, the agent can't help you.
 
@@ -66,29 +66,21 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 ## Folder Structure
 
 ```
-CLAUDE.md
-STATUS.md                              → Flywheel tracker (update after every session)
-Media/
-  Brand/                               → Logo variants, palette reference, brand images
+CLAUDE.md                              → conventions + short current state pointer
+STATUS.md                              → flywheel tracker (update after every session)
+ARCHITECTURE.md                        → multi-repo map, data flow, Supabase schema
+Partner/
+  Anthropic/                           → CPN application trail, email screenshots, analysis
+    Archive/                           → superseded drafts (reply_to_karl v1, submitted answers)
 Projects/
   Tosi/
-    Docs/                              → Experiment docs, prefixed by phase (00-, 01-, ...)
-    Media/
-      Brand/                           → Tosi-specific brand assets
-      Production/                      → Editorial production photography
-      Provocation/                     → Provocative/editorial imagery
-Skills/
-  FTB-Artisan-Discovery.skill.md       → Producer field research framework
-  FTB-Brand-Identity-Website.skill.md  → Website design system (AUTHORITATIVE for all visual decisions)
-  FTB-Content-Engine.skill.md          → Blog, LinkedIn, case study formats
-  FTB-EU-Bandi-Navigator.skill.md      → EU funding landscape, application writing
-  FTB-Manrique-CEO.skill.md            → Communication voice, strategic push-back
-  FTB-Rebrand-Lab-Identity.md          → LEGACY (superseded by Brand-Identity-Website)
-  FTB-Roadmap-2026-2027.skill.md       → Master phased roadmap: fasi, cash flow, decisione fiscale, cosa NON faccio
-  FTB-Strategy.skill.md               → Partnerships, funding pipeline, legal, timeline
-  FTB-Tosi-Experiment.skill.md         → AI sales agent architecture, metrics, documentation
-  FTB-Website-Build-Prompt.md          → Routing, SEO, Next.js structure, deployment
+    Docs/                              → experiment docs, prefixed by phase (00-, 01-, ...)
+      Archive/                         → superseded versions (v0.2 emails, Phase1-Plan)
+.claude/
+  skills/                              → Claude Code skills (one folder per skill, SKILL.md inside)
 ```
+
+Skills are listed and routed in "Task → Skill Routing" below. For the architecture of the 4 repos that make up the Tosi system, see `ARCHITECTURE.md`.
 
 ## Task → Skill Routing
 

@@ -26,8 +26,7 @@ FTB è un lab che costruisce AI tools per produttori artigianali italiani. Il pr
 ```
 
 ### `food-tech-bootcamp` (questo repo, hub)
-- `Projects/Tosi/Docs/` — documenti autoritativi (Voice Twin v0.2, email esempio, baseline interview)
-- `Projects/Tosi/Media/` — asset brand Tosi
+- `Projects/Tosi/Docs/` — documenti autoritativi (Voice Twin v0.3, email esempio, baseline interview, parere legale)
 - `.claude/skills/` — skill Claude Code user-facing per invocare la pipeline
 - `STATUS.md` — flywheel tracker session log
 - `CLAUDE.md` — convenzioni di codice + current state

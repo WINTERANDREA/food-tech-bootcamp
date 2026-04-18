@@ -37,8 +37,6 @@ yarn-error.log*
 .vercel
 
 # raw assets (not for deployment)
-/Media/
-/Skills/
 *.MOV
 *.mp4
 *.xlsx
