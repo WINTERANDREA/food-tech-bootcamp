@@ -69,8 +69,8 @@ Only load the skills you need. Every skill costs context.
 | Task | Load these skills |
 |------|-------------------|
 | **Website development** | Brand-Identity-Website + Website-Build-Prompt |
-| **Blog / LinkedIn / content** | Content-Engine + Manrique-CEO |
-| **Tosi experiment (design / strategy)** | Tosi-Experiment (+ Manrique-CEO if writing about it) |
+| **Blog / LinkedIn / content** | Content-Engine + Voice-CEO |
+| **Tosi experiment (design / strategy)** | Tosi-Experiment (+ Voice-CEO if writing about it) |
 | **Scrape prospect per nuova zona (Milano, Roma, Paris, ...)** | Claudia-Prospect-Scraping |
 | **Import prospect scrapati nel CRM Supabase** | Claudia-Prospect-Import |
 | **Estrarre menu dai siti dei prospect** | Claudia-Menu-Extraction |
@@ -79,9 +79,8 @@ Only load the skills you need. Every skill costs context.
 | **Generate / regenerate Claudia cold emails (CLI, subscription)** | Claudia-Email-Generator |
 | **EU funding applications** | EU-Bandi-Navigator + Content-Engine |
 | **Producer field research** | Artisan-Discovery |
-| **Strategy / partnerships / pitches** | Strategy + Manrique-CEO |
-| **Roadmap / phase priorities / fiscal / "do I accept this client?"** | Roadmap-2026-2027 (+ Strategy if partnership/funding angle) |
-| **Emails / formal communication** | Manrique-CEO |
+| **Strategy / partnerships / pitches / fiscal / roadmap / "do I accept this client?"** | Roadmap-2026-2027 (absorbe ex ftb-strategy) |
+| **Emails / formal communication** | Voice-CEO |
 | **Cortilia work / general dev** | CLAUDE.md alone — no skills needed |
 
 ## Tosi pipeline — 6 skill invocabili da conversazione
@@ -124,6 +123,6 @@ Pattern usato per i doc 04b/04d. Per stile diverso (es. case study formale), dup
 
 1. **Tosi is the seed.** Everything else grows from it. Don't start new projects before Tosi produces results.
 2. **One project, six outputs.** Every Tosi work session should produce material for at least 2 of: case study, blog post, UNISG presentation, EU application, Anthropic pitch, client template. Track in STATUS.md.
-3. **Show, don't pitch.** Build demos, not decks. Ship experiments, not strategies. (César Manrique principle — full voice guide in Manrique-CEO skill.)
+3. **Show, don't pitch.** Build demos, not decks. Ship experiments, not strategies. (César Manrique principle — full voice guide in `ftb-voice-ceo` skill.)
 4. **The artisan is always the subject.** In all content, the human craft comes first, technology second.
 5. **Sector rotation.** Never more than 2 consecutive references to the same food sector. Rotate: caseifici, panifici, frantoi, cantine, norcinerie, pastifici, conservifici, birrifici, apicoltura, cioccolateria, oleifici, gelaterie artigianali.

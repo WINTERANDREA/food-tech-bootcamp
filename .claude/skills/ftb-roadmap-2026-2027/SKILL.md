@@ -5,21 +5,25 @@ description: >
   cash flow projections, fiscal decision tree (forfettario vs SRL vs doppia
   entità), Partner Network buildup, explicit "do-not-do" list, and the three
   strategic directions for 2027 (Apprendista digitale / Terroir AI /
-  Computational Gastronomy Lab). Use when the user asks about phase
-  priorities, long-term planning, cash flow, fiscal regime, partner network
-  recruiting, the verticali primario/secondario distinction (PMI food
-  Lombardia + Consorzi DOP/IGP), when a client/project fits the strategy
-  or should be refused, or when a "do I accept this?" decision needs the
-  "cosa NON faccio" list. Complements ftb-strategy (partnerships + funding
-  pipeline stay there). DO NOT LOAD for Tosi day-to-day execution or
-  technical tasks — Tosi is the seed, ftb-tosi-experiment is the
-  authoritative skill for that.
+  Computational Gastronomy Lab). Also covers the orthogonal operating
+  principles (partnership philosophy, legal trigger logic, bandwidth reality)
+  absorbed from the former ftb-strategy skill.
+
+  Use when the user asks about phase priorities, long-term planning, cash
+  flow, fiscal regime, partner network recruiting, the verticali
+  primario/secondario distinction (PMI food Lombardia + Consorzi DOP/IGP),
+  partnership strategy (Anthropic, UNISG, EU funding bodies), when a
+  client/project fits the strategy or should be refused, or when a "do I
+  accept this?" decision needs the "cosa NON faccio" list.
+
+  DO NOT LOAD for Tosi day-to-day execution or technical tasks — Tosi is
+  the seed, ftb-tosi-experiment is the authoritative skill for that.
 ---
 
 # FTB Roadmap 2026–2027
 
 **Andrea Casero · Food Tech Bootcamp**
-*Ultimo aggiornamento: 2026-04-17*
+*Ultimo aggiornamento: 2026-04-18*
 
 > Documento vivo. Da aggiornare a fine di ogni fase con numeri reali, decisioni prese e scostamenti.
 
@@ -51,6 +55,38 @@ Tutti gli altri segmenti restano in ghiaccio fino a fine Fase 3.
 - Target: consorzi di tutela, camere di commercio, GAL, enti di promozione territoriale
 - Perché: amplifica il brand FTB, accesso a molti produttori con un solo deal, compatibile con la visione Manrique (tecnologia al servizio dell'identità territoriale)
 - Universo potenziale: ~300 consorzi DOP/IGP in Italia, di cui ~80 in Nord Italia
+
+---
+
+## §0 Principi guida operativi
+
+Tre vincoli orizzontali a tutte le fasi (assorbiti dalla ex skill `ftb-strategy`).
+
+### Partnership philosophy
+
+- **UNISG Pollenzo = moltiplicatore EU strutturale**: includere UNISG come partner in ogni applicazione EU. L'impatto sul punteggio di valutazione è misurabile e consistente. Regola: non saltare mai il partner UNISG "per risparmiare complessità".
+- **Anthropic = partnership, non sponsorship**: FTB si posiziona come infrastructure layer per il food artigianale. Pitch angle: replicable model (300k produttori), non single-producer case study. Non chiediamo soldi — chiediamo visibility + co-marketing. Stato CPN: cleared initial review 2026-04-18; partnership pubblica ancora bloccata fino a portal + certification.
+- **Tosi = case study, non cliente**: Tosi ha dato case study permission (2026-03-20) ed è advisor informale. Non trattare come revenue line fino a contrattualizzazione Fase 3.
+
+### Legal structure — trigger logic
+
+Regime attuale: **forfettario** (P.IVA, soglia €85k). Passare a **SRL innovativa** solo se si verifica uno di:
+
+1. Fatturato in arrivo a €85k (tenere margine 10% per non superare).
+2. Serve holding equity per co-founder o investitore.
+3. Bando EU specifico richiede SRL (es. EIC Accelerator).
+4. Investitore istituzionale in ingresso con tax credit 30-50%.
+
+Finché non scatta un trigger: **stai forfettario**. Non creare overhead prima che ci sia revenue.
+
+### Bandwidth reality
+
+Il founder ha full-time a Cortilia. FTB prende serate, weekend e le pieghe. Vincoli non negoziabili:
+
+- **Max 1 applicazione EU per trimestre** (quality > quantity).
+- **Max 1 blog post al mese** realisticamente.
+- **Sistema Tosi deve essere low-maintenance** dopo la Fase 1 (< 5h/settimana).
+- Non pianificare capacity che non esiste. Se una fase richiede >30h/settimana, rivedere lo scope.
 
 ---
 
@@ -95,8 +131,14 @@ Tutti gli altri segmenti restano in ghiaccio fino a fine Fase 3.
 - **Paralisi da analisi sul tech stack**: scegli velocità > perfezione, n8n + Supabase bastano
 - **Dispersione contenuti**: tieni un solo tema portante (AI per food artigianale)
 
-### Stato corrente (2026-04-17)
+### Stato corrente (2026-04-18)
 La Fase 1 è effettivamente iniziata: l'esperimento Tosi con Claudia è il pilota che validerà il modello a 4 fasi di Andrea M. Vedi `ftb-tosi-experiment` per i dettagli operativi.
+
+**Claude Partner Network — status attivo in Fase 1:**
+- Application FTB ha superato l'initial review (email Karl Kadon 2026-04-09, conferma Claude Partner Network Team 2026-04-18).
+- Action item aperto: enroll ten team members in Anthropic Academy + completion del **CPN learning path** (4 corsi per persona, ~10-16h a testa).
+- **Vincolo narrativo duro:** fino al portal launch + assegnazione tier, **nessuna rivendicazione pubblica di "Anthropic partner"** — né in EU bandi, né in pitch UNISG, né sul sito FTB, né in Ambassador application. Formulazione consentita: *"on the path to partnership after clearing initial review."*
+- Dettaglio operativo + reply strategy: vedi `Partner/Anthropic/02_analysis_and_next_steps.md`. Dettaglio curriculum: vedi Fase 3 — Ecosistema Partner Network.
 
 ---
 
@@ -157,9 +199,35 @@ Ogni nuova installazione Claudia eredita:
 - Il modello a 4 fasi adattato al ciclo del prodotto specifico
 
 ### Ecosistema Partner Network
-- **Requirement Anthropic**: 10 collaboratori certificati
-- **Struttura proposta**: 10 freelance italiani/europei con profili complementari (designer, copywriter, developer, consulenti food), legati da accordo di revenue share (10–20% sui progetti che delivery)
-- **Primi 3 attivati entro settembre 2026**, 7 restanti entro dicembre
+
+#### Requirement Anthropic — Claude Partner Network (CPN)
+
+Decodifica operativa basata sull'email del 2026-04-18 + ricerca pubblica:
+
+**Piattaforma:** Anthropic Academy su Skilljar (`https://anthropic.skilljar.com/`).
+**Modalità:** self-enroll pubblico — chiunque con qualsiasi email si registra. **Nessun invite code, nessuna binding a livello di iscrizione.** Il legame fra i dieci e FTB avviene **manualmente alla fine**, quando si clicca *"confirm completion here"* e si sottomettono nomi + email. Anthropic valida contro i certificati rilasciati.
+
+**CPN learning path — 4 corsi obbligatori per persona:**
+
+| # | Corso | Durata stimata |
+|---|---|---|
+| 1 | Introduction to Agent Skills | 2–4 h |
+| 2 | Building with the Claude API | 2–8 h |
+| 3 | Introduction to Model Context Protocol | 2–4 h |
+| 4 | Claude Code in Action | ~1 h |
+
+**Totale per persona:** 10–16 h. **Dieci persone:** 100–160 h cumulative di formazione sulla rete FTB.
+
+**Milestone post-completion:** Anthropic sblocca l'esame **Claude Certified Architect Foundations (CCAF)** per l'organizzazione. Almeno 1 membro deve passarlo per progredire verso partner status pieno.
+
+**Zona grigia da chiarire con Anthropic (domanda aperta a Karl nella reply v2):** se i dieci debbano usare email `@foodtechbootcamp.com` (vincolo domain-match) o se siano accettate email personali con affiliazione dichiarata. FTB non ha dieci dipendenti — la risposta determina se i "dieci" possono essere collaboratori esterni (UNISG, freelance, customer-partner come Andrea M/Tosi).
+
+#### Struttura FTB Partner Network
+
+- **10 freelance italiani/europei** con profili complementari (designer, copywriter, developer, consulenti food), legati da accordo di revenue share (10–20% sui progetti in delivery).
+- **Primi 3 attivati entro settembre 2026**, 7 restanti entro dicembre — allineato al timing CPN: i primi 3 iniziano il learning path in estate 2026 (fine Fase 2 / inizio Fase 3), i 10 completati entro Fase 4.
+- **Doppio beneficio:** servono sia come **Partner Network operativo FTB** (revenue share + capacity di delivery) sia come **"ten team members" per Anthropic CPN** — stessa rete, due funzioni.
+- **Ordine di enrollment suggerito:** Andrea C. per primo (inizio immediato con Claude Code in Action ~1h per avere il primo certificato in mano), poi il technical collaborator, poi i partner delivery man mano che vengono attivati.
 
 ### Rischi fase 3
 - **Sovra-ingegnerizzazione Claudia**: ogni feature deve essere richiesta da ≥2 clienti reali, no feature speculative
@@ -320,8 +388,8 @@ Ogni trimestre, test del taglio netto: *"Questa attività, tra 24 mesi, sarà an
 
 - **Tosi è il progetto-seed di tutta la roadmap.** Se Tosi non valida il modello a 4 fasi, la Fase 3 (prodotto Claudia) non ha fondamenta. Operativamente: `ftb-tosi-experiment`.
 - **Il modello a 4 fasi di Andrea M** (vaschetta → 2 vaschette → contratto → ambassador) è l'asset replicabile che rende Claudia un prodotto e non un servizio custom. Fonte autoritativa: memoria `project_tosi_four_phase_model.md`.
-- **Partnership e funding (Anthropic, EIT Food, Horizon, UNISG)**: vedi `ftb-strategy`. Non sono in questa roadmap perché sono orizzontali a tutte le fasi.
-- **Brand e voce (Manrique + Andrea CEO)**: vedi `ftb-manrique-ceo` e `ftb-andrea-ceo`.
+- **Partnership e funding (Anthropic, EIT Food, Horizon, UNISG)**: vedi §0 Principi guida sopra + skill `ftb-eu-bandi-navigator` per il dettaglio operativo dei bandi. Le partnership sono orizzontali a tutte le fasi.
+- **Brand e voce (Manrique + Andrea CEO)**: vedi `ftb-voice-ceo` (sostanza + stile in un solo skill).
 - **Contenuti e case study**: vedi `ftb-content-engine`.
 
 ## Come usare questa skill
@@ -336,6 +404,6 @@ Ogni trimestre, test del taglio netto: *"Questa attività, tra 24 mesi, sarà an
 
 **Non trigger:**
 - Task operativi Tosi (Claudia, Voice Twin, CRM) → `ftb-tosi-experiment`
-- Scrittura cold email → `ftb-manrique-ceo` + `ftb-tosi-experiment`
+- Scrittura cold email → `ftb-voice-ceo` + `ftb-tosi-experiment`
 - Applicazioni EU funding → `ftb-eu-bandi-navigator`
 - Sviluppo website → `ftb-brand-identity-website` + `ftb-website-build-prompt`

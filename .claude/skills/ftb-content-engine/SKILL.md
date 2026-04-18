@@ -6,7 +6,7 @@ description: >
   Covers: blog structure and templates, LinkedIn format and samples,
   case study structures per audience (Anthropic/UNISG/EU), presentation
   deck template, editorial calendar, and publishing checklist.
-  For voice and word-level rules, pair with ftb-manrique-ceo skill.
+  For voice and word-level rules, pair with ftb-voice-ceo skill.
 ---
 
 # FTB Content Engine
@@ -283,4 +283,4 @@ Before publishing anything:
 - [ ] Would an institutional partner take FTB seriously?
 - [ ] Is technology secondary to the human story?
 - [ ] Could a generic agency have written this? (If yes → rewrite)
-- [ ] For voice and word-level compliance, see `ftb-manrique-ceo` skill
+- [ ] For voice and word-level compliance, see `ftb-voice-ceo` skill

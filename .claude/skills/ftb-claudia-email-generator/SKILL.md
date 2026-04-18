@@ -177,4 +177,4 @@ needs tightening. Re-run once — subscription means retry is free.
 
 - `ftb-tosi-experiment` — architecture, voice design, phase roadmap. Load when
   designing Claudia, not when invoking her.
-- `ftb-manrique-ceo` — voice rules. Load when editing the prompt file.
+- `ftb-voice-ceo` — voice rules + Andrea CEO substance. Load when editing the prompt file.

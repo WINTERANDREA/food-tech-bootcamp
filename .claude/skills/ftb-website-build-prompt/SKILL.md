@@ -39,20 +39,18 @@ WEBSITE2/
 │   └── skills/                        → All skills (auto-discovered by Claude Code)
 │       ├── ftb-brand-identity-website/SKILL.md
 │       ├── ftb-website-build-prompt/SKILL.md    ← THIS FILE
-│       ├── ftb-manrique-ceo/SKILL.md
+│       ├── ftb-voice-ceo/SKILL.md
 │       ├── ftb-content-engine/SKILL.md
 │       ├── ftb-tosi-experiment/SKILL.md
 │       ├── ftb-artisan-discovery/SKILL.md
 │       ├── ftb-eu-bandi-navigator/SKILL.md
-│       └── ftb-strategy/SKILL.md
-├── Media/
-│   └── Brand/                         → Logo variants, palette, brand images
+│       └── ftb-roadmap-2026-2027/SKILL.md
 ├── Projects/
 │   └── Tosi/
-│       ├── Docs/
-│       └── Media/ (Brand, Production, Provocation)
+│       └── Docs/                      → experiment docs (00-, 01-, ...) + Archive/
 ├── CLAUDE.md
 ├── STATUS.md
+├── ARCHITECTURE.md
 └── src/                               → Next.js app — YOU BUILD THIS
 ```
 
