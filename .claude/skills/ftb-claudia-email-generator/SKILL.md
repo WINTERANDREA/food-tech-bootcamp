@@ -56,7 +56,7 @@ API mode for one run, append `--force-api`.
 ### Generate a single draft for a specific prospect
 
 ```bash
-cd ~/Projects/FTB/menu-extraction-agents-sdk_top
+cd ~/Projects/FTB/menu-extraction-agents-sdk_top && source venv/bin/activate
 python -m agents.email_generation.agent 3996
 ```
 

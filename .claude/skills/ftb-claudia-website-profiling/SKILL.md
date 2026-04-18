@@ -54,7 +54,7 @@ Fallback to Playwright MCP if HTTP fetch fails (SPA, JavaScript-heavy sites).
 ### Single prospect
 
 \`\`\`bash
-cd ~/Projects/FTB/menu-extraction-agents-sdk_top
+cd ~/Projects/FTB/menu-extraction-agents-sdk_top && source venv/bin/activate
 python -m agents.website_profiling.agent \\
   "https://pizzeriasapo.it" "Pizzeria Sapò" \\
   --tosi \\

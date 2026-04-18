@@ -51,7 +51,7 @@ the Anthropic partnership metrics. Fallback to API if monthly quota hit.
 ### Extract menu for a single restaurant
 
 \`\`\`bash
-cd ~/Projects/FTB/menu-extraction-agents-sdk_top
+cd ~/Projects/FTB/menu-extraction-agents-sdk_top && source venv/bin/activate
 python -m agents.menu_extraction.agent "https://pizzeriasapo.it" "Pizzeria Sapò" --tosi
 \`\`\`
 
@@ -65,7 +65,7 @@ The batch reads \`input/restaurants.json\` (produced by \`bridgeMenuExtraction.j
 cd ~/Projects/TOSI/WEB/tosi-scraping
 npm run menu-generate   # produces input/restaurants.json (only pending ones)
 
-cd ~/Projects/FTB/menu-extraction-agents-sdk_top
+cd ~/Projects/FTB/menu-extraction-agents-sdk_top && source venv/bin/activate
 cp ~/Projects/TOSI/WEB/tosi-scraping/menu-pipeline/input/restaurants.json input/restaurants.json
 
 python -m batch.batch_menu --tosi --limit 10   # test small

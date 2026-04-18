@@ -57,7 +57,7 @@ Subscription-first (€0). Pattern identico a `email_generation`:
 ### Single prospect
 
 \`\`\`bash
-cd ~/Projects/FTB/menu-extraction-agents-sdk_top
+cd ~/Projects/FTB/menu-extraction-agents-sdk_top && source venv/bin/activate
 python -m agents.briefing_cards.agent 3996 --tosi
 \`\`\`
 
