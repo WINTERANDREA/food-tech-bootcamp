@@ -96,7 +96,12 @@ Only load the skills you need. Every skill costs context.
 |------|-------------------|
 | **Website development** | Brand-Identity-Website + Website-Build-Prompt |
 | **Blog / LinkedIn / content** | Content-Engine + Manrique-CEO |
-| **Tosi experiment** | Tosi-Experiment (+ Manrique-CEO if writing about it) |
+| **Tosi experiment (design / strategy)** | Tosi-Experiment (+ Manrique-CEO if writing about it) |
+| **Scrape prospect per nuova zona (Milano, Roma, Paris, ...)** | Claudia-Prospect-Scraping |
+| **Import prospect scrapati nel CRM Supabase** | Claudia-Prospect-Import |
+| **Estrarre menu dai siti dei prospect** | Claudia-Menu-Extraction |
+| **Profilare sito web prospect (filosofia, stile, fornitori)** | Claudia-Website-Profiling |
+| **Generare briefing card per prospect** | Claudia-Briefing-Cards |
 | **Generate / regenerate Claudia cold emails (CLI, subscription)** | Claudia-Email-Generator |
 | **EU funding applications** | EU-Bandi-Navigator + Content-Engine |
 | **Producer field research** | Artisan-Discovery |
@@ -104,6 +109,21 @@ Only load the skills you need. Every skill costs context.
 | **Roadmap / phase priorities / fiscal / "do I accept this client?"** | Roadmap-2026-2027 (+ Strategy if partnership/funding angle) |
 | **Emails / formal communication** | Manrique-CEO |
 | **Cortilia work / general dev** | CLAUDE.md alone — no skills needed |
+
+## Tosi pipeline — 6 skill invocabili da conversazione
+
+Ogni step della pipeline Claudia ha la sua skill Claude Code. Sequenza naturale:
+
+```
+1. ftb-claudia-prospect-scraping   → Google Places su nuova zona → enriched_results.json
+2. ftb-claudia-prospect-import      → JSON → companies table (Supabase CRM)
+3. ftb-claudia-menu-extraction      → website → companies.menu_structured
+4. ftb-claudia-website-profiling    → website → companies.website_profile
+5. ftb-claudia-briefing-cards       → CRM + menu + profile → briefing_cards table
+6. ftb-claudia-email-generator      → briefing → email_drafts (pending_review)
+```
+
+Tutte le skill operano da subscription Claude (€0 real cost) tranne il button UI in CRM che usa API key. Le skill `ftb-claudia-*` sono tutte **in FTB** (questo repo) anche se i comandi lanciano script nel CRM repo o nel menu-extraction repo — FTB è l'hub di conversazione.
 
 ## Generating PDFs from Markdown (without installing libraries)
 
