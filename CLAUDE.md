@@ -6,6 +6,8 @@ FTB is a lab building AI tools for Italy's 300,000 artisanal food producers. Mis
 
 Not an agency. Not a consultancy. A lab. The work changes — the mission doesn't.
 
+> **Per capire come i 4 repo si tengono insieme, il data flow della pipeline, e lo schema Supabase**: leggi [`ARCHITECTURE.md`](./ARCHITECTURE.md). Questo file (CLAUDE.md) tratta stato corrente + convenzioni. L'architettura è separata perché cambia poco.
+
 ## Current State (2026-04-17)
 
 - **Primary project:** Tosi AI Sales Agent — Phase 0 complete. Phase 1 in progress. Baseline interview sintetizzata → Voice Twin v0.1 → call validazione stile (04b/04c) → agenda decisioni Fase 1 (04d) → **risposte Andrea M (04d-risposte, 2026-04-17)** → **Voice Twin v0.2 scritto e pronto** + tre email esempio rigenerate (doc `05-*`) in attesa di OK finale di Andrea M. CRM: route `/review` con toast notification e Resend live da `hello@tosigorgonzola.com`.
