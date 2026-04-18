@@ -10,48 +10,9 @@ description: >
 
 # Tosi Experiment — AI Sales Agent
 
-## Current State (2026-04-13)
+## Current State
 
-- **Phase:** 0 complete → Phase 1 in progress. CRM deployed, menu extraction rolling out, priority scoring done. **Baseline interview sessione 1 completata e sintetizzata.**
-- **Baseline interview:** sessione 1 svolta 2026-04-12 (Andrea M ⇄ Andrea C, audio + trascrizioni in `Projects/Tosi/Docs/TOSI INTERVISTA - sessione 1/`, file A-L). Sintesi master in `Projects/Tosi/Docs/02-TOSI-Baseline-Interview-Synthesis.md` — 12 sezioni autoconsistenti, integrata con `NOTE TOSI.xlsx` (caratteristiche tecniche firmate + vecchia lista claim) e `scheda tecnica cucchiaio 1kg.png`. **Questa è la fonte autoritativa per il Voice Twin.**
-- **Decisioni consolidate da sessione 1 (2026-04-13):**
-  - **Modello Ambassador logistico**: nuovo modello operativo inedito. Tosi Gattico → Ambassador locale (bar/negozio amico zona Turati, stocca 20-30kg, fattura direttamente al cliente finale come rivenditore autorizzato) → rider refrigerato (Glovo/Deliveroo) → paninoteca/pizzeria. Velocità target ordine → consegna in **ore** ("1×2, non B2B"). Pagamento carta immediato via delivery. Replicabile Roma/Napoli. Candidato a diventare doc dedicato `05-TOSI-Ambassador-Model.md`.
-  - **Voice & positioning**: asse narrativo **"Le mani sono il nostro manifesto / maniaci"** (in sviluppo per Salone Parigi). Claim firma **"Latte, Uomo, Legno, Tempo"** — slogan pronto per briefing card ed email. Parole bandite: `eccellenza`, `unico`, `premium`. Concetti `qualità/artigianalità/tradizione` **sottintesi, mai nominati**. Lessico vivo: mani, fagotto, cagliata tagliata grande, tessitura, penicilli, celle sottoterra, legno vivo. Registro "voi" al primo contatto, "tu" solo dopo relazione.
-  - **Claim numerici autorizzati**: `600L caldaia → 6 forme`, `1.5% sale omogeneo`, `zero scarto`, `TMC 30 giorni`. Usabili in cold email e briefing card. Guardrail: **nessun claim comparativo sugli altri DOP, nessuna accusa diretta al consorzio**.
-  - **Reframing obiezione prezzo**: "Non pagarlo di più perché artigianale — pagarlo di più perché è più buono." Criterio unico = appagamento organolettico. Mai leva "prezzo basso di mercato".
-  - **Argomento "non serve scaldarlo"**: **non è killer frase di apertura** (il concetto crudo/non fuso confonde). È vantaggio operativo secondario da nominare in approfondimento.
-  - **Pipeline Fase 1**: include sia paninerie/focaccerie/bistrot sia **pizzerie gourmet** (nessuna esclusione a priori per `tipo locale`). Il campo `tipo locale` esistente nel prospect pool è sufficiente — nessun nuovo attributo da aggiungere.
-  - **Guardrail Claudio**: autonomia totale su scraping/prima email/invito/prenotazione degustazione/listino standard. Zero autonomia su sconti (hard rule). Andrea M interviene solo su catene multi-sede, contratti fatturazione non standard, approvazione one-shot dello stile della prima email. **Non citare clienti Tosi esistenti nelle cold email — in particolare mai Berberè.** Autorizzazione caso per caso per altri nomi.
-  - **Canali Andrea M ↔ Claudio ↔ Andrea C**: (A) **Validazione stile one-shot** → call dedicata 30min + doc condiviso con 2-3 varianti cold email; approvazione versionata nel Voice Twin system prompt ("stile validato Andrea M — data X"). (B) **Escalation ongoing** → nuova route `/review` nel tosi-mini-crm stile Andon Labs. Claudio non scrive mai direttamente su canali esterni — scrive in coda di review. Due account Supabase (Andrea M + Andrea C), entrambi possono approvare/rifiutare, nessun quorum. Azioni: `Approva & invia` / `Rifiuta con feedback` (feedback obbligatorio, loggato in `interactions`, usato come contesto per draft successivi). Notifica via email dal dominio Tosi con link al draft. Fase 1 pilot: solo questo. WhatsApp eventuale in Fase 2+. **Andrea C gestisce il traffico routine, Andrea M interviene sulle escalation definite nella matrice guardrail.**
-  - **Successo Fase 1**: >1 cliente = successo numerico. Vero successo = validare che il sistema (scraping + Claudio + Ambassador + delivery) funziona come insieme. Replicabilità > volume.
-- **Open questions sessione 2** (10 punti bloccanti): formato assaggio cucchiaio, peso fisso vaschetta, identità Ambassador zona Turati, accordo economico Ambassador, licenza rivendita bar, rider refrigerato Milano, vincoli consorzio DOP su comunicazione "sano", lista clienti top verificata, conferma hard rule sconti, workflow approvazione stile prima email.
-- **CRM repo:** `~/Projects/TOSI/WEB/tosi-mini-crm` (branch: `feat/ai-sales-agent`). Fully refactored. Deployed on Vercel.
-- **CRM features:** 250 prospect table (rating, tipo, contatti), detail panel (phone/email/social/reviews/registro/menu), Google Maps at `/map`, priority score with top-50 view, briefing card types defined, **StructuredMenuSection with gorgonzola highlighting** (collapsible categories, per-dish name/description/price).
-- **Scraping repo:** `~/Projects/TOSI/WEB/tosi-scraping`. Full pipeline + menu extraction bridge to Claude Agent SDK. Bridge filters idempotent — skips prospects with `_menuV2.status === "success"` **e** salta i duplicati Google Places che puntano a un host già estratto (dedup-by-hostname, fix 2026-04-14).
-- **Menu extraction:** `~/Projects/FTB/menu-extraction-agents-sdk_top` (GitHub: WINTERANDREA). Claude Agent SDK + Playwright MCP. Dedicated `output/tosi/` folder (via `--tosi` flag). **15 menus estratti e in Supabase** (Borgo 135, Sapò 62, Cesarino 65, San Giorgio 51, Cecino 40, Romanengo 64, Panino doc 73, 24 Burger 52, Vecchio Mulino 30, 'O Fiore Mio 55, Bonnie & Clyde 87, La Manierina 43, el gian 143, Debbie's 41, Savô 78). **178 pending**. Bridge: `npm run menu-generate` → `python src/batch_smart.py --tosi` → `npm run menu-collect-push`.
-- **Per-website cost tracking (2026-04-14):** `smart_agent.py` cattura tokens reali (input/output/cache_creation/cache_read) e `total_cost_usd` dal `ResultMessage` dell'SDK invece dell'estimate `len/4`. Log cumulativo append-only in `monitoring/tracking/per_restaurant_usage.json`. `batch_smart.py` stampa breakdown per ristorante a fine batch + totali. Subscription mode → cost USD = 0 reale (incluso piano), ma `total_cost_usd` riporta comunque il "would-have-been API cost" → proxy per Anthropic pitch.
-- **Batch 2026-04-14 metriche reali:** 10 prospect, 10/10 success (dopo fix BlockingIOError + bridge slug/schema), **$10.86 totale**, 8.6M tokens, ~48 min wall-clock, cache hit ratio ~92%. Range per sito: $0.35 (Panino doc, sito minimal) → $1.57 (Romanengo, sito complesso). Stima per 178 rimanenti: ~$200, ~15h.
-- **Fix bridge + SDK (2026-04-14):** (1) `smart_agent.py` wrappa `print(message)` in try/except `BlockingIOError` — l'event loop del SDK mette stdout in non-blocking, i ResultMessage enormi con cache tokens facevano fallire il write con `[Errno 35]` killando l'estrazione. Success rate: 30% → 100%. (2) `bridgeMenuExtraction.js` `slugify()` normalizza diacritici (NFD) e converte `&` → `and` (fix Savô, Bonnie & Clyde). (3) `getMenuRestaurantName`/`getMenuWebsite` gestiscono schema SDK alternativo con `restaurant_name`/`url` top-level.
-- **Data in Supabase:** 250 Google Places prospects (data_source='google_places'). 121 email, 231 phone, 250 reviews, 114 registro aziende, 133 menu text (v1), **5 menu_structured** (Claude Agent SDK). Priority scores assigned.
-- **Proposal:** Sent + positive feedback. Source: `Projects/Tosi/Docs/00-TOSI-AI-Sales-Agent-Proposta-IT.md`
-- **Unicorn analysis:** `Projects/Tosi/Docs/00-Analisi-Produttori-Gorgonzola-Unicorni-v2.pdf` + `00-TOSI-Unicorn-Discovery.md`. Tosi #1.
-- **Team:** Andrea C. (FTB founder) = builds + field sales. Andrea M. (Tosi CEO) = supervises, approves.
-- **Location:** Caseificio Tosi, Gattico (NO). Stocking point: Bar Turati (Via Turati 7, Milano).
-- **Target zone:** Zona Turati, Milano (2km radius: Brera, Porta Nuova, Garibaldi, Isola, Porta Venezia, Moscova).
-- **Agent identity: Claudio.** The AI agent that executes the Voice Twin is named **Claudio** — italianization of Claude. Three-layer model: (1) **Maestro** = the human whose voice and judgment are captured (Andrea Tosi for this experiment, parametric for others); (2) **Voice Twin** = the system prompt encoding the maestro's voice + decision criteria; (3) **Claudio** = the agent that acts using the Voice Twin (sends emails, generates briefing cards, scores prospects). Claudio is the "who", Voice Twin is the "what", Maestro is the "whose voice".
-- **Voice Twin v0.1:** **Draft scritto** in `Projects/Tosi/Docs/03-TOSI-Voice-Twin-System-Prompt.md` (2026-04-13). Contiene identità Claudio con disclosure AI (opzione C), tono/registro, claim numerici autorizzati, repertorio 9 gesti processo, firma "Latte Uomo Legno Tempo", reframing obiezione prezzo verbatim, guardrail workflow coda review, risposte canoniche alle domande difficili, 3 esempi illustrativi (paninoteca/pizzeria/focacceria). Tracciabilità esplicita alla sintesi baseline. 7 open points registrati per la call di validazione con Andrea M. **Stato: NON deployato.** Prossimi step: call di stile A → v0.2 post-validazione → v1.0 deploy a `/prompts/voice-judgment-model-v1.md` nel CRM repo.
-- **Email infrastructure (3 account Supabase auth, multi-user già configurato):**
-  - **Andrea C** → `sviluppo@tosigorgonzola.com` — builder + field sales, approva traffico routine in `/review`.
-  - **Andrea M** → `commerciale@caseificiotosi.it` — Maestro Tosi, interviene su escalation (matrice guardrail). Dominio istituzionale separato.
-  - **Claudio** → `claudio@tosigorgonzola.com` — agent identity. Da qui partono le notifiche `/review` verso Andrea C e Andrea M. Candidato anche come mittente delle cold email outbound (vedi nota sotto).
-  - **Doppio dominio intenzionale**: `tosigorgonzola.com` (sperimentale/agent) vs `caseificiotosi.it` (istituzionale Andrea M) — isola l'esperimento e protegge la reputazione email del dominio storico durante l'outbound di Claudio.
-  - **Mittente cold email outbound (deciso 2026-04-13)**: `claudio@tosigorgonzola.com` con display name **"Claudio per Tosi"** — identità AI dichiarata, non nascosta. Wording esatto da finalizzare nella call di stile con Andrea M. Supera il precedente riferimento a `hello@tosigorgonzola.com`.
-  - **Pre-requisiti tecnici pre-pilot**: warm-up dominio `tosigorgonzola.com` (1-2 settimane, volumi crescenti). SPF/DKIM/DMARC verificati su entrambi i domini prima di qualsiasi invio (anche le notifiche `/review` verso Andrea M rischiano spam altrimenti). Deliverability resta il rischio più grande segnalato da Andrea Tosi.
-- **Baseline metrics:** Not collected. Need interview with Andrea Tosi.
-- **Case study permission:** Secured (2026-03-20).
-- **Closed businesses:** Panini Durini (2024), Chic & Go — removed.
-
-> Update this section as the experiment progresses. The agent needs to know what exists.
+For current state see `STATUS.md` (session log) and `CLAUDE.md` § Current State. This skill documents **architecture, methodology, and the 4-project workflow** — not live state.
 
 ---
 
@@ -59,13 +20,13 @@ description: >
 
 This project spans four repos/projects. Each has its own `.claude/skills/` for autonomous Claude Code operation.
 
-| | **FTB** (this repo) | **CRM** | **Scraping** | **Menu Extraction** |
-|---|---|---|---|---|
-| **Path** | `~/Projects/FTB/food-tech-bootcamp` | `~/Projects/TOSI/WEB/tosi-mini-crm` | `~/Projects/TOSI/WEB/tosi-scraping` | `~/Projects/FTB/menu-extraction-agents-sdk_top` |
-| **GitHub** | `WINTERANDREA/food-tech-bootcamp` | `caseificiotosi-hub/tosi-mini-crm` | `caseificiotosi-hub/tosi-scraping` | `WINTERANDREA/menu-extraction-agents-sdk` |
-| **Branch** | `main` | `feat/ai-sales-agent` | `main` | `main` |
-| **Purpose** | Document, plan, track | Build CRM + AI features | Prospect research pipeline | Deep menu extraction (Claude Agent SDK) |
-| **Skills** | ftb-tosi-experiment, strategy, unicorn-discovery... | crm-development, data-import, tosi-context | scraping-pipeline, tosi-context | browser-automation, menu-parsing |
+|             | **FTB** (this repo)                                 | **CRM**                                    | **Scraping**                        | **Menu Extraction**                             |
+| ----------- | --------------------------------------------------- | ------------------------------------------ | ----------------------------------- | ----------------------------------------------- |
+| **Path**    | `~/Projects/FTB/food-tech-bootcamp`                 | `~/Projects/TOSI/WEB/tosi-mini-crm`        | `~/Projects/TOSI/WEB/tosi-scraping` | `~/Projects/FTB/menu-extraction-agents-sdk_top` |
+| **GitHub**  | `WINTERANDREA/food-tech-bootcamp`                   | `caseificiotosi-hub/tosi-mini-crm`         | `caseificiotosi-hub/tosi-scraping`  | `WINTERANDREA/menu-extraction-agents-sdk`       |
+| **Branch**  | `main`                                              | `feat/ai-sales-agent`                      | `main`                              | `main`                                          |
+| **Purpose** | Document, plan, track                               | Build CRM + AI features                    | Prospect research pipeline          | Deep menu extraction (Claude Agent SDK)         |
+| **Skills**  | ftb-tosi-experiment, strategy, unicorn-discovery... | crm-development, data-import, tosi-context | scraping-pipeline, tosi-context     | browser-automation, menu-parsing                |
 
 **Rule:** After every dev session, update STATUS.md and this skill file in the FTB repo.
 
@@ -90,14 +51,14 @@ test data (Villa Crespi, Osteria Francescana, etc.) in the menu-extraction repo.
 
 ### What to document in FTB (this repo)
 
-| What | Where | When |
-|---|---|---|
-| Phase progress, session logs | `STATUS.md` | After every work session |
-| Architecture decisions, corrected context | This skill file | When something structural changes |
-| Proposals, emails, feedback from Andrea Tosi | `Projects/Tosi/Docs/` | Every document sent or feedback received |
-| Scraping methodology and results | `Projects/Tosi/Docs/` | After each scraping run |
-| Blog posts about the experiment | `src/content/blog/` | End of each phase |
-| Public project page updates | `src/content/projects/ai-sales-agent.mdx` | When there are results to show |
+| What                                         | Where                                     | When                                     |
+| -------------------------------------------- | ----------------------------------------- | ---------------------------------------- |
+| Phase progress, session logs                 | `STATUS.md`                               | After every work session                 |
+| Architecture decisions, corrected context    | This skill file                           | When something structural changes        |
+| Proposals, emails, feedback from Andrea Tosi | `Projects/Tosi/Docs/`                     | Every document sent or feedback received |
+| Scraping methodology and results             | `Projects/Tosi/Docs/`                     | After each scraping run                  |
+| Blog posts about the experiment              | `src/content/blog/`                       | End of each phase                        |
+| Public project page updates                  | `src/content/projects/ai-sales-agent.mdx` | When there are results to show           |
 
 ### What NOT to document here
 
@@ -107,14 +68,14 @@ test data (Villa Crespi, Osteria Francescana, etc.) in the menu-extraction repo.
 
 ### Per-phase documentation outputs
 
-| Phase | Document to produce |
-|---|---|
-| 0: Baseline | Baseline interview notes, current process metrics |
-| 0: Scraping | Scraping methodology doc: queries used, filters applied, how many results, data quality |
-| 1: Voice Twin | System prompt rationale: why each section, what knowledge was included, calibration notes |
-| 2: Pipeline | Mid-experiment blog draft, weekly metrics snapshots |
-| 3: Email | Email template analysis: what worked, what got overridden, response rates |
-| 4: Measurement | Full case study (3 versions: Anthropic, UNISG, public blog) |
+| Phase          | Document to produce                                                                       |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| 0: Baseline    | Baseline interview notes, current process metrics                                         |
+| 0: Scraping    | Scraping methodology doc: queries used, filters applied, how many results, data quality   |
+| 1: Voice Twin  | System prompt rationale: why each section, what knowledge was included, calibration notes |
+| 2: Pipeline    | Mid-experiment blog draft, weekly metrics snapshots                                       |
+| 3: Email       | Email template analysis: what worked, what got overridden, response rates                 |
+| 4: Measurement | Full case study (3 versions: Anthropic, UNISG, public blog)                               |
 
 ---
 
@@ -136,17 +97,17 @@ npm run export-csv     →  CSV export for CRM import                           
 
 ### Current Data (250 prospects)
 
-| Enrichment | Coverage | Source |
-|---|---|---|
-| Google Places (name, address, phone, rating, type, coords) | 250/250 (100%) | Text Search API |
-| Google Reviews (5 per place) | 250/250 (100%) | Details API |
-| Email | 121/250 (48%) | Regex + cheerio |
-| Website | 212/250 (85%) | Google Places |
-| Phone | 231/250 (92%) | Google Places |
-| Registro Aziende (tipo societa, fatturato) | 114/250 (46%) | registroaziende.it scraping |
-| Menu text | 133/250 (53%) | Website scraping (HTML/PDF) |
-| Instagram | various | Website scraping |
-| 34 distinct primary types | 250/250 | Google Places |
+| Enrichment                                                 | Coverage       | Source                      |
+| ---------------------------------------------------------- | -------------- | --------------------------- |
+| Google Places (name, address, phone, rating, type, coords) | 250/250 (100%) | Text Search API             |
+| Google Reviews (5 per place)                               | 250/250 (100%) | Details API                 |
+| Email                                                      | 121/250 (48%)  | Regex + cheerio             |
+| Website                                                    | 212/250 (85%)  | Google Places               |
+| Phone                                                      | 231/250 (92%)  | Google Places               |
+| Registro Aziende (tipo societa, fatturato)                 | 114/250 (46%)  | registroaziende.it scraping |
+| Menu text                                                  | 133/250 (53%)  | Website scraping (HTML/PDF) |
+| Instagram                                                  | various        | Website scraping            |
+| 34 distinct primary types                                  | 250/250        | Google Places               |
 
 ### Scraping → CRM Import Flow
 

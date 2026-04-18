@@ -20,13 +20,7 @@
 
 ### Phase Roadmap
 
-| Phase | Timeline | Status | Key Deliverables |
-|-------|----------|--------|-----------------|
-| **0: Baseline** | Week 1-2 | **Complete** | ~~Scraping~~ (250 prospects). ~~Proposal~~ (feedback received). ~~CRM refactoring~~ (schema + import + UI + map). ~~Deploy~~ (Vercel). ~~Priority scoring~~. ~~Unicorn discovery~~ (Tosi #1). |
-| **1: Voice Twin + Briefing Cards + Review UI** | Week 3-5 | **In progress** | ~~Menu extraction pipeline~~ (5 prospects done, 187 remaining). ~~Structured menu UI in CRM~~. ~~BriefingCard types~~. ~~Baseline interview sessione 1~~ (2026-04-12, sintesi master in `02-TOSI-Baseline-Interview-Synthesis.md`). Pending: Voice Twin system prompt (sbloccato, draft da §1/§2/§4/§8 sintesi) → sessione 2 intervista (10 open questions, era 11-12 ora chiuse) → **`/review` route nel CRM** (Andon-style approve/reject+feedback, 2 account Supabase, notifica email — tirato avanti da Phase 3 perché bloccante per pilot) → generate briefing cards for top ~47 prospects. |
-| **2: Pipeline + Interaction Logging** | Week 6-8 | Not started | InteractionLog + InteractionForm components. Pipeline kanban view (`/pipeline` route). AI follow-up suggestions via `suggest-followup` edge function. React Router added. |
-| **3: Email Outreach + Coordinator** | Week 9-12 | Not started | Email draft generation (edge function) — il pezzo "review UI" è stato tirato avanti in Phase 1. Resend integration from hello@tosigorgonzola.com. Coordinator dashboard (`/coordinator` route). Weekly strategy generation. |
-| **4: Measurement + Case Study** | Week 13-16 | Not started | Metrics dashboard (`/metrics` route). 4-week feature freeze. Data export. Case study production (3 versions: Anthropic, UNISG, public). |
+Per la roadmap dettagliata (fasi 1–5, deliverable, cash flow, decisioni fiscali) vedi skill **`ftb-roadmap-2026-2027`**. Questo file traccia solo infrastructure, partnerships, e session log.
 
 ### Technical Architecture
 
