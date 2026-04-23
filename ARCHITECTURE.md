@@ -1,6 +1,6 @@
 # FTB — Architecture Overview
 
-**Ultimo aggiornamento: 2026-04-17**
+**Ultimo aggiornamento: 2026-04-22**
 
 Reference per capire come i pezzi si tengono insieme. Per lo state corrente / convenzioni di codice vai su `CLAUDE.md`. Per la roadmap vai su skill `ftb-roadmap-2026-2027`.
 
@@ -60,22 +60,24 @@ FTB è un lab che costruisce AI tools per produttori artigianali italiani. Il pr
 
 ```
 ┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
-│ 1. PROSPECT      │        │ 2. IMPORT        │        │ 3. MENU          │
-│    SCRAPING      │───────▶│    → Supabase    │───────▶│    EXTRACTION    │
+│ 1. PROSPECT      │        │ 2. IMPORT        │        │ 3. WEBSITE       │
+│    SCRAPING      │───────▶│    → Supabase    │───────▶│    PROFILING     │
 │ (tosi-scraping)  │        │ (tosi-mini-crm)  │        │ (menu-extraction)│
 │                  │        │                  │        │                  │
-│ Google Places    │ JSON   │ upsert by        │        │ Playwright + SDK │
-│ → enriched.json  │        │ google_place_id  │        │ → menu_structured│
+│ Google Places    │ JSON   │ upsert by        │        │ HTTP fetch + SDK │
+│ → enriched.json  │        │ google_place_id  │        │ → website_profile│
+│                  │        │                  │        │ + fit_score 0-10 │
 └──────────────────┘        └──────────────────┘        └──────────────────┘
                                                                   │
+                                                 ═══ GATE ═══  fit_score ≥ 7
                                                                   ▼
 ┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
-│ 6. COLD EMAIL    │        │ 5. BRIEFING CARD │        │ 4. WEBSITE       │
-│    GENERATION    │◀───────│    GENERATION    │◀───────│    PROFILING     │
+│ 6. COLD EMAIL    │        │ 5. BRIEFING CARD │        │ 4. MENU          │
+│    GENERATION    │◀───────│    GENERATION    │◀───────│    EXTRACTION    │
 │ (menu-extraction)│        │ (menu-extraction)│        │ (menu-extraction)│
 │                  │        │                  │        │                  │
-│ Voice Twin v0.2  │        │ CRM + menu +     │        │ HTTP fetch       │
-│ → email_drafts   │        │ profile → card   │        │ → website_profile│
+│ Voice Twin v0.3  │        │ CRM + menu +     │        │ Playwright + SDK │
+│ → email_drafts   │        │ profile → card   │        │ → menu_structured│
 │   (pending_review│        │   → briefing_    │        │                  │
 └────────┬─────────┘        │     cards table  │        └──────────────────┘
          │                   └──────────────────┘
@@ -92,6 +94,12 @@ FTB è un lab che costruisce AI tools per produttori artigianali italiani. Il pr
 └──────────────────┘        └──────────────────┘        └──────────────────┘
 ```
 
+**Pipeline reorder 2026-04-22**: profiling + fit_score gate runs BEFORE menu
+extraction. Rationale: profiling is cheap (HTTP fetch, ~$0.03/prospect, 100%
+success) vs. menu extraction (Playwright, ~$0.50-1.50/prospect, ~47% success on
+new prospects). Filtering sub-7 prospects out of the menu batch saves compute
+and prevents Claudia from drafting emails for misfits.
+
 Ogni step è una **skill invocabile da conversazione** (vedi mappa sotto).
 
 ---
@@ -104,9 +112,11 @@ companies
 ├─ google_place_id (unique), rating, user_rating_count, google_reviews
 ├─ phone, email, link, social fields
 ├─ primary_type, contact_status, assigned_to, updated_by, updated_at
-├─ menu_structured (JSONB)         ← da menu extraction
+├─ menu_structured (JSONB)         ← da menu extraction (step 4, solo se gate passato)
 ├─ menu_v2_status, menu_v2_dishes_count
-├─ website_profile (JSONB)         ← da website profiling
+├─ website_profile (JSONB)         ← da website profiling (step 3)
+│                                     include fit_summary + fit_breakdown
+├─ fit_score (SMALLINT, 0-10)     ← da website profiling, indexed. Gate pipeline ≥ 7
 ├─ priority_score, is_out_of_scope
 └─ data_source ('google_places' | 'registry')
 
@@ -141,8 +151,8 @@ Pipeline step              Skill                              Repo che invoca
 ───────────────────────────────────────────────────────────────────────────
 1. Google Places scraping  ftb-claudia-prospect-scraping      tosi-scraping
 2. Import in CRM           ftb-claudia-prospect-import        tosi-mini-crm
-3. Menu extraction         ftb-claudia-menu-extraction        menu-extraction
-4. Website profiling       ftb-claudia-website-profiling      menu-extraction
+3. Website profiling       ftb-claudia-website-profiling      menu-extraction  ← GATE: emette fit_score
+4. Menu extraction         ftb-claudia-menu-extraction        menu-extraction  ← solo fit_score ≥ 7
 5. Briefing cards          ftb-claudia-briefing-cards         menu-extraction
 6. Email generation        ftb-claudia-email-generator        menu-extraction
 ```

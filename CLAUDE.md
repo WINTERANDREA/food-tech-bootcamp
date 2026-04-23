@@ -8,11 +8,11 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 
 > **Per capire come i 4 repo si tengono insieme, il data flow della pipeline, e lo schema Supabase**: leggi [`ARCHITECTURE.md`](./ARCHITECTURE.md). Questo file (CLAUDE.md) tratta stato corrente + convenzioni. L'architettura è separata perché cambia poco.
 
-## Current State (2026-04-18)
+## Current State (2026-04-22)
 
 - **Tosi Fase 1 quasi pronta.** Voice Twin **v0.3 validato Andrea M (2026-04-18)** + parere legale L. 34/2026 + DOP (doc 06) + tre email esempio v0.3 validate. **Blocker unico al deploy**: numero iscrizione Albo Imprese Artigiane CCIAA Novara (da Andrea Casero) — placeholder `[XXX]` in firma S2.
 - **Agent = Claudia.** Mittente cold outbound: `Claudia per Caseificio Tosi <hello@tosigorgonzola.com>` via Resend. CRM `/review` live con toast notification. Disclosure AI dichiarata (stratificata).
-- **Pipeline menu**: 15 menus in Supabase, **156 prospect pending** dopo blacklist `primary_type`. Per-website cost tracking live (batch 2026-04-14 = $10.86, 92% cache hit, 100% success rate post fix).
+- **Pipeline menu**: 15 menus in Supabase. Pipeline riorganizzata 2026-04-22 — profiling runs PRIMA del menu con fit_score ≥ 7 gate. La batch menu non si lancia più sui 156 pending: prima si profila tutto, poi solo i qualificati (tipicamente 30-50 prospect) entrano in menu extraction. Per-website cost tracking live (batch 2026-04-14 = $10.86, 92% cache hit, 100% success rate post fix).
 - **Strategia consolidata**: modello a 4 fasi (visita → 2 vaschette → contratto → Ambassador). Claudia opera solo in Fase 1. Hard rules: zero citazione clienti, zero offerta 1kg, zero leva prezzo. Positioning: **"Latte, Uomo, Legno, Tempo"**. Memorie autoritative: `project_tosi_four_phase_model.md`, `project_tosi_phase1_rules.md`.
 - **Prossimo milestone**: (1) numero Albo → (2) deploy Voice Twin v0.3 nel CRM → (3) website profiling + briefing cards batch sui 15 → (4) selezione 10 prospect pilota → (5) prima cold email in `/review`.
 
@@ -73,8 +73,8 @@ Only load the skills you need. Every skill costs context.
 | **Tosi experiment (design / strategy)** | Tosi-Experiment (+ Voice-CEO if writing about it) |
 | **Scrape prospect per nuova zona (Milano, Roma, Paris, ...)** | Claudia-Prospect-Scraping |
 | **Import prospect scrapati nel CRM Supabase** | Claudia-Prospect-Import |
-| **Estrarre menu dai siti dei prospect** | Claudia-Menu-Extraction |
-| **Profilare sito web prospect (filosofia, stile, fornitori)** | Claudia-Website-Profiling |
+| **Profilare sito web prospect + emettere fit_score (STEP 3, gate)** | Claudia-Website-Profiling |
+| **Estrarre menu dai siti dei prospect qualificati (fit_score ≥ 7)** | Claudia-Menu-Extraction |
 | **Generare briefing card per prospect** | Claudia-Briefing-Cards |
 | **Generate / regenerate Claudia cold emails (CLI, subscription)** | Claudia-Email-Generator |
 | **EU funding applications** | EU-Bandi-Navigator + Content-Engine |
@@ -85,16 +85,20 @@ Only load the skills you need. Every skill costs context.
 
 ## Tosi pipeline — 6 skill invocabili da conversazione
 
-Ogni step della pipeline Claudia ha la sua skill Claude Code. Sequenza naturale:
+Ogni step della pipeline Claudia ha la sua skill Claude Code. Sequenza naturale
+(profiling PRIMA del menu — fit_score ≥ 7 è il gate per il resto della pipeline):
 
 ```
 1. ftb-claudia-prospect-scraping   → Google Places su nuova zona → enriched_results.json
 2. ftb-claudia-prospect-import      → JSON → companies table (Supabase CRM)
-3. ftb-claudia-menu-extraction      → website → companies.menu_structured
-4. ftb-claudia-website-profiling    → website → companies.website_profile
+3. ftb-claudia-website-profiling    → website → companies.website_profile + companies.fit_score (0-10)
+   ─── GATE: solo prospect con fit_score ≥ 7 proseguono ───
+4. ftb-claudia-menu-extraction      → website → companies.menu_structured
 5. ftb-claudia-briefing-cards       → CRM + menu + profile → briefing_cards table
 6. ftb-claudia-email-generator      → briefing → email_drafts (pending_review)
 ```
+
+Il gate (step 3 → 4) è enforced dal bridge con `node scripts/bridgeMenuExtraction.js generate --require-fit-score 7`. Prospect sub-7 restano in CRM per review manuale ma non consumano compute downstream.
 
 Tutte le skill operano da subscription Claude (€0 real cost) tranne il button UI in CRM che usa API key. Le skill `ftb-claudia-*` sono tutte **in FTB** (questo repo) anche se i comandi lanciano script nel CRM repo o nel menu-extraction repo — FTB è l'hub di conversazione.
 
