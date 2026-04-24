@@ -8,13 +8,14 @@ Not an agency. Not a consultancy. A lab. The work changes — the mission doesn'
 
 > **Per capire come i 4 repo si tengono insieme, il data flow della pipeline, e lo schema Supabase**: leggi [`ARCHITECTURE.md`](./ARCHITECTURE.md). Questo file (CLAUDE.md) tratta stato corrente + convenzioni. L'architettura è separata perché cambia poco.
 
-## Current State (2026-04-22)
+## Current State (2026-04-24)
 
-- **Tosi Fase 1 quasi pronta.** Voice Twin **v0.3 validato Andrea M (2026-04-18)** + parere legale L. 34/2026 + DOP (doc 06) + tre email esempio v0.3 validate. **Blocker unico al deploy**: numero iscrizione Albo Imprese Artigiane CCIAA Novara (da Andrea Casero) — placeholder `[XXX]` in firma S2.
+- **Tosi Fase 1 pronta al deploy.** Voice Twin **v0.3 validato Andrea M (2026-04-18)** + parere legale L. 34/2026 + DOP (doc 06) + tre email esempio v0.3 validate. **Numero Albo CCIAA Novara ottenuto 2026-04-24: `NO-32193`** — firma S2 completa in tutti i doc (03, 03b, 05, 06). Nessun placeholder residuo.
 - **Agent = Claudia.** Mittente cold outbound: `Claudia per Caseificio Tosi <hello@tosigorgonzola.com>` via Resend. CRM `/review` live con toast notification. Disclosure AI dichiarata (stratificata).
-- **Pipeline menu**: 15 menus in Supabase. Pipeline riorganizzata 2026-04-22 — profiling runs PRIMA del menu con fit_score ≥ 7 gate. La batch menu non si lancia più sui 156 pending: prima si profila tutto, poi solo i qualificati (tipicamente 30-50 prospect) entrano in menu extraction. Per-website cost tracking live (batch 2026-04-14 = $10.86, 92% cache hit, 100% success rate post fix).
+- **Pipeline profiling batch eseguito 2026-04-22**. 125 prospect scorati. Distribuzione fit_score: **13 prospect ≥ 7** (8: 1 / 7: 12), 7 a 6, 59 tra 3-5, 41 tra 0-2. Tutti e 13 i qualificati hanno profile + briefing + menu estratto (`output/tosi/` in menu-extraction repo + `enriched_results.json` aggiornato, commit `tosi-scraping:762809f`). Restano ~31 prospect dei 156 senza fit_score (profili ante-reorder o non ancora processati) — re-profiling se serve allargare la platea.
 - **Strategia consolidata**: modello a 4 fasi (visita → 2 vaschette → contratto → Ambassador). Claudia opera solo in Fase 1. Hard rules: zero citazione clienti, zero offerta 1kg, zero leva prezzo. Positioning: **"Latte, Uomo, Legno, Tempo"**. Memorie autoritative: `project_tosi_four_phase_model.md`, `project_tosi_phase1_rules.md`.
-- **Prossimo milestone**: (1) numero Albo → (2) deploy Voice Twin v0.3 nel CRM → (3) website profiling + briefing cards batch sui 15 → (4) selezione 10 prospect pilota → (5) prima cold email in `/review`.
+- **CRM WIP non committato** (branch `feat/ai-sales-agent`): feature "progetti multi-zona" in costruzione — nuove pagine `ProjectsList/ProjectDetail/ProjectNew`, componente `FitScoreChip`, nuovi sidebar (`SidebarFilters/Groups/Projects`), `TopNav`, dir `components/pipeline/` + `components/projects/`, 3 script SQL (`add_projects_tables.sql`, `backfill_milano_project.sql`, `fix_projects_rls.sql`). Andrea committa a breve. Una volta in `main`: la UI permette di vedere fit_score in lista, filtrare ≥ 7, e organizzare prospect per progetto/zona.
+- **Prossimo milestone**: (1) commit CRM WIP → (2) deploy Voice Twin v0.3 nel CRM (prompt con `NO-32193`) → (3) selezione 10 prospect pilota tra i 13 qualificati → (4) generazione draft Claudia via `generate-draft` edge function → (5) review Andrea C + Andrea M in `/review` → (6) prima cold email inviata via Resend.
 
 > **Dettaglio operativo + session log** → `STATUS.md`. **Architettura multi-repo + data flow + Supabase schema** → `ARCHITECTURE.md`. **Roadmap fasi 2026-2027** → skill `ftb-roadmap-2026-2027`.
 

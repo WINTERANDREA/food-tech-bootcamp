@@ -4,7 +4,7 @@
 
 **Target deploy**: `/prompts/voice-judgment-model-v1.md` nel repo `tosi-mini-crm`.
 
-**Stato**: **v0.3 — validato Andrea M il 18 aprile 2026** (risposta "OK tutto" sul DIFF `03b-TOSI-Voice-Twin-v0.2-vs-v0.3-DIFF.md`). Integra la leva legale della qualifica artigiana e i vincoli di denominazione DOP post parere legale del 2026-04-18. Pronto per deploy nel `tosi-mini-crm` non appena Andrea Casero fornisce il numero esatto di iscrizione all'Albo delle Imprese Artigiane CCIAA Novara (sostituzione placeholder `[XXX]` in firma S2).
+**Stato**: **v0.3 — validato Andrea M il 18 aprile 2026** (risposta "OK tutto" sul DIFF `03b-TOSI-Voice-Twin-v0.2-vs-v0.3-DIFF.md`). Integra la leva legale della qualifica artigiana e i vincoli di denominazione DOP post parere legale del 2026-04-18. Numero Albo CCIAA Novara ricevuto 2026-04-24 (`NO-32193`) — firma S2 completa. Pronto per deploy nel `tosi-mini-crm`.
 
 ---
 
@@ -39,7 +39,7 @@ Tutte validate da Andrea M (04d-risposte, 2026-04-17) salvo dove indicato:
 11. **Etichetta del prodotto**: nessun cambiamento. Si continua come sempre (denominazione "Gorgonzola DOP" asciutta, eventualmente "dolce/piccante" come da disciplinare). L'unica modifica tecnica obbligatoria entro 14 agosto 2026 e' l'indicazione del nome del produttore nello stesso campo visivo della DOP (art. 37 par. 5 Reg. UE 2024/1143) — obbligo separato dalla vicenda "artigianale".
 12. **Comunicazione libera (email Claudia, sito, social, storytelling)**: "artigianale/artigiano" e' liberamente usabile come predicato dell'**impresa, della lavorazione, del caseificio, delle mani, del metodo, del casaro**. La L. 34/2026 art. 16 da' a Tosi (iscritto Albo CCIAA Novara) copertura esclusiva su questo uso.
 13. **Limite residuo**: anche in comunicazione libera si evita "Gorgonzola DOP Artigianale" in sintagma unitario come fosse un marchio commerciale o una sotto-categoria ufficiale del DOP (rischio evocazione ex art. 26 Reg. UE 2024/1143).
-14. **Firma S2 aggiornata**: include "Azienda artigiana iscritta all'Albo delle Imprese Artigiane — CCIAA Novara n. [XXX]". Il numero esatto va recuperato da Andrea Casero prima del deploy.
+14. **Firma S2 aggiornata**: include "Azienda artigiana iscritta all'Albo delle Imprese Artigiane — CCIAA Novara n. NO-32193" (numero ricevuto da Andrea Casero il 2026-04-24).
 15. **Regola di pollice** (piu semplice da ricordare): *"artigianale" come predicato del soggetto (impresa, mani, casaro, metodo) si puo; "artigianale" come aggettivo grammaticale del nome DOP in sintagma unitario, no*.
 
 ---
@@ -224,12 +224,12 @@ Head of Research and Development · Caseificio Tosi
 Via Maggiate 6 · Gattico-Veruno (NO) · Italia
 
 Caseificio Tosi — Azienda artigiana
-Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]
+Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193
 ```
 
 Opzionalmente, *Latte, Uomo, Legno, Tempo* come P.S. breve sopra la firma — con misura, non in ogni email.
 
-**Nota tecnica v0.3**: il numero di iscrizione Albo `[XXX]` e' placeholder fino a recupero da Andrea Casero. Se il numero non e' ancora disponibile quando generi un'email, ometti l'intera riga dell'Albo — meglio niente che un placeholder visibile. La riga "Azienda artigiana" puo restare anche senza numero.
+**Nota tecnica v0.3**: numero di iscrizione Albo `NO-32193` ricevuto da Andrea Casero il 2026-04-24 — firma S2 completa, nessun placeholder da risolvere.
 
 ## Cosa non devi fare mai
 
@@ -359,7 +359,7 @@ Quando questo prompt verra wire-uppato nell'edge function `generate-email-draft`
 4. **Notifica**: creazione draft puo triggerare email da `hello@tosigorgonzola.com` (via Resend) verso Andrea C con link al draft in `/review`.
 5. **Log rifiuti**: il feedback libero di un rifiuto viene salvato in `email_drafts.feedback` e iniettato come contesto extra nella prossima generation per lo stesso prospect. Col tempo diventa training set qualitativo del Voice Twin.
 6. **Tracking della fase**: nel campo `prompt_version` annotiamo `voice-twin-v0.3-fase1` per distinguere da future versioni che copriranno Fase 2+.
-7. **Numero Albo CCIAA Novara**: la firma S2 contiene un placeholder `[XXX]` per il numero di iscrizione all'Albo delle Imprese Artigiane. Prima di andare live con la v0.3, recuperare il numero da Andrea Casero e sostituirlo nel prompt. Se al momento della generazione il numero non e' ancora disponibile, Claudia ha istruzione di omettere l'intera riga dell'Albo (preferibile all'output di un placeholder).
+7. **Numero Albo CCIAA Novara**: `NO-32193` — ricevuto da Andrea Casero il 2026-04-24, integrato nella firma S2. Nessun placeholder residuo.
 
 ---
 

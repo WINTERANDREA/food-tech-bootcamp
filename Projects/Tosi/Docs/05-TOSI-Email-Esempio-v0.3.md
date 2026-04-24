@@ -9,7 +9,7 @@
 2. ✅ Paragrafo sulla leva legale di 40 parole in email 3 — confermato.
 3. ✅ Firma estesa con "Azienda artigiana / Iscritti Albo" su tutte e tre le email — confermata.
 
-Claudia entra in produzione con questa baseline sui primi 10 prospect pilota non appena Andrea Casero fornisce il numero di iscrizione all'Albo (sostituzione placeholder `[XXX]`).
+Claudia entra in produzione con questa baseline sui primi 10 prospect pilota. Numero Albo `NO-32193` integrato nella firma S2 il 2026-04-24 — nessun placeholder residuo.
 
 ---
 
@@ -17,7 +17,7 @@ Claudia entra in produzione con questa baseline sui primi 10 prospect pilota non
 
 Tre modifiche minime ma sistematiche, derivate dal DIFF v0.2 → v0.3 (doc `03b-TOSI-Voice-Twin-v0.2-vs-v0.3-DIFF.md`):
 
-1. **Firma estesa su tutte e tre**. Sotto il blocco contatti esistente aggiungiamo due righe: *"Caseificio Tosi — Azienda artigiana / Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]"*. Il numero Albo è placeholder fino a recupero da Andrea Casero. Se non disponibile al deploy, Claudia omette l'intera riga (meglio niente che un placeholder visibile).
+1. **Firma estesa su tutte e tre**. Sotto il blocco contatti esistente aggiungiamo due righe: *"Caseificio Tosi — Azienda artigiana / Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193"*. Numero ricevuto da Andrea Casero il 2026-04-24.
 
 2. **"Artigianale/artigiano" sdoganato** come predicato dell'impresa. La v0.2 evitava la parola in assoluto; la v0.3 la usa con misura — una volta per email, riferita al caseificio o alla lavorazione, mai come aggettivo grammaticale del nome DOP. Mai "Gorgonzola DOP Artigianale" in sintagma unitario.
 
@@ -53,7 +53,7 @@ Tutto il resto (modello a 4 fasi, middle a due paragrafi, cornice "Riferimento p
 > Via Maggiate 6 · Gattico-Veruno (NO)
 >
 > Caseificio Tosi — Azienda artigiana
-> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]
+> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193
 
 **Word count**: ~160 parole.
 
@@ -91,7 +91,7 @@ Tutto il resto (modello a 4 fasi, middle a due paragrafi, cornice "Riferimento p
 > Via Maggiate 6 · Gattico-Veruno (NO)
 >
 > Caseificio Tosi — Azienda artigiana
-> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]
+> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193
 
 **Word count**: ~145 parole.
 
@@ -131,7 +131,7 @@ Tutto il resto (modello a 4 fasi, middle a due paragrafi, cornice "Riferimento p
 > Via Maggiate 6 · Gattico-Veruno (NO)
 >
 > Caseificio Tosi — Azienda artigiana
-> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]
+> Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193
 
 **Word count**: ~200 parole (era ~165 in v0.2 — l'aumento è dovuto al paragrafo sulla leva legale).
 
@@ -175,7 +175,7 @@ Tre decisioni chiuse. Se sei d'accordo su tutte, scrivi "OK tutto" e procediamo 
 ## Prossimi passi dopo l'OK
 
 1. Andrea Casero fornisce il numero di iscrizione all'Albo CCIAA Novara
-2. Il placeholder `[XXX]` viene sostituito in tutte le firme
+2. Numero Albo `NO-32193` già integrato in tutte le firme
 3. Deploy v0.3 nel `tosi-mini-crm` (`/prompts/voice-judgment-model-v1.md`)
 4. `prompt_version` nel database diventa `voice-twin-v0.3-fase1`
 5. Selezione dei 10 prospect pilota tra i 15 con menu già estratto

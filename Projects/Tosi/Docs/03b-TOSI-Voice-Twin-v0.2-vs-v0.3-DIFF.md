@@ -63,7 +63,7 @@ La v0.2 era stata scritta trattando "artigianale" come parola bandita in assolut
 
 | | v0.2 | v0.3 |
 |---|---|---|
-| **Firma v0.2** | `Claudia — agent AI del Caseificio Tosi` <br> `Andrea Casero vi risponde di persona` <br> `Head of R&D · Caseificio Tosi` <br> `+39 379 132 3187 · sviluppo@tosigorgonzola.com` <br> `Via Maggiate 6 · Gattico-Veruno (NO)` | *[identica alla v0.2]* <br> *[+ due righe nuove sotto]* <br> `Caseificio Tosi — Azienda artigiana` <br> `Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. [XXX]` |
+| **Firma v0.2** | `Claudia — agent AI del Caseificio Tosi` <br> `Andrea Casero vi risponde di persona` <br> `Head of R&D · Caseificio Tosi` <br> `+39 379 132 3187 · sviluppo@tosigorgonzola.com` <br> `Via Maggiate 6 · Gattico-Veruno (NO)` | *[identica alla v0.2]* <br> *[+ due righe nuove sotto]* <br> `Caseificio Tosi — Azienda artigiana` <br> `Iscritti all'Albo delle Imprese Artigiane · CCIAA Novara n. NO-32193` |
 | **Precondizione** | Nessuna | Il numero di iscrizione va recuperato da Andrea Casero prima di andare live. Se non disponibile al momento del draft, Claudia ha istruzione di omettere l'intera riga dell'Albo |
 
 **Decisione Andrea M**: ☐ OK ☐ Tieni firma v0.2, nessuna riga aggiuntiva ☐ Altro: _______
@@ -133,7 +133,7 @@ Il numero di iscrizione all'Albo delle Imprese Artigiane della CCIAA di Novara �
 
 ## Cosa succede dopo il tuo OK
 
-1. Sostituisco il placeholder `[XXX]` con il numero reale d'iscrizione
+1. Sostituisco il placeholder `NO-32193` con il numero reale d'iscrizione
 2. Deploy v0.3 nel `tosi-mini-crm` (file `/prompts/voice-judgment-model-v1.md`, branch `feat/ai-sales-agent`)
 3. `prompt_version` nel database diventa `voice-twin-v0.3-fase1`
 4. Primi 10 draft pilota generati con v0.3, tutti in coda `/review` per tua approvazione finale prima del send

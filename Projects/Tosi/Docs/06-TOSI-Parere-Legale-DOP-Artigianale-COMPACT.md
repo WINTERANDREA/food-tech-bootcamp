@@ -54,7 +54,7 @@ La L. 34/2026 riserva "artigianale" agli iscritti all'Albo Imprese Artigiane. To
 ## Firma istituzionale raccomandata
 
 > **Caseificio Tosi — Impresa artigiana del Gorgonzola DOP**
-> *Iscritti all'Albo delle Imprese Artigiane, CCIAA di Novara n. [XXX]*
+> *Iscritti all'Albo delle Imprese Artigiane, CCIAA di Novara n. NO-32193*
 > Via Maggiate 6, Gattico-Veruno (NO) · sviluppo@tosigorgonzola.com · +39 379 132 3187
 
 Soggetto della qualifica artigiana = impresa. Prodotto = denominazione asciutta. Corretta e difendibile.
